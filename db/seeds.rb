@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+# To clean and seed the database use : `rails db:seed:replant`
+
+topic = Topic.create! title: 'Les particules fines'
+
+author = User.create! full_name:  'Thibaut Miquel',
+                      email:      'author@gmail.com',
+                      password:   'password',
+                      tel:        '0612345678',
+                      show_email: true
+
+author.posts.create!(title: '1er article', topic: topic)
