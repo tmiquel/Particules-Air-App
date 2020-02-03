@@ -27,4 +27,6 @@
 class Source < ApplicationRecord
   belongs_to :post
   belongs_to :producer, class_name: 'Stakeholder'
+
+  validates :description, :title, :website_url, presence: true
 end

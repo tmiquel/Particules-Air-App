@@ -13,4 +13,7 @@
 class Definition < ApplicationRecord
   has_many :post_definitions, dependent: :destroy
   has_many :posts, through: :post_definitions
+
+  has_rich_text :meaning
+  validates :term, :meaning, presence: true
 end

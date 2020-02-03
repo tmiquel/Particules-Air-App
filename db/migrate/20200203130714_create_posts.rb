@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :topic, null: false, foreign_key: true
       t.references :following_post, index: true
+      t.boolean :published, default: false
 
       t.timestamps
     end

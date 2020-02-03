@@ -5,7 +5,7 @@
 # Table name: stakeholders
 #
 #  id         :bigint           not null, primary key
-#  emails     :string
+#  email      :string
 #  facebook   :string
 #  linkedin   :string
 #  name       :string
@@ -18,4 +18,9 @@
 class Stakeholder < ApplicationRecord
   has_many :post_stakeholders, dependent: :destroy
   has_many :posts, through: :post_stakeholders
+
+  has_rich_text :content
+  has_one_attached :avatar
+
+  validates :name, presence: true
 end

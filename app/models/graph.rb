@@ -13,4 +13,6 @@
 class Graph < ApplicationRecord
   has_many :post_graphs, dependent: :destroy
   has_many :posts, through: :post_graphs
+
+  validates :slug, presence: true
 end

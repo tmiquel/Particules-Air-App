@@ -5,6 +5,7 @@
 # Table name: posts
 #
 #  id                :bigint           not null, primary key
+#  published         :boolean          default(FALSE)
 #  summary           :text
 #  title             :string
 #  created_at        :datetime         not null
@@ -37,6 +38,12 @@ class Post < ApplicationRecord
   has_many :stakeholders, through: :post_stakeholders
   has_many :post_definitions, dependent: :destroy
   has_many :definitions, through: :post_definitions
-
   has_many :sources, dependent: :destroy
+
+  has_rich_text :content
+  has_one_attached :banner
+
+  scope :published, -> { where(published: true) }
+
+  validates :summary, :title, :content
 end

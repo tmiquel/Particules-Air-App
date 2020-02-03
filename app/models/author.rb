@@ -24,4 +24,5 @@
 #
 
 class Author < User
+  # Just an alias for User
 end
