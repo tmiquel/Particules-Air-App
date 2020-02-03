@@ -1,2 +1,3 @@
 rails: bin/rails server
+webpacker: bin/webpack-dev-server
 nuxt: yarn --cwd ./nuxt run dev --port 8080
