@@ -11,6 +11,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :string
 #  show_email             :boolean          default(FALSE)
 #  tel                    :string
 #  twitter                :string
@@ -25,4 +26,5 @@
 
 class Author < User
   # Just an alias for User
+  default_scope { where(role: :author) }
 end

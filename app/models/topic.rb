@@ -15,5 +15,5 @@
 class Topic < ApplicationRecord
   has_many :posts, dependent: :nullify
   has_one_attached :image
-  validates :long_description, :short_description, :title, :avatar, presence: true
+  validates :long_description, :short_description, :title, :image, presence: true
 end

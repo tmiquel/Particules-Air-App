@@ -9,6 +9,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :string
 #  show_email             :boolean          default(FALSE)
 #  tel                    :string
 #  twitter                :string
