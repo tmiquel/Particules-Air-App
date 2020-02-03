@@ -45,5 +45,5 @@ class Post < ApplicationRecord
 
   scope :published, -> { where(published: true) }
 
-  validates :summary, :title, :content
+  validates :summary, :title, :content, presence: true
 end
