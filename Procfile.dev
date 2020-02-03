@@ -1,0 +1,2 @@
+rails: bin/rails server
+nuxt: yarn --cwd ./nuxt run dev --port 8080
