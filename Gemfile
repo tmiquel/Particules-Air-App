@@ -21,6 +21,10 @@ gem 'webpacker'
 gem 'cloudinary'
 gem 'image_processing'
 
+gem 'administrate'
+gem 'administrate-field-active_storage'
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'foreman'

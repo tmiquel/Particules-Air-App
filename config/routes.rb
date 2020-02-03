@@ -2,7 +2,23 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'admin/posts#index'
+
+  # ADMIN
+  namespace :admin do
+    resources :users
+    resources :authors
+    resources :topics
+    resources :posts
+    resources :graphs
+    resources :stakeholders
+    resources :definitions
+    resources :sources
+
+    root to: 'posts#index'
+  end
+
+  # API
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       get 'hello', to: 'base#hello'
