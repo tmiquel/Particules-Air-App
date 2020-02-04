@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: post_stakeholders
@@ -22,4 +24,6 @@
 class PostStakeholder < ApplicationRecord
   belongs_to :post
   belongs_to :stakeholder
+
+  accepts_nested_attributes_for :stakeholder, reject_if: :all_blank
 end

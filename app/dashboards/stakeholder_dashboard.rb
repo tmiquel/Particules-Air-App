@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class StakeholderDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -9,19 +11,18 @@ class StakeholderDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     post_stakeholders: Field::HasMany,
-    posts: Field::HasMany,
-    rich_text_content: Field::HasOne,
-    avatar_attachment: Field::HasOne,
-    avatar_blob: Field::HasOne,
-    id: Field::Number,
-    name: Field::String,
-    email: Field::String,
-    show_email: Field::Boolean,
-    twitter: Field::String,
-    linkedin: Field::String,
-    facebook: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    posts:             Field::HasMany,
+    content:           RichTextAreaField,
+    avatar:            Field::ActiveStorage,
+    id:                Field::Number,
+    name:              Field::String,
+    email:             Field::String,
+    show_email:        Field::Boolean,
+    twitter:           Field::String,
+    linkedin:          Field::String,
+    facebook:          Field::String,
+    created_at:        Field::DateTime,
+    updated_at:        Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,46 +31,38 @@ class StakeholderDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  post_stakeholders
-  posts
-  rich_text_content
-  avatar_attachment
+    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  post_stakeholders
-  posts
-  rich_text_content
-  avatar_attachment
-  avatar_blob
-  id
-  name
-  email
-  show_email
-  twitter
-  linkedin
-  facebook
-  created_at
-  updated_at
+    id
+    name
+    email
+    show_email
+    twitter
+    linkedin
+    facebook
+    avatar
+    content
+    created_at
+    updated_at
+    posts
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  post_stakeholders
-  posts
-  rich_text_content
-  avatar_attachment
-  avatar_blob
-  name
-  email
-  show_email
-  twitter
-  linkedin
-  facebook
+    name
+    avatar
+    email
+    show_email
+    content
+    twitter
+    linkedin
+    facebook
   ].freeze
 
   # COLLECTION_FILTERS

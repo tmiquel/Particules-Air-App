@@ -30,7 +30,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
-  has_many :posts, dependent: :nullify
+  has_many :posts, foreign_key: :author_id, dependent: :nullify, inverse_of: :author
   has_one_attached :avatar
 
   enum role: { admin: 'admin', author: 'author' } # default is NULL => no role

@@ -88,15 +88,15 @@ ActiveRecord::Schema.define(version: 2020_02_03_143641) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "summary"
-    t.bigint "user_id", null: false
+    t.bigint "author_id"
     t.bigint "topic_id", null: false
     t.bigint "following_post_id"
     t.boolean "published", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["following_post_id"], name: "index_posts_on_following_post_id"
     t.index ["topic_id"], name: "index_posts_on_topic_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "sources", force: :cascade do |t|
@@ -104,11 +104,11 @@ ActiveRecord::Schema.define(version: 2020_02_03_143641) do
     t.string "website_url"
     t.string "description"
     t.bigint "post_id", null: false
-    t.bigint "stakeholder_id", null: false
+    t.bigint "producer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_sources_on_post_id"
-    t.index ["stakeholder_id"], name: "index_sources_on_stakeholder_id"
+    t.index ["producer_id"], name: "index_sources_on_producer_id"
   end
 
   create_table "stakeholders", force: :cascade do |t|
@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_143641) do
   add_foreign_key "post_stakeholders", "posts"
   add_foreign_key "post_stakeholders", "stakeholders"
   add_foreign_key "posts", "topics"
-  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "author_id"
   add_foreign_key "sources", "posts"
-  add_foreign_key "sources", "stakeholders"
+  add_foreign_key "sources", "stakeholders", column: "producer_id"
 end

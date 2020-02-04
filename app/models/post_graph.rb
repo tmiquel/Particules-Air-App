@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: post_graphs
@@ -22,4 +24,6 @@
 class PostGraph < ApplicationRecord
   belongs_to :post
   belongs_to :graph
+
+  accepts_nested_attributes_for :graph, reject_if: :all_blank
 end

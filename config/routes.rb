@@ -6,14 +6,14 @@ Rails.application.routes.draw do
 
   # ADMIN
   namespace :admin do
-    resources :users
-    resources :authors
-    resources :topics
     resources :posts
+    resources :topics
     resources :graphs
     resources :stakeholders
     resources :definitions
     resources :sources
+    resources :authors
+    resources :users
 
     root to: 'posts#index'
   end

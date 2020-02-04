@@ -17,11 +17,12 @@ author = User.create! full_name:  'Thibaut Miquel',
                       show_email: true,
                       role:       :author
 
-author.posts.create! title:   '1er article',
-                     topic:   topic,
-                     summary: 'This is a summary',
-                     content: '<h1>Rich Text</h1> <p>Text main content</p>',
-                     banner:  {
-                       io:       File.open('db/seeds/pollution.jpg'),
-                       filename: 'Pollution'
-                     }
+Post.create! title:   '1er article',
+             topic:   topic,
+             author:  author,
+             summary: 'This is a summary',
+             content: '<h1>Rich Text</h1> <p>Text main content</p>',
+             banner:  {
+               io:       File.open('db/seeds/pollution.jpg'),
+               filename: 'Pollution'
+             }

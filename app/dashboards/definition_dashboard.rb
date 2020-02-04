@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class DefinitionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -9,12 +11,12 @@ class DefinitionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     post_definitions: Field::HasMany,
-    posts: Field::HasMany,
-    rich_text_meaning: Field::HasOne,
-    id: Field::Number,
-    term: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    posts:            Field::HasMany,
+    meaning:          RichTextAreaField,
+    id:               Field::Number,
+    term:             Field::String,
+    created_at:       Field::DateTime,
+    updated_at:       Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -23,32 +25,29 @@ class DefinitionDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  post_definitions
-  posts
-  rich_text_meaning
-  id
+    id
+    term
+    meaning
+    posts
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  post_definitions
-  posts
-  rich_text_meaning
-  id
-  term
-  created_at
-  updated_at
+    id
+    term
+    meaning
+    created_at
+    updated_at
+    posts
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  post_definitions
-  posts
-  rich_text_meaning
-  term
+    term
+    meaning
   ].freeze
 
   # COLLECTION_FILTERS
@@ -66,7 +65,7 @@ class DefinitionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how definitions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(definition)
-  #   "Definition ##{definition.id}"
-  # end
+  def display_resource(definition)
+    definition.term
+  end
 end

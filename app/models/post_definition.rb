@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: post_definitions
@@ -22,4 +24,6 @@
 class PostDefinition < ApplicationRecord
   belongs_to :post
   belongs_to :definition
+
+  accepts_nested_attributes_for :definition, reject_if: :all_blank
 end

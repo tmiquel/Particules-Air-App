@@ -34,12 +34,12 @@ class TopicDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    posts
-    image
     id
     title
+    image
     short_description
     long_description
+    posts
     created_at
     updated_at
   ].freeze

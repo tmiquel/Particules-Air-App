@@ -7,7 +7,7 @@ class CreateSources < ActiveRecord::Migration[6.0]
       t.string :website_url
       t.string :description
       t.references :post, null: false, foreign_key: true
-      t.references :stakeholder, null: false, foreign_key: true
+      t.references :producer, foreign_key: { to_table: :stakeholders }
 
       t.timestamps
     end
