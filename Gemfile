@@ -23,7 +23,7 @@ gem 'image_processing'
 
 gem 'administrate'
 gem 'administrate-field-active_storage'
-
+gem 'administrate-field-nested_has_many'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

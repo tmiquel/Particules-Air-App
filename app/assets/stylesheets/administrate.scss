@@ -35,3 +35,14 @@
     width: 80%;
   }
 }
+
+.join-fields {
+  border-bottom: #b1a6a6 solid 1px;
+}
+
+.field-unit--nested {
+  width: 100%;
+  .field-unit__label {
+    width: calc(15% - 1rem);
+  }
+}
