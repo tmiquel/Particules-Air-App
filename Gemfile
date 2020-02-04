@@ -6,7 +6,7 @@ ruby '2.6.5'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 0.21'
+gem 'pg'
 gem 'puma'
 gem 'rails', '6.0.2.1'
 gem 'redis'
@@ -18,6 +18,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'cloudinary'
+gem 'image_processing'
+
+gem 'administrate'
+gem 'administrate-field-active_storage'
+gem 'administrate-field-nested_has_many'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -39,5 +45,4 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
-  gem 'rubocop'
 end

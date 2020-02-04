@@ -1,0 +1,37 @@
+<%# .nested-fields.project-tag-fields
+.tag_from_list
+= f.association :tag, :collection => Tag.all(:order => 'name'), :prompt => 'Choose an existing tag'
+= link_to_add_association 'or create a new tag', f, :tag
+= link_to_remove_association "remove tag", f %>
+
+<% if local_assigns[:find_or_create] %>
+  <div class="nested-fields join-fields">
+    <div class="field-unit  from_list">
+      <div class="field-unit__label">
+        <label>Choose one</label>
+      </div>
+      <div class=" field-unit__field">
+        <%= f.select "#{field.association_name.singularize}_id", field.associated_resource_options, prompt: "Choose an existing #{field.associated_class_name.humanize}" %>
+      </div>
+    </div>
+
+    <%= link_to_add_association(
+      "Create #{field.associated_class_name.titleize}",
+      f,
+      field.association_name.singularize,
+      class: 'create_fields',
+      partial: "fields/nested_has_many/fields",
+      render_options: { locals: { field: field } },
+    ) %>
+  </div>
+<% else %>
+  <div class="nested-fields">
+    <% field.nested_fields_for_builder(f).each do |attribute| -%>
+      <div class="field-unit field-unit--<%= attribute.html_class %>">
+        <%= render_field attribute, f: f %>
+      </div>
+    <% end -%>
+
+    <%= link_to_remove_association I18n.t("administrate.fields.nested_has_many.remove", resource: field.associated_class_name.titleize), f %>
+  </div>
+<% end %>

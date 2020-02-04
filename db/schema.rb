@@ -10,10 +10,125 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_085447) do
+ActiveRecord::Schema.define(version: 2020_02_03_143641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "definitions", force: :cascade do |t|
+    t.string "term"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "graphs", force: :cascade do |t|
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "post_definitions", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "definition_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["definition_id"], name: "index_post_definitions_on_definition_id"
+    t.index ["post_id"], name: "index_post_definitions_on_post_id"
+  end
+
+  create_table "post_graphs", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "graph_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["graph_id"], name: "index_post_graphs_on_graph_id"
+    t.index ["post_id"], name: "index_post_graphs_on_post_id"
+  end
+
+  create_table "post_stakeholders", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "stakeholder_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_stakeholders_on_post_id"
+    t.index ["stakeholder_id"], name: "index_post_stakeholders_on_stakeholder_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.bigint "author_id"
+    t.bigint "topic_id", null: false
+    t.bigint "following_post_id"
+    t.boolean "published", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
+    t.index ["following_post_id"], name: "index_posts_on_following_post_id"
+    t.index ["topic_id"], name: "index_posts_on_topic_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "title"
+    t.string "website_url"
+    t.string "description"
+    t.bigint "post_id", null: false
+    t.bigint "producer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_sources_on_post_id"
+    t.index ["producer_id"], name: "index_sources_on_producer_id"
+  end
+
+  create_table "stakeholders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.boolean "show_email", default: false
+    t.string "twitter"
+    t.string "linkedin"
+    t.string "facebook"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.text "short_description"
+    t.text "long_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +138,24 @@ ActiveRecord::Schema.define(version: 2020_02_03_085447) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "full_name"
+    t.string "tel"
+    t.boolean "show_email", default: false
+    t.string "twitter"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "post_definitions", "definitions"
+  add_foreign_key "post_definitions", "posts"
+  add_foreign_key "post_graphs", "graphs"
+  add_foreign_key "post_graphs", "posts"
+  add_foreign_key "post_stakeholders", "posts"
+  add_foreign_key "post_stakeholders", "stakeholders"
+  add_foreign_key "posts", "topics"
+  add_foreign_key "posts", "users", column: "author_id"
+  add_foreign_key "sources", "posts"
+  add_foreign_key "sources", "stakeholders", column: "producer_id"
 end
