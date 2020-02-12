@@ -15,9 +15,9 @@ Ils ont chacun leur propre `package.json`, donc pour ajouter une lib JS :
 
 
 Pour lancer les serveurs :
-`foreman start` : lance `rails`, `webpacker-dev-server` et `nuxt`
-`foreman start -f Procfile.rails` : lance `rails`, `webpacker-dev-server`
-`yarn --cwd ./nuxt run dev --port 8080` : lance `nuxt` uniquement
+- `foreman start` : lance `rails`, `webpacker-dev-server` et `nuxt`
+- `foreman start -f Procfile.rails` : lance `rails`, `webpacker-dev-server`
+- `yarn --cwd ./nuxt run dev --port 8080` : lance `nuxt` uniquement
 
 Ports :
 - Nuxt : `localhost:8080`
