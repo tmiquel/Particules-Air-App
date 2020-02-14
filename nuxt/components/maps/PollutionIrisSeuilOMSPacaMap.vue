@@ -26,14 +26,11 @@ export default {
       map = L.map('map').setView([43.3, 5.4], 8)
       const mapboxToken =
         'pk.eyJ1Ijoia2V2aW5iZXJ0aGllciIsImEiOiJjazZtN3Z1Y2UwbGE3M2xwNnhiZnIzZjM5In0.MaE3umnwu7me7VZalKFG7A'
-      L.tileLayer(
-        `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`,
-        {
-          id: 'mapbox/light-v9',
-          tileSize: 512,
-          zoomOffset: -1
-        }
-      ).addTo(map)
+      L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`, {
+        id: 'mapbox/light-v9',
+        tileSize: 512,
+        zoomOffset: -1
+      }).addTo(map)
     },
     toPerc(val, base) {
       let result = (val / base) * 100
@@ -70,13 +67,15 @@ export default {
 
         if (!props) return
         // <h4>Population exposée supérieur aux seuils de l'OMS par iris et polluant</h4>
-        info._div.innerHTML = `${props.insee_com} ${props.nom_com} <br/>
-       ${props.nom_iris} <br/>
-       Population : ${props.IRIS_POP14} Habitants <br/>
-       NO2 : ${this.toPerc(props.POP_LD_NO2, props.IRIS_POP14)} % <br/>
-       PM1 : ${this.toPerc(props.POP_LD_PM1, props.IRIS_POP14)} % <br/>
-       PM2 : ${this.toPerc(props.POP_LD_PM2, props.IRIS_POP14)} % <br/>
-       O3 : ${this.toPerc(props.POP_LD_O3, props.IRIS_POP14)} %`
+        info._div.innerHTML = `
+          ${props.insee_com} ${props.nom_com} <br/>
+          ${props.nom_iris} <br/>
+          Population : ${props.IRIS_POP14} Habitants <br/>
+          Oxydes d'azote (NOx): ${this.toPerc(props.POP_LD_NO2, props.IRIS_POP14)}% (${props.POP_LD_NO2} hab.)<br/>
+          Particules (10 microns) : ${this.toPerc(props.POP_LD_PM1, props.IRIS_POP14)}% (${props.POP_LD_PM1} hab.)<br/>
+          Particules (2.5 microns) : ${this.toPerc(props.POP_LD_PM2, props.IRIS_POP14)}% (${props.POP_LD_PM2} hab.)
+          <br/>
+          Ozone (O3) : ${this.toPerc(props.POP_LD_O3, props.IRIS_POP14)}% (${props.POP_LD_O3} hab.)`
       }
       info.addTo(map)
 
@@ -88,11 +87,9 @@ export default {
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
-          div.innerHTML += `<p><i style="background: ${this.perc2color(
-            grades[i] + 1
-          )}"></i> ${grades[i]} ${
-            grades[i + 1] ? '&ndash;' + grades[i + 1] : ''
-          } %</p>`
+          div.innerHTML += `
+            <p><i style="background: ${this.perc2color(grades[i] + 1)}"></i>
+            ${grades[i]} ${grades[i + 1] ? '&ndash;' + grades[i + 1] : ''}%</p>`
         }
 
         return div
@@ -148,8 +145,7 @@ export default {
         fillOpacity: 0.7
       })
 
-      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
-        layer.bringToFront()
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) layer.bringToFront()
 
       info.update(layer.feature.properties)
     },
