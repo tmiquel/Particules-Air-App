@@ -20,9 +20,9 @@ export default {
     Logo
   },
   async asyncData({ $axios }) {
-    let data  = await $axios.$get('/hello')
+    // let data  = await $axios.$get('/hello')
 
-    return { msg: data.msg }
+    return { msg: 'Hello' }
   }
 }
 </script>
@@ -38,8 +38,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
