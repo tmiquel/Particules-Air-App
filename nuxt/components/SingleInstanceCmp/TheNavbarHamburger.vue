@@ -1,5 +1,5 @@
 <template>
-  <div id="burger" :class="{ active: isOpen }" @click.prevent="toggle">
+  <div id="burger" :class="{ active: isOpen }">
     <slot>
       <button type="button" class="burger-button" title="Menu">
         <span class="hidden">Toggle menu</span>
@@ -18,11 +18,6 @@ export default {
       type: Boolean,
       required: true
     }
-  },
-  methods: {
-    toggle() {
-      this.isOpen = !this.isOpen;
-    }
   }
 };
 </script>
@@ -37,14 +32,14 @@ export default {
 
 /** burger **/
 
-button {
+/* button {
   cursor: pointer;
-}
+} */
 
 /* remove blue outline */
-button:focus {
+/* button:focus {
   outline: 0;
-}
+} */
 
 .burger-button {
   position: relative;

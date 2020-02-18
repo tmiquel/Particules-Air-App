@@ -1,10 +1,8 @@
 <template>
   <b-navbar toggleable="md" fixed="top" type="dark">
-    <b-navbar-toggle class="border-0">
+    <b-navbar-toggle class="border-0" target="collapsing-navbar">
       <the-navbar-hamburger
-        :is-open="isCollapseOpen"
-        v-b-toggle.collapsing-navbar
-      />
+        :is-open="isCollapseOpen"/>
     </b-navbar-toggle>
     <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/"
       >PARTICULES</nuxt-link
