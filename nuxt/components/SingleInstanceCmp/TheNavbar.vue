@@ -24,7 +24,7 @@
 
 
 <script>
-import TheNavbarHamburger from "@/components/SingleInstanceCmp/TheNavbarHamburger.vue";
+import TheNavbarHamburger from "@/components/SingleInstanceCmp/TheNavbarHamburger.vue"
 export default {
   components: {
     TheNavbarHamburger
