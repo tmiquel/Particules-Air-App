@@ -1,12 +1,25 @@
 <template>
   <div>
-    <nuxt />
+    <the-navbar />
+    <div class="container">
+      <nuxt />
+    </div>
   </div>
 </template>
 
+<script>
+import TheNavbar from "~/components/SingleInstanceCmp/TheNavbar.vue";
+
+export default {
+  components: {
+    TheNavbar
+  }
+};
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+ /* html {
+  font-family: 'Barlow',  'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
@@ -17,6 +30,11 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Barlow',  'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+} */
+/*
 *,
 *:before,
 *:after {
@@ -51,5 +69,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>
