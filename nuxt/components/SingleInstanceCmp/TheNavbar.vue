@@ -1,39 +1,58 @@
 <template>
   <b-navbar toggleable="md" fixed="top" type="dark">
-    <b-navbar-toggle 
-      target="collapsing-navbar"
-      class="border-0 "
+    <b-navbar-toggle class="border-0">
+      <the-navbar-hamburger
+        :is-open="isCollapseOpen"
+        v-b-toggle.collapsing-navbar
+      />
+    </b-navbar-toggle>
+    <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/"
+      >PARTICULES</nuxt-link
     >
-
-    </b-navbar-toggle >
-    <b-navbar-brand class="mr-auto ml-auto" href="#">PARTICULES</b-navbar-brand>
-    <b-collapse id="collapsing-navbar" is-nav>
+    <b-collapse v-model="isCollapseOpen" id="collapsing-navbar" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item class="d-block d-md-none" href="#">Accueil</b-nav-item>
-        <b-nav-item href="#">A propos</b-nav-item>
-        <b-nav-item href="#">Contact</b-nav-item>
-        <b-nav-item href="#">Mode Sombre</b-nav-item>
+        <nuxt-link tag="b-nav-item" class="d-block d-md-none" to="/"
+          >Accueil</nuxt-link
+        >
+        <nuxt-link tag="b-nav-item" to="/about">A propos</nuxt-link>
+        <nuxt-link tag="b-nav-item" to="/contact">Contact</nuxt-link>
+        <b-nav-item>Mode Sombre</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 
-<style lang="scss">
-.navbar-toggler > .navbar-toggler-icon {
-  fill: white; 
-  color: white;
-}
 
+<script>
+import TheNavbarHamburger from "@/components/SingleInstanceCmp/TheNavbarHamburger.vue";
+export default {
+  components: {
+    TheNavbarHamburger
+  },
+  data() {
+    return {
+      isCollapseOpen: false
+    };
+  }
+};
+</script>
+
+<style lang="scss">
 .nav-link {
   color: #fff !important; //$gray-100 !important;
 }
-
 .nav-link:hover {
   color: gray("300") !important;
 }
-
 .nav-link:active {
   background-color: var(--left-gradient-color);
+}
+
+.navbar-brand {
+  color: #fff !important; //$gray-100 !important;
+}
+.navbar-brand:hover {
+  color: gray("300") !important;
 }
 
 nav.navbar {
@@ -51,10 +70,5 @@ nav.navbar {
   font-weight: 500;
   font-size: 19px;
   line-height: 23px;
-}
-
-body {
-  padding-top: 70px;
-  font-family: "Barlow", sans-serif;
 }
 </style>
