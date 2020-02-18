@@ -4150,6 +4150,11 @@ levenary@^1.1.1:
   dependencies:
     leven "^3.1.0"
 
+lib-js@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/lib-js/-/lib-js-0.0.7.tgz#0d2c70a2d45f67a47f1d03a7753aae9c043d2f80"
+  integrity sha1-DSxwotRfZ6R/HQOndTqunAQ9L4A=
+
 loader-runner@^2.3.1, loader-runner@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"

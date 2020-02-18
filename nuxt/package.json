@@ -16,6 +16,7 @@
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
     "leaflet": "^1.6.0",
+    "lib-js": "^0.0.7",
     "nuxt": "^2.11.0"
   },
   "devDependencies": {}
