@@ -2,8 +2,7 @@
   <b-navbar toggleable="md" fixed="top" type="dark">
     <b-navbar-toggle class="border-0" target="collapsing-navbar">
       <client-only placeholder="Menu">
-      <the-navbar-hamburger
-        :is-open="isCollapseOpen"/>
+        <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
       </client-only>
     </b-navbar-toggle>
     <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/"
@@ -24,20 +23,25 @@
 
 
 <script>
-import TheNavbarHamburger from "@/components/SingleInstanceCmp/TheNavbarHamburger.vue"
+import TheNavbarHamburger from "~/components/SingleInstanceCmp/TheNavbarHamburger.vue";
 export default {
-  components: {
-    TheNavbarHamburger
-  },
   data() {
     return {
       isCollapseOpen: false
     };
+  },
+  components: {
+    TheNavbarHamburger
   }
 };
 </script>
 
 <style lang="scss">
+// remove blue outline when the burger is selected
+.navbar-dark > button:focus {
+  outline: 0;
+}
+
 .nav-link {
   color: #fff !important; //$gray-100 !important;
 }

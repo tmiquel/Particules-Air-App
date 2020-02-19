@@ -1,5 +1,17 @@
-@import 'vars/_colors.scss';
-@import '~/node_modules/bootstrap/scss/bootstrap.scss';
-@import '~/node_modules/bootstrap-vue/src/index.scss';
+@import "vars/_colors.scss";
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
+@import "~/node_modules/bootstrap-vue/src/index.scss";
 
-// /bootstrap/scss/_variables.scss
+@supports (--css: variables) {
+  :root {
+    // add Barlow as first font
+    --font-family-sans-serif: "Barlow", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    --headings-font-family: "Barlow", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+}
