@@ -12,7 +12,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Barlow&display=swap"}
+
     ]
   },
   /*
@@ -23,6 +25,7 @@ export default {
   ** Global CSS
   */
   css: [
+   '@/assets/_custom.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -45,7 +48,15 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/style-resources'
+    // As per https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
   ],
+  styleResources: {
+    scss: [
+        'assets/_custom.scss',
+    ]
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
