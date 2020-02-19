@@ -62,9 +62,13 @@ export default {
   transform: scaleX(1);
 }
 
+/* Because hover don't work on small devises, Reduce second bar on hovering only on computer, not on tablet or mobiles, 
+breakpoint set as per https://project-rfs.github.io/docs/4.3/layout/overview/#responsive-breakpoints  */
+/* @media only screen and (min-width: 992px)  { 
 .burger-button:hover .burger-bar--2 {
   transform: scaleX(0.8);
 }
+} */
 
 .no-touchevents .burger-bar--2:hover {
   transform: scaleX(1);

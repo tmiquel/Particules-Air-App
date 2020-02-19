@@ -13,8 +13,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Barlow&display=swap"}
-
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Barlow&display=swap"},
+      { rel:"stylesheet", href:"https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" }
     ]
   },
   /*
@@ -49,7 +49,8 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/style-resources'
-    // As per https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
+    // As per 
+    //https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
   ],
   styleResources: {
     scss: [

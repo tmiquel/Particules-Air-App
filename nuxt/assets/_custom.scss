@@ -1,4 +1,14 @@
 @import "vars/_colors.scss";
+
+// https://bootstrap-vue.js.org/docs/reference/theming/
+//https://getbootstrap.com/docs/4.4/getting-started/theming/
+$theme-colors: (
+  "primary": #4B8AC9,
+  "success": #94E576,
+  "warning": #FFA55E,
+  "danger": #F54A4A
+);
+
 @import "~/node_modules/bootstrap/scss/bootstrap.scss";
 @import "~/node_modules/bootstrap-vue/src/index.scss";
 
