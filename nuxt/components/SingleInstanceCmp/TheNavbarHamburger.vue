@@ -2,7 +2,7 @@
   <div id="burger" :class="{ active: isOpen }">
     <slot>
       <button type="button" class="burger-button" title="Menu">
-        <span class="hidden">Toggle menu</span>
+        <span class="invisible">Toggle menu</span>
         <span class="burger-bar burger-bar--1"></span>
         <span class="burger-bar burger-bar--2"></span>
         <span class="burger-bar burger-bar--3"></span>
@@ -24,11 +24,6 @@ export default {
 
 
 <style scoped>
-/** common styles **/
-
-.hidden {
-  visibility: hidden;
-}
 
 /** burger **/
 
