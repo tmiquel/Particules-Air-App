@@ -32,9 +32,9 @@ export default {
 } */
 
 /* remove blue outline */
-/* button:focus {
+button:focus {
   outline: 0;
-} */
+}
 
 .burger-button {
   position: relative;

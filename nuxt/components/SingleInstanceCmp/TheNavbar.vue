@@ -37,10 +37,6 @@ export default {
 </script>
 
 <style lang="scss">
-// remove blue outline when the burger is selected
-.navbar-dark > button:focus {
-  outline: 0;
-}
 
 .nav-link {
   color: #fff !important; //$gray-100 !important;
