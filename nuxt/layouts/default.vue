@@ -20,9 +20,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 html {
-  font-family: $font-family-sans-serif;
+ font-family: var(--font-family-sans-serif);
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -33,6 +33,6 @@ html {
 }
 
 body {
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 </style>

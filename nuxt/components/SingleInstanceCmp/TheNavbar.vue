@@ -1,6 +1,8 @@
 <template>
   <b-navbar toggleable="md" fixed="top" type="dark">
-    <b-navbar-toggle class="border-0" target="collapsing-navbar" />
+    <b-navbar-toggle class="border-0" target="collapsing-navbar">
+        <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
+    </b-navbar-toggle>
     <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/"
       >PARTICULES</nuxt-link
     >
@@ -19,29 +21,24 @@
 
 
 <script>
+import TheNavbarHamburger from "~/components/SingleInstanceCmp/TheNavbarHamburger.vue";
 export default {
   data() {
     return {
       isCollapseOpen: false
     };
+  },
+  components: {
+    TheNavbarHamburger
   }
 };
 </script>
 
 <style lang="scss">
 
-
-$custom-navbar-toggle-color: #fff;
-$custom-navbar-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$custom-navbar-toggle-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-.navbar-dark .navbar-toggler-icon {
-  background-image: escape-svg($custom-navbar-toggler-icon-bg);
-}    
-
-// remove blue outline when the burger is selected
-.navbar-dark > button:focus {
+nav > button:focus {
   outline: 0;
-} 
-
+}
 
 .nav-link {
   color: #fff !important; //$gray-100 !important;
