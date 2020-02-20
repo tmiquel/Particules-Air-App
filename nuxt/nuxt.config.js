@@ -18,12 +18,8 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Barlow&display=swap"
-      },
-      {
-        rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+          "https://fonts.googleapis.com/css?family=Barlow|Source+Sans+Pro&display=swap"
       }
     ]
   },
