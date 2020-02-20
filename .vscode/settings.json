@@ -1,8 +1,35 @@
 {
-    "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
-    "vetur.validation.template": false,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "files.encoding": "utf8",
+  "editor.detectIndentation": false,
+  "files.insertFinalNewline": true,
+  "javascript.preferences.quoteStyle": "single",
+  "files.hotExit": "off",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.useTabStops": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSaveTimeout": 1500,
+  "git.autofetch": true,
+  "breadcrumbs.enabled": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.snippetSuggestions": "top",
+  "vetur.completion.tagCasing": "initial",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": false,
+      "singleQuote": true,
+      "printWidth": 120
     }
+  },
+  "yaml.format.enable": true,
+  "scssFormatter.singleQuote": true,
+  "editor.fontLigatures": true,
+  "javascript.format.enable": true
 }
