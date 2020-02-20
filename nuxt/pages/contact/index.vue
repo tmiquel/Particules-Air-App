@@ -1,33 +1,38 @@
 <template>
-  <div>
-    <b-form @submit="onSubmit" v-if="show">
-      <div id="title">Contactez-nous</div>
-        <br/>
-        <br/>
-         <b-form inline>
-            <b-input id="inline-form-input-name" class="mb-2 mr-sm-2 mb-sm-0" v-model="form.LastName" required placeholder="Nom">
-            </b-input>
+  <div id="contact-page">
+    <div>
+      <h1 id="title" class="text-left mb-4">Contactez-nous</h1>
+      <b-form @submit="onSubmit">
+        <b-form-row class="mb-4">
+          <b-col>
+            <b-input v-model="form.LastName" required placeholder="Nom" autocomplete="family-name"></b-input>
+          </b-col>
+          <b-col>
+            <b-input
+              v-model="form.FirstName"
+              required
+              placeholder="Prénom"
+              autocomplete="given-name"
+            ></b-input>
+          </b-col>
+        </b-form-row>
+        <b-form-input
+          v-model="form.email"
+          type="email"
+          required
+          placeholder="Email"
+          autocomplete="email"
+          class="mb-4"
+        ></b-form-input>
+        <b-form-textarea v-model="form.text" placeholder="Votre message" rows="3" max-rows="6"></b-form-textarea>
 
-            <b-input id="inline-form-input-name" class="mb-2 mr-sm-2 mb-sm-0" v-model="form.FirstName" required placeholder="Prénom">
-            </b-input>
-        </b-form>
-        <br>
-      <b-form-input id="input-1" v-model="form.email" type="email" required placeholder="Email"></b-form-input>
-        <br>
-      <b-form-textarea
-        id="textarea"
-        v-model="text"
-        placeholder="Votre message"
-        rows="3"
-        max-rows="6"
-      ></b-form-textarea>
-
-      <pre class="mt-3 mb-0">{{ text }}</pre>
-
-      <b-button type="submit" pill variant=""><b>Envoyer</b></b-button>
-    </b-form>
-    <br />
-    <div><i>Ou écrivez directement à :</i> <b>Contact@contact.fr</b></div>
+        <b-button type="submit" pill class="px-5 py-2 mt-4 font-weight-bold border-0">Envoyer</b-button>
+      </b-form>
+      <p class="mt-4">
+        <i>Ou écrivez directement à :</i>
+        <b>Contact@contact.fr</b>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -36,79 +41,49 @@ export default {
   data() {
     return {
       form: {
-        email: "",
-        FirstName: "",
-        LastName: "",
-        text: "",
-      },
-      show: true
-    };
+        email: '',
+        FirstName: '',
+        LastName: '',
+        text: ''
+      }
+    }
   },
   methods: {
     onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      evt.preventDefault()
+      alert(JSON.stringify(this.form))
     }
   }
-};
+}
 </script>
 
 
 <style scoped>
+#contact-page {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 button {
-        
-
-    background: linear-gradient(89.86deg, #006FBF -79.71%, #71C0E8 167.69%);
-    border-radius: 24.5px;
-    width: 117.69px;
-    height: 35.48px;
-    left: 148.15px;
-    top: 533.59px;
-
+  background: linear-gradient(89.86deg, #006fbf -79.71%, #71c0e8 167.69%);
 }
 
-#input-1 {
-
-position: center;
-width: 418px;
-height: 43.63px;
-left: 18.11px;
-top: 295.95px;
-
-background: #F0F0F0;
-
-}
-
-#inline-form-input-name {
-
-background: #F0F0F0;
-
-
-}
-
-#textarea {
-    position: center;
-    width: 418px;
-    height: 152.61px;
-    left: 18.11px;
-    top: 355.45px;
-
-background: #F0F0F0;
+input,
+textarea {
+  background: #f0f0f0;
 }
 
 #title {
-    font-family: Source Sans Pro;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 21px;
-    line-height: 26px;
-    position: absolute;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
 
-color: #454545;
+  color: #454545;
 }
-
-
-
-
 </style>
