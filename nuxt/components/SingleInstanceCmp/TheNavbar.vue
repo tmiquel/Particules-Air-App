@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="md" fixed="top" type="dark">
-    <b-navbar-toggle class="border-0" target="collapsing-navbar">
-      <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
+    <b-navbar-toggle id="the-navbar-toggler" class="border-0 align-top" target="collapsing-navbar">
+        <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
     </b-navbar-toggle>
     <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/">PARTICULES</nuxt-link>
     <b-collapse v-model="isCollapseOpen" id="collapsing-navbar" is-nav>
@@ -34,6 +34,12 @@ export default {
 nav > button:focus {
   outline: 0;
 }
+
+#the-navbar-toggler {
+  position: absolute;
+  top: 5px;
+}
+
 
 .nav-link {
   color: #fff !important; //$gray-100 !important;

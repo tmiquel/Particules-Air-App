@@ -1,18 +1,21 @@
 <template>
   <div>
     <TheNavbar />
-    <div class="container">
+    <div class="container my-5 pt-2">
       <nuxt />
     </div>
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import TheNavbar from '~/components/SingleInstanceCmp/TheNavbar.vue'
+import TheNavbar from "~/components/SingleInstanceCmp/TheNavbar.vue"
+import TheFooter from "~/components/SingleInstanceCmp/TheFooter.vue"
 
 export default {
   components: {
-    TheNavbar
+    TheNavbar,
+    TheFooter
   }
 }
 </script>
