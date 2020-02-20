@@ -4,20 +4,53 @@
       :justified="true"
       :small="true"
       type="dark"
-      class="footer-bar w-100 d-flex justify-content-between fixed-bottom flex-nowrap"
+      class="footer-bar d-flex justify-content-between fixed-bottom"
+      style="height: 40px;"
       tabs
     >
-      <b-button squared variant="primary" class="footer-item flex-grow-1 flex-nowrap">LES GRAPHES<b-icon-pie-chart
-      /></b-button>
-      <b-button squared variant="primary" class="footer-item flex-grow-1 flex-nowrap"
-        ><span class="pr-10"  >LES ACTEkjsbcqkjsURS <b-icon-people/> </span> 
+      <b-button
+        squared
+        variant="primary"
+        class="footer-item flex-grow-1"
+        ><span class="d-none d-md-inline">LES GRAPHES<b-icon-pie-chart class="ml-2"
+      /></span>
+      
+      <span class="d-md-none row"> <span class="mobile-footer-text col-6"> GRAPHES </span> <b-icon-pie-chart class="col-6"
+      />
+      
+      
+      </span>
+      
+      </b-button>
+      <b-button
+        squared
+        variant="primary"
+        class="footer-item flex-grow-1"
+        ><span class="d-none d-md-inline">LES ACTEURS<b-icon-people class="ml-2" /></span>
+
+      <span class="d-md-none  row "> <span class="mobile-footer-text col-6"> ACTEURS</span><b-icon-people class="col-6"
+      /> </span>
+
       </b-button>
       <b-button squared variant="primary" class="footer-item flex-grow-1"
-        ><span class="pr-1 d-none d-md-block">LE LEXIQUE</span><b-icon-list-check scale="1.3" shift-v="-1"
-      /></b-button>
-      <b-button squared  variant="primary" class="footer-item flex-grow-1"
-        ><span class="pr-1 d-none d-md-block">LES SOURCES</span><b-icon-documents
-      /></b-button>
+        ><span class="d-none d-md-inline"
+          >LE LEXIQUE <b-icon-list-check class="ml-2" scale="1.3" shift-v="-1"/></span
+      >
+      
+            <span class="d-md-none  row "> <span class="mobile-footer-text col-6"> LEXIQUE</span><b-icon-list-check class="col-6"
+      /> </span>
+      
+      </b-button>
+      <b-button squared variant="primary" class="footer-item flex-grow-1"
+        ><span class="d-none d-md-inline">LES SOURCES<b-icon-documents class="ml-2"
+      /></span
+        >
+        
+        <span class="d-md-none  row"> <span class="mobile-footer-text col-6"> SOURCES </span><b-icon-documents class="col-6"
+      /> </span>
+        
+        
+        </b-button>
     </b-nav>
   </div>
 </template>  
@@ -48,6 +81,10 @@ export default {
   /* background-color: var(--footer-background-color); */
 }
 .footer-item {
+}
+
+.mobile-footer-text {
+font-size: 12px;
 }
 
 .footer-item span {
