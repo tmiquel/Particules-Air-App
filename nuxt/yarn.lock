@@ -5400,11 +5400,6 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lib-js@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/lib-js/-/lib-js-0.0.7.tgz#0d2c70a2d45f67a47f1d03a7753aae9c043d2f80"
-  integrity sha1-DSxwotRfZ6R/HQOndTqunAQ9L4A=
-
 libcipm@^4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/libcipm/-/libcipm-4.0.7.tgz#76cd675c98bdaae64db88b782b01b804b6d02c8a"
