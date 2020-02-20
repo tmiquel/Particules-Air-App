@@ -66,12 +66,12 @@ export default {
   async asyncData({ $axios }) {
     // let data  = await $axios.$get('/hello')
 
-    return { msg: "Hello" };
+    return { msg: 'Hello' }
   }
-};
+}
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;

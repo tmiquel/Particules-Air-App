@@ -9,20 +9,20 @@
 </template>
 
 <script>
-import TheNavbar from "~/components/SingleInstanceCmp/TheNavbar.vue";
-import TheFooter from "~/components/SingleInstanceCmp/TheFooter.vue";
+import TheNavbar from "~/components/SingleInstanceCmp/TheNavbar.vue"
+import TheFooter from "~/components/SingleInstanceCmp/TheFooter.vue"
 
 export default {
   components: {
     TheNavbar,
     TheFooter
   }
-};
+}
 </script>
 
 <style>
 html {
- font-family: var(--font-family-sans-serif);
+  font-family: var(--font-family-sans-serif);
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
