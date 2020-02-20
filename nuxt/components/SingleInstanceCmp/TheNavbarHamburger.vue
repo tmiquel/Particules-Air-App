@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 
+
 .burger-button {
   position: relative;
   height: 30px;
