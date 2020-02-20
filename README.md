@@ -36,5 +36,14 @@ bundle && yarn && rails db:migrate && yarn --cwd ./nuxt
 
 Best practices :
 
-- Toujours scopé votre CSS sinon il entre en conflit avec les autres pages/components `<style scoped>`
+- Toujours nesté votre CSS sinon il entre en conflit avec les autres pages/components
+
+```scss
+#my-navbar {
+  button {
+    padding: 10px 20px;
+  }
+}
+```
+
 - Privilegier les utilities Bootstrap (Spacing, colors, positions, flexbox...) https://getbootstrap.com/docs/4.4/utilities/spacing/
