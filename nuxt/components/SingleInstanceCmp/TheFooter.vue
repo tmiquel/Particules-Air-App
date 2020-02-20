@@ -4,53 +4,42 @@
       :justified="true"
       :small="true"
       type="dark"
-      class="footer-bar d-flex justify-content-between fixed-bottom"
-      style="height: 40px;"
+      class="footer-bar d-flex justify-content-between fixed-bottom text-center flex-nowrap"
       tabs
     >
       <b-button
         squared
         variant="primary"
-        class="footer-item flex-grow-1"
-        ><span class="d-none d-md-inline">LES GRAPHES<b-icon-pie-chart class="ml-2"
-      /></span>
-      
-      <span class="d-md-none row"> <span class="mobile-footer-text col-6"> GRAPHES </span> <b-icon-pie-chart class="col-6"
-      />
-      
-      
-      </span>
-      
+        class="footer-item px-0 flex-grow-1 justify-content-center"
+        ><span :style="footerTextStyle"
+          >{{ responsiveGraphText }} <b-icon-pie-chart class="ml-1" />
+        </span>
       </b-button>
       <b-button
         squared
         variant="primary"
-        class="footer-item flex-grow-1"
-        ><span class="d-none d-md-inline">LES ACTEURS<b-icon-people class="ml-2" /></span>
-
-      <span class="d-md-none  row "> <span class="mobile-footer-text col-6"> ACTEURS</span><b-icon-people class="col-6"
-      /> </span>
-
+        class="footer-item px-0 flex-grow-1 justify-content-center"
+        ><span :style="footerTextStyle"
+          >{{ responsiveStakeholdersText }}<b-icon-people class="ml-1"
+        /></span>
       </b-button>
-      <b-button squared variant="primary" class="footer-item flex-grow-1"
-        ><span class="d-none d-md-inline"
-          >LE LEXIQUE <b-icon-list-check class="ml-2" scale="1.3" shift-v="-1"/></span
-      >
-      
-            <span class="d-md-none  row "> <span class="mobile-footer-text col-6"> LEXIQUE</span><b-icon-list-check class="col-6"
-      /> </span>
-      
+      <b-button
+        squared
+        variant="primary"
+        class="footer-item px-0 flex-grow-1 justify-content-center"
+        ><span :style="footerTextStyle"
+          >{{ responsiveDefinitionsText }}
+          <b-icon-list-check class="ml-1" scale="1.4" shift-v="-1"
+        /></span>
       </b-button>
-      <b-button squared variant="primary" class="footer-item flex-grow-1"
-        ><span class="d-none d-md-inline">LES SOURCES<b-icon-documents class="ml-2"
-      /></span
-        >
-        
-        <span class="d-md-none  row"> <span class="mobile-footer-text col-6"> SOURCES </span><b-icon-documents class="col-6"
-      /> </span>
-        
-        
-        </b-button>
+      <b-button
+        squared
+        variant="primary"
+        class="footer-item px-0 flex-grow-1 justify-content-center"
+        ><span :style="footerTextStyle"
+          >{{ responsiveSourcesText }}<b-icon-documents class="ml-1"
+        /></span>
+      </b-button>
     </b-nav>
   </div>
 </template>  
@@ -71,24 +60,42 @@ export default {
     BIconPeople,
     BIconListCheck,
     BIconDocuments
+  },
+  computed: {
+    responsiveGraphText() {
+      return this.$mq === "mobile" ? "GRAPHES" : "LES GRAPHES";
+    },
+    responsiveStakeholdersText() {
+      return this.$mq === "mobile" ? "ACTEURS" : "LES ACTEURS";
+    },
+    responsiveDefinitionsText() {
+      return this.$mq === "mobile" ? "LEXIQUE" : "LE LEXIQUE";
+    },
+    responsiveSourcesText() {
+      return this.$mq === "mobile" ? "SOURCES" : "LES SOURCES";
+    },
+    footerTextStyle() {
+      if (this.$mq === "mobile") {
+        return {
+          fontSize: "0.7rem"
+        };
+      } else {
+        return {
+          fontSize: "1rem"
+        };
+      }
+    }
   }
 };
 </script>
 
 
 <style scoped>
-.footer-bar {
-  /* background-color: var(--footer-background-color); */
-}
-.footer-item {
-}
-
-.mobile-footer-text {
-font-size: 12px;
-}
-
 .footer-item span {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", "Barlow", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
 }
 </style>
 

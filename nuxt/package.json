@@ -19,6 +19,7 @@
     "leaflet": "^1.6.0",
     "node-sass": "^4.13.1",
     "nuxt": "^2.11.0",
+    "nuxt-mq": "^2.0.1",
     "sass-loader": "^8.0.2"
   },
   "devDependencies": {

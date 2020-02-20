@@ -48,9 +48,23 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
     // As per 
     //https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
+    [
+      'nuxt-mq',
+      {
+        // Default breakpoint for SSR
+        defaultBreakpoint: 'default',
+        breakpoints: {
+          // changed to match Bootstrap default's breakpoints 
+          // cf https://getbootstrap.com/docs/4.0/layout/grid/#grid-options
+          mobile: 768, // default vue-mq: 450
+          desktop: Infinity
+        }
+      }
+    ]
+  
   ],
   styleResources: {
     scss: [
