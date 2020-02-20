@@ -1,12 +1,12 @@
 <template>
   <div id="burger" :class="{ active: isOpen }">
     <slot>
-      <button type="button" class="burger-button" title="Menu">
+      <span class="burger-button" title="Menu">
         <span class="invisible">Toggle menu</span>
         <span class="burger-bar burger-bar--1"></span>
         <span class="burger-bar burger-bar--2"></span>
         <span class="burger-bar burger-bar--3"></span>
-      </button>
+      </span>
     </slot>
   </div>
 </template>
@@ -24,17 +24,6 @@ export default {
 
 
 <style scoped>
-
-/** burger **/
-
-/* button {
-  cursor: pointer;
-} */
-
-/* remove blue outline */
-/* button:focus {
-  outline: 0;
-} */
 
 .burger-button {
   position: relative;
