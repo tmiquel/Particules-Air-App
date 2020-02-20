@@ -11,7 +11,7 @@
         squared
         variant="primary"
         class="footer-item px-0 flex-grow-1 justify-content-center"
-        ><span :style="footerTextStyle"
+        ><span :style="footerTextStyle" class="font-weight-bold"
           >{{ responsiveGraphText }} <b-icon-pie-chart class="ml-1" />
         </span>
       </b-button>
@@ -19,7 +19,7 @@
         squared
         variant="primary"
         class="footer-item px-0 flex-grow-1 justify-content-center"
-        ><span :style="footerTextStyle"
+        ><span :style="footerTextStyle" class="font-weight-bold"
           >{{ responsiveStakeholdersText }}<b-icon-people class="ml-1"
         /></span>
       </b-button>
@@ -27,7 +27,7 @@
         squared
         variant="primary"
         class="footer-item px-0 flex-grow-1 justify-content-center"
-        ><span :style="footerTextStyle"
+        ><span :style="footerTextStyle" class="font-weight-bold"
           >{{ responsiveDefinitionsText }}
           <b-icon-list-check class="ml-1" scale="1.4" shift-v="-1"
         /></span>
@@ -36,13 +36,13 @@
         squared
         variant="primary"
         class="footer-item px-0 flex-grow-1 justify-content-center"
-        ><span :style="footerTextStyle"
+        ><span :style="footerTextStyle" class="font-weight-bold"
           >{{ responsiveSourcesText }}<b-icon-documents class="ml-1"
         /></span>
       </b-button>
     </b-nav>
   </div>
-</template>  
+</template>
 
 <script>
 import {
