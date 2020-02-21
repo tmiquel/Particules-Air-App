@@ -2,11 +2,15 @@
   <div class="about-page">
     <div>
       <h1 class="text-center mt-5 mb-5">À PROPOS</h1>
-      <p class="mx-auto">
-        Open Air est un projet porté par 5 développeurs provençaux conseillés par 'a Lab in the AIR'. Beaucoup d'informations sur la Qualité de l'Air sont disponibles en ligne. Ces bases de données sont dispersées entre plusieurs portails d'accès, parfois impossibles à lire sans logiciel spécifique, parfois difficile à comprendre.
-        Un particulier doit également trouver un cheminement adapté entre ces informations, pour obtenir toutes les réponses recherchées avec un niveau de compréhension suffisant et sans oublier des parties importantes.
-        Open Air est un portail où des experts publient des articles sur les centres d'intérêt des particuliers pour la thématique Qualité de l'Air. Ces articles référencent les bases de données concernées, et apportent une visualisation immédiate de cette base de donnée là où c'est utile.
-      </p>
+      <p
+        class="mx-auto mb-4"
+      >Open Air est un projet porté par 5 développeurs provençaux conseillés par 'a Lab in the AIR'. Beaucoup d'informations sur la Qualité de l'Air sont disponibles en ligne. Ces bases de données sont dispersées entre plusieurs portails d'accès, parfois impossibles à lire sans logiciel spécifique, parfois difficile à comprendre.</p>
+      <p
+        class="mx-auto mb-4"
+      >Un particulier doit également trouver un cheminement adapté entre ces informations, pour obtenir toutes les réponses recherchées avec un niveau de compréhension suffisant et sans oublier des parties importantes.</p>
+      <p
+        class="mx-auto mb-4"
+      >Open Air est un portail où des experts publient des articles sur les centres d'intérêt des particuliers pour la thématique Qualité de l'Air. Ces articles référencent les bases de données concernées, et apportent une visualisation immédiate de cette base de donnée là où c'est utile.</p>
     </div>
 
     <div class="team">
@@ -66,7 +70,7 @@
 export default {
   data() {
     return {
-      mainProps: { width: 110, height: 110 }
+      mainProps: { width: 75, height: 75 }
     }
   }
 }
@@ -76,10 +80,10 @@ export default {
 
 <style scoped>
 p {
-  width: 345.9px;
-  height: 382.47px;
-  left: 34.05px;
-  top: 241.54px;
+  width: auto;
+  height: auto;
+  left: auto;
+  top: auto;
 
   font-family: Barlow;
   font-style: normal;
