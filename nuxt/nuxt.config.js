@@ -30,7 +30,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/_custom.scss"],
+  css: ["@/assets/application.scss"],
   /*
    ** Plugins to load before mounting the App
    */
@@ -52,7 +52,6 @@ export default {
     "@nuxtjs/pwa",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-    "@nuxtjs/style-resources",
     // As per
     //https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
     [
@@ -81,16 +80,15 @@ export default {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: false // Or `bvCSS: false`
   },
-  styleResources: {
-    scss: ["assets/_custom.scss"]
-  },
   /*
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: "js-yaml-loader"
+      });
+    }
   }
 };

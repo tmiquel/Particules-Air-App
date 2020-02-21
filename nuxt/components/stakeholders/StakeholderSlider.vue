@@ -1,0 +1,31 @@
+<template>
+  <drawer
+    placement="right"
+    @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')"
+    :visible="state.visible"
+    width="300"
+  >
+    <template v-if="selected">
+      <img
+        :src="require('~/assets/images/stakeholders/'+selected.img)"
+        :alt="selected.img"
+        class="mx-auto img-fluid mt-5"
+      />
+      <h2 v-html="selected.title"></h2>
+      <p v-html="selected.description"></p>
+    </template>
+  </drawer>
+</template>
+
+<script>
+import Drawer from 'ant-design-vue/lib/drawer'
+import stakeholders from '~/data/stakeholders.yml'
+import { mapState } from 'vuex'
+export default {
+  components: { Drawer },
+  computed: mapState({
+    state: state => state.stakeHolderSlider,
+    selected: state => (state.stakeHolderSlider.slug ? stakeholders[state.stakeHolderSlider.slug] : null)
+  })
+}
+</script>

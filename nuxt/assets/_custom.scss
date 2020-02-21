@@ -2,26 +2,31 @@
 
 // https://bootstrap-vue.js.org/docs/reference/theming/
 //https://getbootstrap.com/docs/4.4/getting-started/theming/
+
+// COLORS
 $theme-colors: (
-  "primary": #4B8AC9,
-  "success": #94E576,
-  "warning": #FFA55E,
-  "danger": #F54A4A
+  "primary": #4b8ac9,
+  "success": #94e576,
+  "warning": #ffa55e,
+  "danger": #f54a4a
 );
 
+// FONTS
+$font-family-sans-serif: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: $font-family-sans-serif;
+$enable-responsive-font-sizes: true;
+
+// BOOTSTRAP SASS IMPORT
 @import "~/node_modules/bootstrap/scss/bootstrap.scss";
 @import "~/node_modules/bootstrap-vue/src/index.scss";
 
+// ADDITIONAL ROOT VARIABLES
 @supports (--css: variables) {
   :root {
-    // add Barlow as first font
-    --font-family-sans-serif: "Barlow", -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-    --headings-font-family: "Barlow", -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
+    @each $variant, $color in $grays {
+      --gray-#{$variant}: #{$color};
+    }
   }
 }
