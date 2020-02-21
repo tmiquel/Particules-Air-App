@@ -15,62 +15,61 @@
 
     <div class="team">
       <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
-      <div class="text-center">
-        <b-img
-          class="mx-3"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
-        <b-img
-          class="mx-3"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
-        <b-img
-          class="mx-3"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
-      </div>
-
-      <div class="text-center">
-        <b-img
-          class="mx-3 my-4"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
-        <b-img
-          class="mx-3 my-4"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
-        <b-img
-          class="mx-3 my-4"
-          src="https://picsum.photos/250/250/?image=54"
-          v-bind="mainProps"
-          rounded="circle"
-          alt="image1"
-        ></b-img>
+      <div class="row justify-content-center">
+        <div class="col-4 my-3" v-for="(member, id) in members" :key="id">
+          <b-img
+            @click="showDrawer(member)"
+            class="mx-auto"
+            :src="require('~/assets/images/stakeholders/'+ member.img)"
+            v-bind="mainProps"
+            rounded="circle"
+            alt="image1"
+          ></b-img>
+        </div>
       </div>
     </div>
+    <drawer placement="right" @close="onClose" :visible="visible" width="300">
+      <template v-if="member">
+        <img
+          :src="require('~/assets/images/stakeholders/'+ member.img)"
+          :alt="member.img"
+          class="mx-auto img-fluid mt-5"
+        />
+        <h2 v-html="member.name"></h2>
+        <p v-html="member.description"></p>
+      </template>
+    </drawer>
   </div>
 </template>
 
 <script>
+import Drawer from 'ant-design-vue/lib/drawer'
+
 export default {
+  components: { Drawer },
   data() {
     return {
-      mainProps: { width: 75, height: 75 }
+      visible: false,
+      mainProps: { width: 75, height: 75 },
+      member: null,
+      members: [
+        { img: 'monique.png', name: 'Monique', description: 'test test' },
+        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
+        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
+        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
+        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
+        { img: 'monique.png', name: 'Monique 2', description: 'test test' }
+      ]
+    }
+  },
+
+  methods: {
+    showDrawer(member) {
+      this.member = member
+      this.visible = true
+    },
+    onClose() {
+      this.visible = false
     }
   }
 }
