@@ -19,7 +19,7 @@
 
 <script>
 import Drawer from 'ant-design-vue/lib/drawer'
-import stakeholders from '~/static/stakeholders.yml'
+import stakeholders from '~/data/stakeholders.yml'
 import { mapState } from 'vuex'
 export default {
   components: { Drawer },
