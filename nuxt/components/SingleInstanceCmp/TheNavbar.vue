@@ -26,13 +26,21 @@ export default {
   },
   components: {
     TheNavbarHamburger
-  }
+  },
+  // computed: {
+  //   // fixedHeightUnlessCollapse() {
+  //   //   if (!this.isCollapseOpen) {
+  //   //     return {height: "49px !important"}
+  //   //   } else return null
+  //   // }
+  //   //  :style="fixedHeightUnlessCollapse"
+  // }
 }
 </script>
 
 <style lang="scss">
 #navbar {
-  background: linear-gradient(99.18deg, var(--left-gradient-color) 27.29%, var(--right-gradient-color) 88.43%);
+  background: linear-gradient(99.18deg, var(--left-navbar-gradient-color) 27.29%, var(--right-navbar-gradient-color) 88.43%);
 
   button:focus {
     outline: 0;
@@ -50,7 +58,7 @@ export default {
     color: var(--gray-300) !important;
   }
   .nav-link:active {
-    background-color: var(--left-gradient-color);
+    background-color: var(--left-navbar-gradient-color);
   }
 
   .navbar-brand {
