@@ -29,11 +29,3 @@ export default {
   })
 }
 </script>
-
-<style >
-@import 'ant-design-vue/lib/drawer/style/index.css';
-
-.ant-drawer {
-  z-index: 9999;
-}
-</style>
