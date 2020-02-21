@@ -1,0 +1,5 @@
+polluants_atmospheriques:
+  title: "Polluants atmosphériques:"
+  description: >
+    Composés de gaz et de particules ayant un effet néfaste direct ou indirect sur la santé et l’environnement.
+    Les principaux polluants atmosphériques sont : les oxydes d’azote (NOx), l’ozone (O₃), les Composés Organiques Volatiles (COV), les particules PM₁₀ et PM2,5, et le dioxyde de soufre (SO₂).

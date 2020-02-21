@@ -5,34 +5,24 @@
       <nuxt />
     </div>
     <TheFooter />
+    <StakeholderSlider />
+    <SourceSlider />
   </div>
 </template>
 
 <script>
-import TheNavbar from "~/components/SingleInstanceCmp/TheNavbar.vue"
-import TheFooter from "~/components/SingleInstanceCmp/TheFooter.vue"
+import TheNavbar from '~/components/SingleInstanceCmp/TheNavbar.vue'
+import TheFooter from '~/components/SingleInstanceCmp/TheFooter.vue'
+import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
+import SourceSlider from '~/components/sources/SourceSlider.vue'
 
 export default {
   components: {
     TheNavbar,
-    TheFooter
+    TheFooter,
+    StakeholderSlider,
+    SourceSlider
   }
 }
 </script>
 
-<style>
-html {
-  font-family: var(--font-family-sans-serif);
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-family-sans-serif);
-}
-</style>

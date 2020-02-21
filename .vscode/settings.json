@@ -1,10 +1,6 @@
 {
   "editor.formatOnSave": true,
   "vetur.validation.template": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-
   "files.encoding": "utf8",
   "editor.detectIndentation": false,
   "files.insertFinalNewline": true,
@@ -21,6 +17,9 @@
   "emmet.showSuggestionsAsSnippets": true,
   "editor.snippetSuggestions": "top",
   "vetur.completion.tagCasing": "initial",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
       "semi": false,

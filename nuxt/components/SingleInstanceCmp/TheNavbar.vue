@@ -1,7 +1,7 @@
 <template>
-  <b-navbar toggleable="md" fixed="top" type="dark">
+  <b-navbar id="navbar" toggleable="md" fixed="top" type="dark">
     <b-navbar-toggle id="the-navbar-toggler" class="border-0 align-top" target="collapsing-navbar">
-        <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
+      <the-navbar-hamburger :is-open="isCollapseOpen"></the-navbar-hamburger>
     </b-navbar-toggle>
     <nuxt-link tag="b-navbar-brand" class="mr-auto ml-auto" to="/">PARTICULES</nuxt-link>
     <b-collapse v-model="isCollapseOpen" id="collapsing-navbar" is-nav>
@@ -30,44 +30,43 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-nav > button:focus {
-  outline: 0;
-}
-
-#the-navbar-toggler {
-  position: absolute;
-  top: 5px;
-}
-
-
-.nav-link {
-  color: #fff !important; //$gray-100 !important;
-}
-.nav-link:hover {
-  color: gray('300') !important;
-}
-.nav-link:active {
-  background-color: var(--left-gradient-color);
-}
-
-.navbar-brand {
-  color: #fff !important; //$gray-100 !important;
-}
-.navbar-brand:hover {
-  color: gray('300') !important;
-}
-
-nav.navbar {
+<style lang="scss">
+#navbar {
   background: linear-gradient(99.18deg, var(--left-gradient-color) 27.29%, var(--right-gradient-color) 88.43%);
-}
 
-.navbar-brand {
-  color: #ffffff !important;
-  font-weight: 500;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 23px;
+  nav > button:focus {
+    outline: 0;
+  }
+
+  #the-navbar-toggler {
+    position: absolute;
+    top: 5px;
+  }
+
+  .nav-link {
+    color: var(--gray-100) !important; //$gray-100 !important;
+  }
+  .nav-link:hover {
+    color: var(--gray-300) !important;
+  }
+  .nav-link:active {
+    background-color: var(--left-gradient-color);
+  }
+
+  .navbar-brand {
+    color: var(--gray-100) !important; //$gray-100 !important;
+  }
+  .navbar-brand:hover {
+    color: var(--gray-300) !important;
+  }
+
+  .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 23px;
+  }
 }
 </style>
