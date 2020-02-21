@@ -6,6 +6,7 @@
     </div>
     <TheFooter />
     <StakeholderSlider />
+    <SourceSlider />
   </div>
 </template>
 
@@ -13,12 +14,14 @@
 import TheNavbar from '~/components/SingleInstanceCmp/TheNavbar.vue'
 import TheFooter from '~/components/SingleInstanceCmp/TheFooter.vue'
 import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
+import SourceSlider from '~/components/sources/SourceSlider.vue'
 
 export default {
   components: {
     TheNavbar,
     TheFooter,
-    StakeholderSlider
+    StakeholderSlider,
+    SourceSlider
   }
 }
 </script>
