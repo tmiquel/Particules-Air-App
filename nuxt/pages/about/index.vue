@@ -16,7 +16,7 @@
     <div class="team">
       <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
       <div class="row justify-content-center">
-        <div class="col-4 my-3" v-for="(member, id) in members" :key="id">
+        <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
           <b-img
             @click="showDrawer(member)"
             class="mx-auto"
@@ -25,6 +25,7 @@
             rounded="circle"
             alt="image1"
           ></b-img>
+          <h4 v-html="member.name"></h4>
         </div>
       </div>
     </div>
@@ -33,9 +34,12 @@
         <img
           :src="require('~/assets/images/stakeholders/'+ member.img)"
           :alt="member.img"
+          rounded="circle"
           class="mx-auto img-fluid mt-5"
         />
+
         <h2 v-html="member.name"></h2>
+
         <p v-html="member.description"></p>
       </template>
     </drawer>
@@ -50,15 +54,51 @@ export default {
   data() {
     return {
       visible: false,
-      mainProps: { width: 75, height: 75 },
+      mainProps: { width: 90, height: 90 },
       member: null,
       members: [
-        { img: 'monique.png', name: 'Monique', description: 'test test' },
-        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
-        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
-        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
-        { img: 'monique.png', name: 'Monique 2', description: 'test test' },
-        { img: 'monique.png', name: 'Monique 2', description: 'test test' }
+        {
+          img: 'monique.png',
+          name: 'Amine Sanhaji',
+          description:
+            'Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !'
+        },
+        {
+          img: 'monique.png',
+          name: 'Thibaut Miquel',
+          description:
+            'bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.'
+        },
+        {
+          img: 'monique.png',
+          name: 'Kévin Berthier',
+          description:
+            'Le super sage de l’équipe et surtout un développeur de talent, il transmet son savoir à Thibaut et Amine et conçoit les cartes du projet. '
+        },
+        {
+          img: 'monique.png',
+          name: 'Emilie Rembert',
+          description:
+            'Le lancement de nouveaux produits, elle connaît par coeur, elle en a fait son coeur de métier. Pourquoi Particules ? Parce qu`il fait écho à ses engagements personnels dans l’écologie et le bien être du vivant (et ceux qui veulent le rester).'
+        },
+        {
+          img: 'monique.png',
+          name: 'Elise Blanc',
+          description:
+            'Prévenante, multi-tâches et brillante,  Elise est notre spécialiste des données en tout genre ! Une vraie magicienne qui transforme d’obscurs Excel en carte animées !'
+        },
+        {
+          img: 'monique.png',
+          name: 'Clair Méduse',
+          description:
+            'Dernière arrivée dans l’équipe mais celle dont nous avions besoin. Claire fait des merveilles en design et sa formation scientifique nous permet à la fois de créer des contenus exacts mais surtout vulgarisés.'
+        },
+        {
+          img: 'monique.png',
+          name: 'Raphaël',
+          description:
+            ' Le designer engagé de l’équipe, il a conçu graphiquement l’application particules avec précision et style ! What else !?'
+        }
       ]
     }
   },
