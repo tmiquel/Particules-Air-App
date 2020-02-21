@@ -34,7 +34,7 @@ export default {
 #navbar {
   background: linear-gradient(99.18deg, var(--left-gradient-color) 27.29%, var(--right-gradient-color) 88.43%);
 
-  nav > button:focus {
+  button:focus {
     outline: 0;
   }
 
