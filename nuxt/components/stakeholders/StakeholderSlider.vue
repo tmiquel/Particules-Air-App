@@ -1,12 +1,16 @@
 <template>
   <drawer
     placement="right"
-    :closable="false"
     @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')"
     :visible="state.visible"
+    width="300"
   >
     <template v-if="selected">
-      <!-- <img :src="require('~assets/images/stakeholders/'+selected.img)" :alt="selected.img" /> -->
+      <img
+        :src="require('~/assets/images/stakeholders/'+selected.img)"
+        :alt="selected.img"
+        class="mx-auto img-fluid mt-5"
+      />
       <h2 v-html="selected.title"></h2>
       <p v-html="selected.description"></p>
     </template>
