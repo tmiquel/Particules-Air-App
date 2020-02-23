@@ -8,6 +8,7 @@
 import PollutionIrisSeuilOMSPacaMap from '~/components/maps/PollutionIrisSeuilOMSPacaMap.vue'
 
 export default {
+  layout: 'map',
   components: { PollutionIrisSeuilOMSPacaMap }
 }
 </script>

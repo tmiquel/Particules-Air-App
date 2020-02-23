@@ -34,13 +34,14 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~plugins/global-components.js'
-  ],
+  plugins: ["~plugins/global-components.js"],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    "@nuxtjs/dotenv"
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -50,8 +51,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    "@nuxtjs/dotenv",
     // As per
     //https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
     [
@@ -79,6 +78,10 @@ export default {
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: false // Or `bvCSS: false`
+  },
+  env: {
+    algoliaApp: process.env.ALGOLIA_APP,
+    algoliaKey: process.env.ALGOLIA_KEY
   },
   /*
    ** Build configuration
