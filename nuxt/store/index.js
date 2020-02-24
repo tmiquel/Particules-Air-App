@@ -4,7 +4,7 @@ export const state = () => ({
     visible: false,
     slug: null
   },
-  sourceSlider: {
+  definitionSlider: {
     visible: false,
     slug: null
   }
@@ -19,12 +19,12 @@ export const mutations = {
     state.stakeHolderSlider.visible = false;
     state.stakeHolderSlider.slug = null;
   },
-  OPEN_SOURCE_SLIDER(state, slug) {
-    state.sourceSlider.visible = true;
-    state.sourceSlider.slug = slug;
+  OPEN_DEFINITION_SLIDER(state, slug) {
+    state.definitionSlider.visible = true;
+    state.definitionSlider.slug = slug;
   },
-  CLOSE_SOURCE_SLIDER(state) {
-    state.sourceSlider.visible = false;
-    state.sourceSlider.slug = null;
+  CLOSE_DEFINITION_SLIDER(state) {
+    state.definitionSlider.visible = false;
+    state.definitionSlider.slug = null;
   }
 };

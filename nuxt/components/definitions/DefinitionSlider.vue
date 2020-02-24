@@ -1,7 +1,7 @@
 <template>
   <drawer
     placement="bottom"
-    @close="$store.commit('CLOSE_SOURCE_SLIDER')"
+    @close="$store.commit('CLOSE_DEFINITION_SLIDER')"
     :visible="state.visible"
     height="auto"
   >
@@ -14,13 +14,13 @@
 
 <script>
 import Drawer from 'ant-design-vue/lib/drawer'
-import sources from '~/data/sources.yml'
+import definitions from '~/data/definitions.yml'
 import { mapState } from 'vuex'
 export default {
   components: { Drawer },
   computed: mapState({
-    state: state => state.sourceSlider,
-    selected: state => (state.sourceSlider.slug ? sources[state.sourceSlider.slug] : null)
+    state: state => state.definitionSlider,
+    selected: state => (state.definitionSlider.slug ? definitions[state.definitionSlider.slug] : null)
   })
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100">
+  <div class="w-100 mb-5">
     <div class="banner d-flex align-items-end">
       <div class="px-0" id="my-banner-text-container">
         <div>

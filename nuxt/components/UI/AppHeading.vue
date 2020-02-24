@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5 id="app-title" class="text-center">
+    <h5 id="app-title" class="text-center text-uppercase mb-4">
       <slot></slot>
     </h5>
   </div>
