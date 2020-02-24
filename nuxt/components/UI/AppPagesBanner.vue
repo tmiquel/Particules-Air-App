@@ -1,19 +1,17 @@
 <template>
-  <div class="container-fluid banner d-flex my-padding-1px">
-    <div class="row flex-column align-items-left">
-      <div class="col pl-3 flex-grow-1">
-        <h6 class="pt-3 mt-3 mb-0 " id="banner-topic-title" :style="responsiveBannerTopicTitleStyle">
-          MON AIR & MA SANTE
-        </h6>
+  <div class="container-fluid banner d-flex">
+    <div class="row flex-column">
+      <div class="col pl-3 mt-3  flex-grow-0 flex-shrink-1">
+        <h6 id="banner-topic-title" :style="responsiveBannerTopicTitleStyle">MON AIR & MA SANTE</h6>
       </div>
-      <div class="col flex-grow-0">
-        <h1 class="pt-2 mb-0" id="banner-title" :style="responsiveBannerTitleStyle">
-          L’augmentation de la Mortalité & mon Air Q
+      <div class="col flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+        <h1 id="banner-title-with-underline" class="flex-grow-1" :style="responsiveBannerTitleStyle">
+          L’augmentation de la Mortalité & mon Air
         </h1>
       </div>
-      <div class="col flex-grow-1">
+      <div class="col flex-grow-0 flex-shrink-1">
         <p
-          class="text-white pt-1 font-italic"
+          class="text-white  font-italic"
           :style="this.$mq === 'mobile' ? { fontSize: '0.65rem' } : { fontSize: '1rem' }"
         >
           Le 19 septembre 2019 / Par Jean Jacques Goldman
@@ -56,8 +54,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .banner {
   background-image: linear-gradient(
       180deg,
@@ -76,7 +72,6 @@ export default {
   height: 25vh;
 }
 
-
 #banner-topic-title {
   /* fontSize and backgroundSize defined in responsiveBannerTopicTitleStyle() */
   background-image: linear-gradient(to right, #fff, #fff 37px, transparent 37px);
@@ -89,12 +84,13 @@ export default {
   color: white;
 }
 
-#banner-title {
-  /* fontSize and backgroundSize defined in responsiveBannerTitleStyle() */
+#banner-title-with-underline {
+  /* backgroundSize defined in responsiveBannerTitleStyle() */
   background-image: linear-gradient(to right, #fff, #fff 57px, transparent 57px);
   background-repeat: no-repeat;
   background-position: 0 100%;
   padding-bottom: 0.9rem;
+  /* fontSize  defined in responsiveBannerTitleStyle() */
   font-family: $font-family-sans-serif !important;
   font-weight: bold;
   font-style: normal;
