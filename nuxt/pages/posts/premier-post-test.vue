@@ -1,5 +1,6 @@
 <template>
   <div>
+    <app-pages-banner />
     <h1>Premier post</h1>
     <p>
       Je mentionne

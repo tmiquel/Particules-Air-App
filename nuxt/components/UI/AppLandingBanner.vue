@@ -29,7 +29,8 @@ export default {
       } else
         return {
           fontSize: '2.5rem',
-          backgroundSize: '100% 0.3rem'
+          backgroundSize: '100% 0.3rem',
+          paddingRight: '35%'
         }
     }
   }
@@ -61,7 +62,6 @@ export default {
 }
 
 #banner-title {
-  /* padding-right: 25%; */
   background-image: linear-gradient(to right, #fff, #fff 57px, transparent 57px);
   background-repeat: no-repeat;
   background-position: 0 100%;
