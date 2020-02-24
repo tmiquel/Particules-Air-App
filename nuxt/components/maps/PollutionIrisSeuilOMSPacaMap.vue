@@ -1,11 +1,12 @@
 <template>
-  <div id="map"></div>
+  <div>
+    <SearchAddress :map="map" v-if="map" />
+    <div id="map"></div>
+  </div>
 </template>
 
 <script>
-import 'leaflet/dist/leaflet.css'
-import 'leaflet/dist/images/marker-icon-2x.png'
-import 'leaflet/dist/images/marker-shadow.png'
+import SearchAddress from '~/components/maps/SearchAddress.vue'
 import axios from 'axios'
 var L
 if (process.client) L = require('leaflet')
@@ -15,22 +16,42 @@ var info
 var legend
 
 export default {
+  components: { SearchAddress },
+  data() {
+    return {
+      map: null
+    }
+  },
   mounted() {
     this.createMap()
-    axios.get('/iris_2018_pop14_formatted_simplified.json').then(resp => {
+    axios.get('/iris_2018_pop14_formatted_simplified_light.json').then(resp => {
       this.addLayer(resp.data)
     })
   },
   methods: {
     createMap() {
       map = L.map('map').setView([43.3, 5.4], 8)
-      const mapboxToken =
-        'pk.eyJ1Ijoia2V2aW5iZXJ0aGllciIsImEiOiJjazZtN3Z1Y2UwbGE3M2xwNnhiZnIzZjM5In0.MaE3umnwu7me7VZalKFG7A'
-      L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`, {
-        id: 'mapbox/light-v9',
-        tileSize: 512,
-        zoomOffset: -1
+      this.map = map
+      map.createPane('labels')
+      map.getPane('labels').style.zIndex = 650
+      map.getPane('labels').style.pointerEvents = 'none'
+      var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+        attribution: '©OpenStreetMap, ©CartoDB',
+        detectRetina: true
       }).addTo(map)
+
+      var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+        attribution: '©OpenStreetMap, ©CartoDB',
+        pane: 'labels',
+        detectRetina: true
+      }).addTo(map)
+      // const mapboxToken =
+      //   'pk.eyJ1Ijoia2V2aW5iZXJ0aGllciIsImEiOiJjazZtN3Z1Y2UwbGE3M2xwNnhiZnIzZjM5In0.MaE3umnwu7me7VZalKFG7A'
+      // L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`, {
+      //   id: 'mapbox/light-v9',
+      //   tileSize: 512,
+      //   zoomOffset: -1
+      // }).addTo(map)
     },
     toPerc(val, base) {
       let result = (val / base) * 100
@@ -41,7 +62,7 @@ export default {
         style: this.setStyle,
         onEachFeature: this.onEachFeature
       }).addTo(map)
-      info = L.control()
+      info = L.control({ position: 'bottomleft' })
       info.onAdd = function(map) {
         this._div = L.DomUtil.create('div', 'info') // create a div with a class "info"
         this.update()
@@ -159,34 +180,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-#map {
-  height: 100vh;
-  width: 100vw;
-}
-.info {
-  padding: 6px 8px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-.info h4 {
-  margin: 0 0 5px;
-  color: #777;
-}
-.legend {
-  line-height: 18px;
-  color: #555;
-  padding-top: 1.5em;
-}
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
-}
-</style>
