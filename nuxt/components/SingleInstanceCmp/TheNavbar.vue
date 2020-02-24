@@ -49,6 +49,7 @@ export default {
   #the-navbar-toggler {
     position: absolute;
     top: 5px;
+    padding-left: 0rem !important;
   }
 
   .nav-link {
