@@ -1,6 +1,10 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5 id="app-title" class="text-center text-uppercase mb-4">
+    <h5
+      id="app-title"
+      class="text-center text-uppercase mb-4 mb-md-5"
+      :style="this.$mq === 'mobile' ? { fontSize: '1.25rem' } : { fontSize: '1.7rem' }"
+    >
       <slot></slot>
     </h5>
   </div>
