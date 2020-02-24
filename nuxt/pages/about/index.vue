@@ -64,19 +64,19 @@ export default {
             'Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !'
         },
         {
-          img: 'monique.png',
+          img: 'Thibaut.png',
           name: 'Thibaut Miquel',
           description:
             'bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.'
         },
         {
-          img: 'monique.png',
+          img: 'KEVIN.jpg',
           name: 'Kévin Berthier',
           description:
             'Le super sage de l’équipe et surtout un développeur de talent, il transmet son savoir à Thibaut et Amine et conçoit les cartes du projet. '
         },
         {
-          img: 'monique.png',
+          img: 'Emilie.jpg',
           name: 'Emilie Rembert',
           description:
             'Le lancement de nouveaux produits, elle connaît par coeur, elle en a fait son coeur de métier. Pourquoi Particules ? Parce qu`il fait écho à ses engagements personnels dans l’écologie et le bien être du vivant (et ceux qui veulent le rester).'
