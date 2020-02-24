@@ -19,14 +19,15 @@ export default {
       required: true
     }
   }
-};
+}
 </script>
 
 
 <style scoped>
-
-
 .burger-button {
+  /* margin-left -6px in order to align burger at 16px margin from left border of the screen (including the navbar padding),
+   /* and have the same vertical alignement than the banner text's one */ 
+  margin-left: -6px;
   position: relative;
   height: 30px;
   width: 32px;
@@ -48,8 +49,7 @@ export default {
   height: 2px;
   width: auto;
   margin-top: -1px;
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
-    opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
     background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -63,9 +63,9 @@ export default {
   transform: scaleX(1);
 }
 
-/* Because hover don't work on small devises, Reduce second bar on hovering only on computer, not on tablet or mobiles, 
+/* Because hover don't work on small devises, Reduce second bar on hovering only on computer, not on tablet or mobiles,
 breakpoint set as per https://project-rfs.github.io/docs/4.3/layout/overview/#responsive-breakpoints  */
-/* @media only screen and (min-width: 992px)  { 
+/* @media only screen and (min-width: 992px)  {
 .burger-button:hover .burger-bar--2 {
   transform: scaleX(0.8);
 }
