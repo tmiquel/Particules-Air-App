@@ -10,19 +10,18 @@
             <u
               ><strong
                 ><b-link
-                  href="www.google.fr"
+                  :href="source.link"
                   class="text text-dark"
                   :style="this.$mq === 'mobile' ? { fontSize: '0.9rem' } : { fontSize: '1.1rem' }"
-                  >Mon titre</b-link
+                  >{{ source.title }}</b-link
                 ></strong
               ></u
             >
           </h6>
           <b-card-text>
-            <small :style="this.$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }">
-              This is a wider card with supporting text as a natural lead-in to additional content. This content is a
-              little bit longer.</small
-            >
+            <small class="text-justify" :style="this.$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }">{{
+              source.description
+            }}</small>
           </b-card-text>
         </b-card-body>
       </b-col>
@@ -34,6 +33,12 @@
 import { BIcon, BIconDocumentText } from 'bootstrap-vue'
 
 export default {
+  props: {
+    source: {
+      type: Object,
+      required: true
+    }
+  },
   components: {
     BIcon,
     BIconDocumentText

@@ -1,0 +1,72 @@
+Annual_Pollution_Modeling_AtmoSud:
+  title: AtmoSud - Modélisations annuelles des polluants principaux sur la région Sud
+  link: https://trouver.datasud.fr/dataset/niveaux-annuels-de-polluants-dans-l-air-ambiant-issus-de-la-modelisation-sur-la-region-sud
+  description: >-
+    Niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10,
+    ozone O3 et de l'Indice Synthétique air (ISA) dans l'air ambiant, issus de la modélisation
+    de la région Sud par année sur les 5 dernières années.
+Report_INSEE_AtmoSud_2017:
+  title: INSEE / AtmoSud - En 2017, le seuil de l’OMS dépassé pour la moitié des résidents de la région
+  link: https://trouver.datasud.fr/dataset/niveaux-annuels-de-polluants-dans-l-air-ambiant-issus-de-la-modelisation-sur-la-region-sud
+  description: >-
+    Etude de l'INSEE et d'AtmoSud. Les habitants de Provence-Alpes-Côte d’Azur sont très exposés à la pollution de l’air
+    par les particules. En 2017, pour la moitié d’entre eux, la concentration en PM10 dépasse, sur leur lieu de résidence,
+    la ligne directrice de l’Organisation mondiale de la santé. Les populations concernées résident
+    surtout sur le littoral méditerranéen et dans la vallée du Rhône. Les habitants des grandes agglomérations sont
+    soumis aux concentrations les plus fortes, en particulier les Marseillais. Dans les Alpes-de-Haute-Provence et
+    les Hautes-Alpes, où les niveaux de concentration sont les plus faibles, la ligne directrice est très rarement dépassée.
+Plume_AQI_Index:
+  title: Plume Labs - Indice de qualité de l'air
+  link: https://plume.readme.io/docs/live
+  description: >-
+    Plume Labs utilise la norme internationale établie par l’Agence Américaine de Protection de l’Environnement (EPA)
+    ainsi que les directives de l’OMS et des études scientifiques pour définir le Plume AQI et les cinq niveaux de pollution.
+    Le Plume AQI prend en compte les concentrations de plusieurs polluants différents et est calculé en fonction du polluant
+    ayant le plus d’impact sur la santé au moment présent.
+1LoremIpsum:
+  title: Nom de l'auteur - Titre de ma source de données / référence
+  link: http://www.google.fr
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+    ullamcorper eros at augue luctus, sit amet vulputate odio molestie.
+    Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
+    ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
+    vulputate faucibus aliquet.
+2LoremIpsum:
+  title: Titre de ma source de données / référence
+  link: http://www.google.fr
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+    ullamcorper eros at augue luctus, sit amet vulputate odio molestie.
+    Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
+    ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
+    vulputate faucibus aliquet.
+3LoremIpsum:
+  title: Titre de ma source de données / référence
+  link: http://www.google.fr
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+    ullamcorper eros at augue luctus, sit amet vulputate odio molestie.
+    Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
+    ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
+    vulputate faucibus aliquet.
+4LoremIpsum:
+  title: Titre de ma source de données / référence
+  link: http://www.google.fr
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+    ullamcorper eros at augue luctus, sit amet vulputate odio molestie.
+    Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
+    ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
+    vulputate faucibus aliquet.
+5LoremIpsum:
+  title: Titre de ma source de données / référence
+  link: http://www.google.fr
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+    ullamcorper eros at augue luctus, sit amet vulputate odio molestie.
+    Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
+    ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
+    vulputate faucibus aliquet.
+
+
