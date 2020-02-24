@@ -3,7 +3,6 @@
     <br />
     <br />
     <br />
-    <br />
     <div id="title">LE LEXIQUE</div>
     <br />
     <div class="h1">Polluants atmosphériques :</div>
