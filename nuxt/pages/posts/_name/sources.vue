@@ -6,7 +6,13 @@
     <b-card-group columns class="container">
       <source-card :source="source" v-for="(source, id) in sources" :key="id" />
     </b-card-group>
-    <back-to-post-link />
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <back-to-post-link />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

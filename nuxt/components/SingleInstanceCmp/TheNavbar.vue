@@ -26,14 +26,6 @@ export default {
   components: {
     TheNavbarHamburger
   },
-  // computed: {
-  //   // fixedHeightUnlessCollapse() {
-  //   //   if (!this.isCollapseOpen) {
-  //   //     return {height: "49px !important"}
-  //   //   } else return null
-  //   // }
-  //   //  :style="fixedHeightUnlessCollapse"
-  // }
 }
 </script>
 

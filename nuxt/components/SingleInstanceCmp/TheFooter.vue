@@ -8,9 +8,9 @@
   >
     <b-button
       squared
-      to="/graphs"
       variant="primary"
       class="footer-item px-0 flex-grow-1 justify-content-center"
+      :to="urlFor('graphs')"
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveGraphText }}
@@ -19,9 +19,9 @@
     </b-button>
     <b-button
       squared
-      to="/stakeholders"
       variant="primary"
       class="footer-item px-0 flex-grow-1 justify-content-center"
+      :to="urlFor('stakeholders')"
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveStakeholdersText }}
