@@ -16,4 +16,16 @@ export default {
 }
 </script>
 
-
+<style scoped>
+.link {
+  position: absolute;
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  text-decoration-line: underline;
+  color: #454545;
+}
+</style>
