@@ -9,7 +9,6 @@
         <nuxt-link tag="b-nav-item" class="d-block d-md-none" to="/">Accueil</nuxt-link>
         <nuxt-link tag="b-nav-item" to="/about">A propos</nuxt-link>
         <nuxt-link tag="b-nav-item" to="/contact">Contact</nuxt-link>
-        <b-nav-item>Mode Sombre</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
