@@ -3,11 +3,9 @@
     <app-landing-banner />
     <app-heading>LES SOURCES</app-heading>
 
-    <div class="container">
-      <b-card-group columns v-for="source in sources">
-        <source-card :source="source" />
-      </b-card-group>
-    </div>
+    <b-card-group columns class="container">
+      <source-card :source="source" v-for="(source, id) in sources" :key="id" />
+    </b-card-group>
   </div>
 </template>
 
@@ -25,7 +23,7 @@ export default {
     SourceCard
   },
   mounted() {
-    console.log(this.sources)
+    // console.log(this.sources)
   }
 }
 </script>

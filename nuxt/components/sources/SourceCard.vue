@@ -7,21 +7,25 @@
       <b-col cols="10">
         <b-card-body class="py-0 pl-0 pr-1" align="left">
           <h6 class="mb-0">
-            <u
-              ><strong
-                ><b-link
+            <u>
+              <strong>
+                <b-link
                   :href="source.link"
                   class="text text-dark"
-                  :style="this.$mq === 'mobile' ? { fontSize: '0.9rem' } : { fontSize: '1.1rem' }"
-                  >{{ source.title }}</b-link
-                ></strong
-              ></u
-            >
+                  :style="$mq === 'mobile' ? { fontSize: '0.9rem' } : { fontSize: '1.1rem' }"
+                >{{ source.title }}</b-link>
+              </strong>
+            </u>
           </h6>
           <b-card-text>
-            <small class="text-justify" :style="this.$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }">{{
+            <small
+              class="text-justify"
+              :style="$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }"
+            >
+              {{
               source.description
-            }}</small>
+              }}
+            </small>
           </b-card-text>
         </b-card-body>
       </b-col>
