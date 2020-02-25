@@ -16,12 +16,6 @@ import sources from '~/data/sources.yml'
 
 export default {
   components: { SourceCard },
-  props: {
-    currentRoute: {
-      type: Object,
-      required: true
-    }
-  },
   data() {
     return {
       sources: sources
