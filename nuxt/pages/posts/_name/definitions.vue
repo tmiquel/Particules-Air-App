@@ -56,7 +56,7 @@
     </p>
     <br />
     <br />
-    <nuxt-link to="/" class="link">Retourner à l’article</nuxt-link>
+    <back-to-post-link />
     <br />
     <br />
   </div>
