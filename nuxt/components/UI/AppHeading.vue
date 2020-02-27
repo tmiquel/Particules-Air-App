@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
 export default {
   mixins: [fontSizeMixin],
   computed: {
     responsiveHeadingFontSize() {
-      this.responsiveFontSize(process.env.fontSizeHeading)
+      return this.responsiveFontSize('fontSizeHeading')
     }
   }
 }

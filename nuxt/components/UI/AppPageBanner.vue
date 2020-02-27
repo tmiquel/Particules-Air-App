@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
 export default {
   mixins: [fontSizeMixin],
@@ -58,13 +58,13 @@ export default {
   },
   computed: {
     responsiveBannerTopicTitleStyle() {
-      this.responsiveFontSize(process.env.fontSizeTopicTitle)
+      return this.responsiveFontSize('fontSizeTopicTitle')
     },
     responsiveBannerTitleStyle() {
-      this.responsiveFontSize(process.env.fontSizePostTitle)
+      return this.responsiveFontSize('fontSizePostTitle')
     },
     responsivePostAuthorDateFontSize() {
-      this.responsiveFontSize(process.env.fontSizePostAuthorDate)
+      return this.responsiveFontSize('fontSizePostAuthorDate')
     }
   }
 }

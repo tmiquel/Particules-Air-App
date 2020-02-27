@@ -9,12 +9,9 @@
           <h6 class="mb-0">
             <u>
               <strong>
-                <b-link
-                  :href="source.link"
-                  class="text text-dark"
-                  :style="responsiveTitleFontSize"
-                  >{{ source.title }}</b-link
-                >
+                <b-link :href="source.link" class="text text-dark" :style="responsiveTitleFontSize">{{
+                  source.title
+                }}</b-link>
               </strong>
             </u>
           </h6>
@@ -31,7 +28,7 @@
 
 <script>
 import { BIcon, BIconDocumentText } from 'bootstrap-vue'
-import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
 export default {
   mixins: [fontSizeMixin],
@@ -47,10 +44,10 @@ export default {
   },
   computed: {
     responsiveTextFontSize() {
-      this.responsiveFontSize(process.env.fontSizeCardText)
+      return this.responsiveFontSize('fontSizeCardText')
     },
     responsiveTitleFontSize() {
-      this.responsiveFontSize(process.env.fontSizeCardTitle)
+      return this.responsiveFontSize('fontSizeCardTitle')
     }
   }
 }

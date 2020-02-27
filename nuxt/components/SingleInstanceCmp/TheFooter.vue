@@ -56,7 +56,7 @@
 <script>
 import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconDocuments } from 'bootstrap-vue'
 
-import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
 export default {
   mixins: [fontSizeMixin],
@@ -81,7 +81,7 @@ export default {
       return this.$mq === 'mobile' ? 'SOURCES' : 'LES SOURCES'
     },
     footerTextStyle() {
-      this.responsiveFontSize(process.env.fontSizeFooter)
+      return this.responsiveFontSize('fontSizeFooter')
     }
   },
   methods: {

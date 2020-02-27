@@ -81,44 +81,7 @@ export default {
   },
   env: {
     algoliaApp: process.env.ALGOLIA_APP,
-    algoliaKey: process.env.ALGOLIA_KEY,
-    
-    fontSizeTopicTitle: {
-      mobile: "0.9rem", // AppPageBanner
-      desktop: "1.3rem"
-    },
-    fontSizePostTitle: {
-      mobile: "1.6rem", // AppPageBanner
-      desktop: "2.1rem"
-    },
-    fontSizePostAuthorDate: {
-      mobile: "0.8rem", // AppPageBanner
-      desktop: "1rem"
-    },
-    fontSizeLandingBannerTitle: {
-      mobile: "1.75rem", // AppLandingBanner
-      desktop: "2.5rem"
-    },
-    fontSizeLandingBannerSubtitle: {
-      mobile: "0.8rem", // AppLandingBanner
-      desktop: "1.5rem"
-    },
-    fontSizeCardTitle: {
-      mobile: "0.9rem", // SourcesCard & DefinitionsCard
-      desktop: "1.1rem"
-    },
-    fontSizeCardText: {
-      mobile: "0.8rem", // SourcesCard & DefinitionsCard
-      desktop: "1rem"
-    },
-    fontSizeHeading: {
-      mobile: "1.25rem", // AppHeading
-      desktop: "1.7rem"
-    },
-    fontSizeFooter: {
-      mobile: "0.7rem", // TheFooter
-      desktop: "1rem"
-    }
+    algoliaKey: process.env.ALGOLIA_KEY
   },
   /*
    ** Build configuration
