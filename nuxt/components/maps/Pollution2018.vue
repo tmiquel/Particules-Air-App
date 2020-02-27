@@ -1,6 +1,7 @@
 <template>
-  <div id="map">
+  <div>
     <SearchAddress :map="map" v-if="map" />
+    <div id="map"></div>
   </div>
 </template>
 
