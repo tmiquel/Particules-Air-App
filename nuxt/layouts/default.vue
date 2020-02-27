@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheNavbar />
-    <div id="pages-container" class="justify-content-center mb-5">
+    <div id="pages-container" class="justify-content-center">
       <nuxt />
     </div>
     <TheFooter />
@@ -29,5 +29,6 @@ export default {
 <style>
 #pages-container {
   margin-top: 49px;
+  margin-bottom: 62px;
 }
 </style>
