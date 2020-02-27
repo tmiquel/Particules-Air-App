@@ -1,7 +1,7 @@
 <template>
-  <div class="about-page mx-4">
+  <div class="about-page">
     <app-landing-banner />
-    <div>
+    <div class="mx-4">
       <app-heading>À PROPOS</app-heading>
       <p
         class="mx-auto mb-4"
@@ -14,7 +14,7 @@
       >Open Air est un portail où des experts publient des articles sur les centres d'intérêt des particuliers pour la thématique Qualité de l'Air. Ces articles référencent les bases de données concernées, et apportent une visualisation immédiate de cette base de donnée là où c'est utile.</p>
     </div>
 
-    <div class="team">
+    <div class="team mx-4">
       <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
       <div class="row justify-content-center">
         <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
