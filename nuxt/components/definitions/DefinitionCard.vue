@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="h1" :style="$mq === 'mobile' ? { fontSize: '0.9rem' } : { fontSize: '1.1rem' }">
+    <div class="h1" :style="responsiveTitleFontSize">
       {{ definition.title }}
     </div>
-    <p class="text" :style="$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }">
+    <p class="text" :style="responsiveTextFontSize">
       {{ definition.description }}
     </p>
     <br />
@@ -11,11 +11,22 @@
 </template>
 
 <script>
+import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+
 export default {
+  mixins: [fontSizeMixin],
   props: {
     definition: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    responsiveTextFontSize() {
+      this.responsiveFontSize(process.env.fontSizeCardText)
+    },
+    responsiveTitleFontSize() {
+      this.responsiveFontSize(process.env.fontSizeCardTitle)
     }
   }
 }

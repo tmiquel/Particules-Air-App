@@ -8,7 +8,10 @@
           </h1>
         </div>
         <div>
-          <p class="text-white pt-1" :style="this.$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1.5rem' }">
+          <p
+            class="text-white pt-1"
+            :style="responsiveFontSizeLandingBannerSubtitle"
+          >
             Comprendre comment l’air impacte votre santé avec des données locales.
           </p>
         </div>
@@ -18,20 +21,26 @@
 </template>
 
 <script>
+import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
+
 export default {
+  mixins: [fontSizeMixin],
   computed: {
     responsiveBannerTitleStyle() {
       if (this.$mq === 'mobile') {
         return {
-          fontSize: '1.75rem',
+          fontSize: process.env.fontSizeLandingBannerTitle.mobile,
           backgroundSize: '100% 0.2rem'
         }
       } else
         return {
-          fontSize: '2.5rem',
+          fontSize: process.env.fontSizeLandingBannerTitle.desktop,
           backgroundSize: '100% 0.3rem',
           paddingRight: '35%'
         }
+    },
+    responsiveFontSizeLandingBannerSubtitle() {
+      this.responsiveFontSize(process.env.fontSizeLandingBannerSubtitle)
     }
   }
 }

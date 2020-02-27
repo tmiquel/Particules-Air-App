@@ -12,19 +12,15 @@
                 <b-link
                   :href="source.link"
                   class="text text-dark"
-                  :style="$mq === 'mobile' ? { fontSize: '0.9rem' } : { fontSize: '1.1rem' }"
-                >{{ source.title }}</b-link>
+                  :style="responsiveTitleFontSize"
+                  >{{ source.title }}</b-link
+                >
               </strong>
             </u>
           </h6>
           <b-card-text>
-            <small
-              class="text-justify"
-              :style="$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }"
-            >
-              {{
-              source.description
-              }}
+            <small class="text-justify" :style="responsiveTextFontSize">
+              {{ source.description }}
             </small>
           </b-card-text>
         </b-card-body>
@@ -35,8 +31,10 @@
 
 <script>
 import { BIcon, BIconDocumentText } from 'bootstrap-vue'
+import { fontSizeMixin } from '@/mixins/fontSizeMixin.js'
 
 export default {
+  mixins: [fontSizeMixin],
   props: {
     source: {
       type: Object,
@@ -46,6 +44,14 @@ export default {
   components: {
     BIcon,
     BIconDocumentText
+  },
+  computed: {
+    responsiveTextFontSize() {
+      this.responsiveFontSize(process.env.fontSizeCardText)
+    },
+    responsiveTitleFontSize() {
+      this.responsiveFontSize(process.env.fontSizeCardTitle)
+    }
   }
 }
 </script>
