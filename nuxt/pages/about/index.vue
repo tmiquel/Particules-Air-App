@@ -59,7 +59,7 @@ export default {
       member: null,
       members: [
         {
-          img: 'monique.png',
+          img: 'Amine.jpg',
           name: 'Amine Sanhaji',
           description:
             'Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !'
