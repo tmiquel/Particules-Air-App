@@ -1,6 +1,6 @@
 <template>
   <div class="typeahead-container">
-    <input type="search" id="input-map" class="mt-3" placeholder="Saisissez votre adresse" />
+    <input type="text" id="input-map" class="mt-3" placeholder="Saisissez votre adresse" />
   </div>
 </template>
 

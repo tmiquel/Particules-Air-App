@@ -1,6 +1,7 @@
 <template>
-  <div id="map">
+  <div>
     <SearchAddress :map="map" v-if="map" />
+    <div id="map"></div>
   </div>
 </template>
 
@@ -55,7 +56,7 @@ export default {
 
       L.Control.WMSLegend = L.Control.extend({
         options: {
-          position: 'topright',
+          position: 'bottomleft',
           uri: ''
         },
 
@@ -121,7 +122,7 @@ export default {
       }
       legend.addTo(map)
 
-      L.control.scale({ imperial: false }).addTo(map)
+      // L.control.scale({ imperial: false }).addTo(map)
     }
   }
 }

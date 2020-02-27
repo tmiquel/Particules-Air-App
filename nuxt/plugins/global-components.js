@@ -7,6 +7,7 @@ import AppHeading from "@/components/UI/AppHeading";
 import AppLandingBanner from "@/components/UI/AppLandingBanner";
 import AppPageBanner from "@/components/UI/AppPageBanner";
 import BackToPostLink from "@/components/UI/BackToPostLink";
+import MapPreview from "@/components/UI/MapPreview";
 
 Vue.component("AppButton", AppButton);
 Vue.component("StakeholderLink", StakeholderLink);
@@ -15,3 +16,4 @@ Vue.component("AppHeading", AppHeading);
 Vue.component("AppLandingBanner", AppLandingBanner);
 Vue.component("AppPageBanner", AppPageBanner);
 Vue.component("BackToPostLink", BackToPostLink);
+Vue.component("MapPreview", MapPreview);
