@@ -23,7 +23,7 @@
         <div class="col flex-grow-0">
           <span
             class="text-white pt-1 pb-md-2 font-italic date-and-time-overline"
-            :style="this.$mq === 'mobile' ? { fontSize: '0.8rem' } : { fontSize: '1rem' }"
+            :style="responsivePostAuthorDateFontSize"
           >
             {{ postDate }} / Par {{ postAuthor }}
           </span>
@@ -34,7 +34,10 @@
 </template>
 
 <script>
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
+
 export default {
+  mixins: [fontSizeMixin],
   props: {
     topicTitle: {
       type: String,
@@ -55,27 +58,13 @@ export default {
   },
   computed: {
     responsiveBannerTopicTitleStyle() {
-      if (this.$mq === 'mobile') {
-        return {
-          fontSize: '0.9rem',
-          backgroundSize: '100% 0.2rem'
-        }
-      } else
-        return {
-          fontSize: '1.3rem',
-          backgroundSize: '100% 0.3rem'
-        }
+      return this.responsiveFontSize('fontSizeTopicTitle')
     },
     responsiveBannerTitleStyle() {
-      if (this.$mq === 'mobile') {
-        return {
-          fontSize: '1.6rem'
-        }
-      } else
-        return {
-          fontSize: '2.1rem'
-          // paddingRight: '20%'
-        }
+      return this.responsiveFontSize('fontSizePostTitle')
+    },
+    responsivePostAuthorDateFontSize() {
+      return this.responsiveFontSize('fontSizePostAuthorDate')
     }
   }
 }
