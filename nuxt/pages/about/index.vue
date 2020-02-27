@@ -1,7 +1,8 @@
 <template>
   <div class="about-page">
+    <app-landing-banner />
     <div>
-      <h1 class="text-center mt-5 mb-5">À PROPOS</h1>
+      <app-heading>À PROPOS</app-heading>
       <p
         class="mx-auto mb-4"
       >Open Air est un projet porté par 5 développeurs provençaux conseillés par 'a Lab in the AIR'. Beaucoup d'informations sur la Qualité de l'Air sont disponibles en ligne. Ces bases de données sont dispersées entre plusieurs portails d'accès, parfois impossibles à lire sans logiciel spécifique, parfois difficile à comprendre.</p>

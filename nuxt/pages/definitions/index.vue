@@ -1,9 +1,7 @@
 <template>
   <div>
-    <br />
-    <br />
-    <br />
-    <div id="title">LE LEXIQUE</div>
+    <app-landing-banner />
+    <app-heading>LE LEXIQUE</app-heading>
     <br />
     <div class="h1">Polluants atmosphériques :</div>
 

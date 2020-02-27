@@ -1,6 +1,6 @@
 <template>
   <div class="stakeholders-page">
-    <h1 class="text-center mt-5 mb-5">LES ACTEURS</h1>
+    <app-heading>LES ACTEURS</app-heading>
     <div class="row justify-content-center">
       <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
         <b-img

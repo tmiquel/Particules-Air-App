@@ -1,11 +1,17 @@
 <template>
   <div id="contact-page">
     <div>
-      <h1 id="title" class="text-left mb-4">Contactez-nous</h1>
+      <app-heading>Contactez-nous</app-heading>
       <b-form @submit="onSubmit">
         <b-form-row class="mb-4">
           <b-col>
-            <b-input v-model="form.LastName" required placeholder="Nom" class="rounded-0" autocomplete="family-name"></b-input>
+            <b-input
+              v-model="form.LastName"
+              required
+              placeholder="Nom"
+              class="rounded-0"
+              autocomplete="family-name"
+            ></b-input>
           </b-col>
           <b-col>
             <b-input
@@ -25,10 +31,14 @@
           autocomplete="email"
           class="rounded-0 mb-4"
         ></b-form-input>
-        <b-form-textarea v-model="form.text" placeholder="Votre message" class="rounded-0" rows="3" max-rows="6"></b-form-textarea>
+        <b-form-textarea
+          v-model="form.text"
+          placeholder="Votre message"
+          class="rounded-0"
+          rows="3"
+          max-rows="6"
+        ></b-form-textarea>
         <AppButton type="submit" class="mt-4" />
-
-
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
@@ -71,7 +81,11 @@ export default {
 }
 
 button {
-  background: linear-gradient(89.86deg, var(--left-navbar-gradient-color) -79.71%, var(--right-navbar-gradient-color) 167.69%);
+  background: linear-gradient(
+    89.86deg,
+    var(--left-navbar-gradient-color) -79.71%,
+    var(--right-navbar-gradient-color) 167.69%
+  );
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 }
