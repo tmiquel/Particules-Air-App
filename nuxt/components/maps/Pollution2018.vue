@@ -56,7 +56,7 @@ export default {
 
       L.Control.WMSLegend = L.Control.extend({
         options: {
-          position: 'topright',
+          position: 'bottomleft',
           uri: ''
         },
 
@@ -122,7 +122,7 @@ export default {
       }
       legend.addTo(map)
 
-      L.control.scale({ imperial: false }).addTo(map)
+      // L.control.scale({ imperial: false }).addTo(map)
     }
   }
 }

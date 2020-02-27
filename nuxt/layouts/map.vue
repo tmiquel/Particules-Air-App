@@ -1,13 +1,17 @@
 <template>
-  <nuxt />
+  <div>
+    <CloseIcon id="close-icon" @click="$router.back()" />
+    <nuxt />
+  </div>
 </template>
 
 <script>
+import CloseIcon from '~/assets/images/icons/close.svg?inline'
 import 'leaflet/dist/images/marker-icon-2x.png'
 import 'leaflet/dist/images/marker-shadow.png'
-export default {}
+export default { components: { CloseIcon } }
 </script>
-<style>
+<style lang='scss'>
 @import 'leaflet/dist/leaflet.css';
 
 .leaflet-container {
@@ -38,5 +42,20 @@ export default {}
   margin-right: 8px;
   opacity: 0.7;
 }
-</style>
+.wms-legend {
+  max-height: 160px;
+}
 
+#close-icon {
+  z-index: 1000;
+  cursor: pointer;
+  fill: white;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  width: 5vw;
+  height: 5vw;
+  max-width: 40px;
+  max-height: 40px;
+}
+</style>
