@@ -1,7 +1,8 @@
 <template>
   <div class="stakeholders-page">
+    <app-landing-banner />
     <app-heading>LES ACTEURS</app-heading>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mx-3">
       <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
         <b-img
           class="mx-auto"
@@ -21,7 +22,7 @@
 export default {
   data() {
     return {
-      mainProps: { width: 90, height: 90 },
+      mainProps: { width: 75, height: 75 },
       member: null,
       members: [
         {

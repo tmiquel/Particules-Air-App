@@ -1,5 +1,5 @@
 <template>
-  <div class="about-page">
+  <div class="about-page mx-4">
     <app-landing-banner />
     <div>
       <app-heading>À PROPOS</app-heading>
@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       visible: false,
-      mainProps: { width: 90, height: 90 },
+      mainProps: { width: 80, height: 80 },
       member: null,
       members: [
         {

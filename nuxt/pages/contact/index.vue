@@ -1,5 +1,5 @@
 <template>
-  <div id="contact-page">
+  <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form @submit="onSubmit">
@@ -72,7 +72,6 @@ export default {
 
 <style scoped>
 #contact-page {
-  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;
