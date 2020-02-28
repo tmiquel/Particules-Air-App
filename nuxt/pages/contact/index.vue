@@ -42,7 +42,7 @@
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
-        <b>contact@particules.io</b>
+        <b>contact@particules.info</b>
       </p>
     </div>
   </div>
