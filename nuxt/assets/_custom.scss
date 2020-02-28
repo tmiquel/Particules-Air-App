@@ -19,6 +19,8 @@ $headings-font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSyste
   'Noto Color Emoji';
 $enable-responsive-font-sizes: true;
 
+
+
 // BOOTSTRAP SASS IMPORT
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
 @import '~/node_modules/bootstrap-vue/src/index.scss';
@@ -26,6 +28,8 @@ $enable-responsive-font-sizes: true;
 // ADDITIONAL ROOT VARIABLES
 @supports (--css: variables) {
   :root {
+    --headings-font-family: $headings-font-family;
+
     @each $variant, $color in $grays {
       --gray-#{$variant}: #{$color};
     }
