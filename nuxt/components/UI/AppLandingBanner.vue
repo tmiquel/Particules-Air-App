@@ -26,12 +26,12 @@ export default {
     responsiveBannerTitleStyle() {
       if (this.$mq === 'mobile') {
         return {
-          fontSize: "1.75rem",
+          fontSize: '1.75rem',
           backgroundSize: '100% 0.2rem'
         }
       } else
         return {
-          fontSize: "2.5rem",
+          fontSize: '2.5rem',
           backgroundSize: '100% 0.3rem',
           paddingRight: '35%'
         }
@@ -51,7 +51,7 @@ export default {
       rgba(39, 39, 39, 0.62) 52.6%,
       rgba(0, 0, 0, 0.6) 100%
     ),
-    url('~assets/img/banner-background-image-crop.jpg');
+    url('~assets/images/banners/landing/banner-background-image-crop.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

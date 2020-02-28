@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid banner-background-img px-0 mb-5">
+  <div class="container-fluid banner-background-img px-0 mb-5" :style="backImg">
     <div class="container d-flex flex-column flex-nowrap h-100">
       <div class="row d-flex flex-column h-100 flex-nowrap justify-content-between">
         <div class="col flex-grow-0">
@@ -39,6 +39,11 @@ import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 export default {
   mixins: [fontSizeMixin],
   props: {
+    backgroundImgUrl: {
+      type: String,
+      required: true
+      // Working example: <app-post-banner post-title="Les Sources" :background-img-url="require('~/assets/images/banners/landing/banner-background-image-crop.jpg')"/>
+    },
     topicTitle: {
       type: String,
       default: 'mon air & ma santé'
@@ -57,6 +62,12 @@ export default {
     }
   },
   computed: {
+    backImg() {
+      return {
+        backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
+       ${this.backgroundImgUrl})`
+      }
+    },
     responsiveBannerTopicTitleStyle() {
       return this.responsiveFontSize('fontSizeTopicTitle')
     },
@@ -72,13 +83,13 @@ export default {
 
 <style scoped>
 .banner-background-img {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(39, 39, 39, 0.62) 52.6%,
       rgba(0, 0, 0, 0.6) 100%
     ),
-    url('~assets/img/banner-background-image-crop.jpg');
+    url('~assets/images/banners/landing/banner-background-image-crop.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -95,12 +106,13 @@ export default {
   background-repeat: no-repeat;
   background-position: 0 100%;
   padding-bottom: 0.5rem;
-  font-family: $headings-font-family !important;
+  background-size: 100% 0.3rem;
+  font-family: var(--headings-font-family) !important;
 }
 
 #banner-post-title {
   /* fontSize defined in responsiveBannerTitleStyle() */
-  font-family: $headings-font-family !important;
+  font-family: var(--headings-font-family) !important;
 }
 
 .date-and-time-overline {
