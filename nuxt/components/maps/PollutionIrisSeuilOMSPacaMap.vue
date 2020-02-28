@@ -56,6 +56,7 @@ export default {
         style: this.setStyle,
         onEachFeature: this.onEachFeature
       }).addTo(map)
+      this.$geojson = geojson
 
       // LEGEND
       legend = L.control({ position: 'bottomleft' })
