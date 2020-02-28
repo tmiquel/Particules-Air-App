@@ -8,6 +8,7 @@
       <!-- ICI Appeler le composant qui correspond à l'article -->
 
       <component :is="$route.params.name" />
+      <posts-list />
     </b-container>
   </div>
 </template>
@@ -17,9 +18,11 @@ import { mapState } from 'vuex'
 import SanteAir from '~/components/posts/SanteAir'
 import Mortalite from '~/components/posts/Mortalite'
 import Enfants from '~/components/posts/Enfants'
+import PostsList from '~/components/posts/PostsList'
 
 export default {
-  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants },
+  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants,PostsList
+},
   computed: mapState({
     postsTitle: state => state.postsTitle
   })

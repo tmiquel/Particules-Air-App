@@ -1,6 +1,6 @@
 @supports (--css: variables) {
   :root {
-    --background-color: #e7e7e7;
+    --background-color: #E5E5E5;
     --left-gradient-color: #ffa55e;
     --right-gradient-color: #fff5b9;
     --font-headers-color: #ffa555;
@@ -13,6 +13,7 @@
     --success: #94e576;
     --warning: #ffa55e;
     --danger: #f54a4a;
+    --font-post-card-title: #454545;
   }
 
   [dark-theme="on"] {

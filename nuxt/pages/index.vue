@@ -2,14 +2,18 @@
   <div>
     <app-landing-banner />
     <sante-air />
+    <posts-list />
   </div>
 </template>
 
 <script>
 import SanteAir from '@/components/posts/SanteAir'
+import PostsList from '~/components/posts/PostsList'
+
 export default {
   components: {
-    SanteAir
+    SanteAir,
+    PostsList
   }
 }
 </script>
