@@ -30,7 +30,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#ffa55e" },
   /*
    ** Global CSS
    */
@@ -72,7 +72,6 @@ export default {
       }
     ]
   ],
-
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

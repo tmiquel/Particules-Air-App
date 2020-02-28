@@ -1,16 +1,27 @@
 <template>
-  <b-container>
-    <!-- ICI Appeler le composant qui correspond à l'article -->
-    <component :is="$route.params.name" />
-  </b-container>
+  <div>
+    <app-post-banner
+      :post-title="postsTitle[$route.params.name]"
+      :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
+    />
+    <b-container>
+      <!-- ICI Appeler le composant qui correspond à l'article -->
+
+      <component :is="$route.params.name" />
+    </b-container>
+  </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import SanteAir from '~/components/posts/SanteAir'
 import Mortalite from '~/components/posts/Mortalite'
 
 export default {
-  components: { 'sante-air': SanteAir, mortalite: Mortalite }
+  components: { 'sante-air': SanteAir, mortalite: Mortalite },
+  computed: mapState({
+    postsTitle: state => state.postsTitle
+  })
 }
 </script>
 

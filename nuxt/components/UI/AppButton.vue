@@ -1,9 +1,22 @@
 <template>
-  <b-button pill class="font-weight-bold border-0">Envoyer</b-button>
+  <nuxt-link class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white" tag="button" :to="to">
+    <slot>Envoyer</slot>
+  </nuxt-link>
 </template>
 
+<script>
+export default {
+  props: {
+    to: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+
 <style scoped>
-button {
+.btn {
   background: linear-gradient(89.86deg, var(--left-navbar-gradient-color) -79.71%, var(--right-navbar-gradient-color) 167.69%);
   padding-left: 2rem !important;
   padding-right: 2rem !important;
