@@ -4,7 +4,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    titleTemplate: pageTitle =>
+      pageTitle ? `${pageTitle} - Particules` : "Particules",
     meta: [
       { charset: "utf-8" },
       {
@@ -15,17 +16,32 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: ""
       }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       {
         rel: "stylesheet",
         href:
           "https://fonts.googleapis.com/css?family=Barlow|Source+Sans+Pro&display=swap"
       }
     ]
+  },
+  // FOR PWA + SEO
+  meta: {
+    nativeUI: true,
+    description: "",
+    lang: "fr",
+    ogHost: "https://particules.info",
+    ogImage: "/icon.png",
+    ogSiteName: "Particules"
+  },
+  manifest: {
+    name: "Particules",
+    lang: "fr",
+    description: ""
   },
   /*
    ** Customize the progress-bar color
@@ -77,9 +93,7 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {
-    baseURL: "http://localhost:3000/api/v1"
-  },
+  axios: {},
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: false // Or `bvCSS: false`
@@ -88,6 +102,7 @@ export default {
     algoliaApp: process.env.ALGOLIA_APP,
     algoliaKey: process.env.ALGOLIA_KEY
   },
+  "nuxt-compress": { gzip: { cache: true }, brotli: { threshold: 10240 } },
   /*
    ** Build configuration
    */

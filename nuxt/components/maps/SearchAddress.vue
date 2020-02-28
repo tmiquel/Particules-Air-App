@@ -7,6 +7,7 @@
 <script>
 var places
 if (process.client) places = require('places.js')
+import leafletPip from '@mapbox/leaflet-pip'
 
 export default {
   props: { map: { required: true } },
@@ -24,13 +25,14 @@ export default {
         debounce: 400
       }
     })
-    placesAutocomplete.on('cursorchanged', this.flyTo)
+    placesAutocomplete.on('change', this.flyTo)
     placesAutocomplete.on('clear', this.clear)
   },
   methods: {
     flyTo(event) {
       // this.map.flyTo([event.geometry.coordinates[1], event.geometry.coordinates[0]], 16)
       const latLng = event.suggestion.latlng
+      if (this.$parent.$geojson) leafletPip.pointInLayer(latLng, this.$parent.$geojson, true)[0].fire('click')
       if (this.marker) {
         this.marker.setLatLng(latLng)
       } else {

@@ -41,8 +41,10 @@
       </p>
 
       <p class="text-justify">
-        Pellentesque porta nec augue non placerat. Etiam dignissim lectus vel mi
-        tristique, in mollis dolor ullamcorper. Sed sed diam sit amet augue
+        Pellentesque porta nec augue non placerat.
+        <stakeholder-link to="monique_renaud">Monique Renaud</stakeholder-link>Etiam dignissim lectus vel mi
+        tristique, in mollis dolor ullamcorper.
+        <definition-link to="polluants_atmospheriques">polluants atmosphériques</definition-link>Sed sed diam sit amet augue
         vulputate tincidunt. Vestibulum consectetur ante eu fermentum interdum.
         Donec id hendrerit ex. Proin ac est est. Etiam vitae ligula magna. Etiam
         est ipsum, mattis a nisi ut, rutrum fringilla sem. Aenean arcu risus,
@@ -55,21 +57,17 @@
 
       <p class="text-justify">FIN</p>
 
-      <hr>
+      <hr />
 
+      <h3>Les Liens</h3>
+      <nuxt-link to="/posts/sante-air">Article Santé Air</nuxt-link>
+      <nuxt-link to="/posts/mortalite">Article Mortalité</nuxt-link>
+      <nuxt-link to="/maps/pollution-2018">Map pollution 2018</nuxt-link>
+      <nuxt-link to="/maps/pollution-par-iris">Map pollution par Iris</nuxt-link>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  async asyncData({ $axios }) {
-    // let data  = await $axios.$get('/hello')
-
-    return { msg: 'Hello' }
-  }
-}
-</script>
 
 <style scoped>
 .container {
@@ -82,8 +80,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

@@ -17,14 +17,11 @@
       <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
       <div class="row justify-content-center">
         <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
-          <b-img
+          <div
+            class="member-avatar rounded-circle mx-auto"
             @click="showDrawer(member)"
-            class="mx-auto"
-            :src="require('~/assets/images/stakeholders/'+ member.img)"
-            v-bind="mainProps"
-            rounded="circle"
-            alt="image1"
-          ></b-img>
+            :style="{backgroundImage: `url(${require('~/assets/images/stakeholders/'+ member.img)})` }"
+          ></div>
           <h4 v-html="member.name"></h4>
         </div>
       </div>
@@ -38,7 +35,7 @@
           class="mx-auto img-fluid mt-5"
         />
 
-        <h2 v-html="member.name"></h2>
+        <h2 class="mt-4" v-html="member.name"></h2>
 
         <p v-html="member.description"></p>
       </template>
@@ -118,6 +115,13 @@ export default {
 
 
 <style scoped>
+.member-avatar {
+  cursor: pointer;
+  height: 90px;
+  width: 90px;
+  background-size: cover;
+  background-position: center;
+}
 p {
   width: auto;
   height: auto;
