@@ -1,5 +1,5 @@
 <template>
-  <div class="typeahead-container">
+  <div class="typeahead-container px-3">
     <input type="text" id="input-map" class="mt-3" placeholder="Saisissez votre adresse" />
   </div>
 </template>
@@ -10,9 +10,7 @@ if (process.client) places = require('places.js')
 
 export default {
   props: { map: { required: true } },
-  data: () => ({
-    marker: null
-  }),
+  data: () => ({ marker: null }),
   mounted() {
     var placesAutocomplete = places({
       appId: process.env.algoliaApp,
@@ -51,12 +49,10 @@ export default {
 .typeahead-container {
   width: 100vw;
   display: flex;
-  justify-content: center;
   position: fixed;
   z-index: 999;
   & > span {
-    min-width: 300px;
-    width: 50%;
+    max-width: 400px;
   }
   button {
     padding: 0;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CloseIcon id="close-icon" @click="$router.back()" />
+    <CloseIcon id="close-icon" class="mt-3 mr-3 d-none d-sm-block" @click="$router.back()" />
     <nuxt />
   </div>
 </template>
@@ -20,11 +20,10 @@ export default { components: { CloseIcon } }
 }
 .info {
   padding: 6px 8px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  margin-right: 10px;
 }
 .info h4 {
   margin: 0 0 5px;
@@ -35,12 +34,24 @@ export default { components: { CloseIcon } }
   color: #555;
   padding-top: 1.5em;
 }
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
+.info.legend {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 0.66rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  p {
+    margin: 0 5px 0 0;
+  }
+  i {
+    width: 0.7rem;
+    height: 0.7rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-right: 5px;
+    opacity: 0.7;
+  }
 }
 .wms-legend {
   max-height: 160px;
@@ -49,13 +60,11 @@ export default { components: { CloseIcon } }
 #close-icon {
   z-index: 1000;
   cursor: pointer;
-  fill: white;
+  fill: var(--footer-background-color);
   position: absolute;
-  top: 1vw;
-  right: 1vw;
-  width: 5vw;
-  height: 5vw;
-  max-width: 40px;
-  max-height: 40px;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
 }
 </style>

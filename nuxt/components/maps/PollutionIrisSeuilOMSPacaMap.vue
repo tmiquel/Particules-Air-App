@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     createMap() {
-      map = L.map('map').setView([43.3, 5.4], 8)
+      map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 8)
       this.map = map
       map.createPane('labels')
       map.getPane('labels').style.zIndex = 650
@@ -45,13 +45,7 @@ export default {
         pane: 'labels',
         detectRetina: true
       }).addTo(map)
-      // const mapboxToken =
-      //   'pk.eyJ1Ijoia2V2aW5iZXJ0aGllciIsImEiOiJjazZtN3Z1Y2UwbGE3M2xwNnhiZnIzZjM5In0.MaE3umnwu7me7VZalKFG7A'
-      // L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`, {
-      //   id: 'mapbox/light-v9',
-      //   tileSize: 512,
-      //   zoomOffset: -1
-      // }).addTo(map)
+      L.control.zoom({ position: 'bottomright' }).addTo(map)
     },
     toPerc(val, base) {
       let result = (val / base) * 100
@@ -62,6 +56,27 @@ export default {
         style: this.setStyle,
         onEachFeature: this.onEachFeature
       }).addTo(map)
+
+      // LEGEND
+      legend = L.control({ position: 'bottomleft' })
+      legend.onAdd = map => {
+        var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 10, 20, 50, 70, 100],
+          labels = []
+
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+          div.innerHTML += `
+            <p><i style="background: ${this.perc2color(grades[i] + 1)}"></i>
+            ${grades[i]} ${grades[i + 1] ? '&ndash;' + grades[i + 1] : ''}%</p>`
+        }
+
+        return div
+      }
+
+      legend.addTo(map)
+
+      // INFO
       info = L.control({ position: 'bottomleft' })
       info.onAdd = function(map) {
         this._div = L.DomUtil.create('div', 'info') // create a div with a class "info"
@@ -89,34 +104,15 @@ export default {
         if (!props) return
         // <h4>Population exposée supérieur aux seuils de l'OMS par iris et polluant</h4>
         info._div.innerHTML = `
-          ${props.insee_com} ${props.nom_com} <br/>
-          ${props.nom_iris} <br/>
+          ${props.insee_com} ${props.nom_com} - ${props.nom_iris} <br/>
           Population : ${props.IRIS_POP14} Habitants <br/>
-          Oxydes d'azote (NOx): ${this.toPerc(props.POP_LD_NO2, props.IRIS_POP14)}% (${props.POP_LD_NO2} hab.)<br/>
+          Dioxyde d'azote (NO₂): ${this.toPerc(props.POP_LD_NO2, props.IRIS_POP14)}% (${props.POP_LD_NO2} hab.)<br/>
           Particules (10 microns) : ${this.toPerc(props.POP_LD_PM1, props.IRIS_POP14)}% (${props.POP_LD_PM1} hab.)<br/>
           Particules (2.5 microns) : ${this.toPerc(props.POP_LD_PM2, props.IRIS_POP14)}% (${props.POP_LD_PM2} hab.)
           <br/>
           Ozone (O3) : ${this.toPerc(props.POP_LD_O3, props.IRIS_POP14)}% (${props.POP_LD_O3} hab.)`
       }
       info.addTo(map)
-
-      legend = L.control({ position: 'bottomright' })
-      legend.onAdd = map => {
-        var div = L.DomUtil.create('div', 'info legend'),
-          grades = [0, 10, 20, 50, 70, 100],
-          labels = []
-
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-          div.innerHTML += `
-            <p><i style="background: ${this.perc2color(grades[i] + 1)}"></i>
-            ${grades[i]} ${grades[i + 1] ? '&ndash;' + grades[i + 1] : ''}%</p>`
-        }
-
-        return div
-      }
-
-      legend.addTo(map)
     },
     perc2color(perc) {
       return perc > 100
@@ -176,6 +172,8 @@ export default {
     },
     zoomToFeature(e) {
       map.fitBounds(e.target.getBounds())
+      geojson.resetStyle()
+      this.highlightFeature(e)
     }
   }
 }
