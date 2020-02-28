@@ -3,15 +3,15 @@ export default {
     responsiveFontSize(context) {
       const fontSizeEnvVar = {
         fontSizeTopicTitle: {
-          mobile: "0.9rem", // AppPageBanner
+          mobile: "0.9rem", // appPostBanner
           desktop: "1.3rem"
         },
         fontSizePostTitle: {
-          mobile: "1.6rem", // AppPageBanner
+          mobile: "1.6rem", // appPostBanner
           desktop: "2.1rem"
         },
         fontSizePostAuthorDate: {
-          mobile: "0.8rem", // AppPageBanner
+          mobile: "0.8rem", // appPostBanner
           desktop: "1rem"
         },
         fontSizeLandingBannerTitle: {

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <app-landing-banner></app-landing-banner>
+    <app-post-banner
+      :post-title="postsTitle[$route.params.name]"
+      :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
+    />
     <app-heading>LES GRAPHES</app-heading>
     <div class="container">
       <div class="row">
@@ -11,3 +14,14 @@
     </div>
   </div>
 </template>
+
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  computed: mapState({
+    postsTitle: state => state.postsTitle,
+  })
+}
+</script>
