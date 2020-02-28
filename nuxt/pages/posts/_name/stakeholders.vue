@@ -1,8 +1,17 @@
 <template>
   <div class="stakeholders-page">
+<<<<<<< HEAD
     <app-landing-banner />
     <app-heading>LES ACTEURS</app-heading>
     <div class="row justify-content-center mx-3">
+=======
+        <app-post-banner
+      :post-title="postsTitle[$route.params.name]"
+      :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
+    />
+    <h1 class="text-center mt-5 mb-5">LES ACTEURS</h1>
+    <div class="row justify-content-center">
+>>>>>>> master
       <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
         <b-img
           class="mx-auto"
@@ -19,7 +28,11 @@
 
 
 <script>
+import { mapState } from 'vuex'
 export default {
+  computed: mapState({
+    postsTitle: state => state.postsTitle,
+  }),
   data() {
     return {
       mainProps: { width: 75, height: 75 },

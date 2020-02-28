@@ -1,6 +1,7 @@
 <template>
-  <div id="map">
+  <div>
     <SearchAddress :map="map" v-if="map" />
+    <div id="map"></div>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     buildMap() {
-      var map = L.map('map').setView([43.307827, 5.404262], 12)
+      var map = L.map('map', { zoomControl: false }).setView([43.307827, 5.404262], 12)
       this.map = map
       map.createPane('labels')
       map.getPane('labels').style.zIndex = 650
@@ -41,6 +42,7 @@ export default {
       //   opacity: 0.7,
       //   accessToken: 'pk.eyJ1IjoidG1pcXVlbCIsImEiOiJjanU5d3AzenEyY2QxNDRucnF2c3pydW8wIn0.PQGiuirI2MraPTanoBJzRQ'
       // }).addTo(map)
+      L.control.zoom({ position: 'bottomright' }).addTo(map)
 
       var wmsUri = 'https://geoservices.atmosud.org/geoserver/mod_sudpaca_2018/wms'
       var wmsLayer = L.tileLayer
@@ -55,7 +57,7 @@ export default {
 
       L.Control.WMSLegend = L.Control.extend({
         options: {
-          position: 'topright',
+          position: 'bottomleft',
           uri: ''
         },
 
@@ -121,7 +123,7 @@ export default {
       }
       legend.addTo(map)
 
-      L.control.scale({ imperial: false }).addTo(map)
+      // L.control.scale({ imperial: false }).addTo(map)
     }
   }
 }

@@ -1,6 +1,8 @@
 <template>
-  <!-- ICI Appeler le composant qui correspond à l'article -->
-  <component :is="$route.params.name" />
+  <b-container>
+    <!-- ICI Appeler le composant qui correspond à l'article -->
+    <component :is="$route.params.name" />
+  </b-container>
 </template>
 
 <script>

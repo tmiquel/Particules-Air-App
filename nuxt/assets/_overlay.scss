@@ -7,3 +7,14 @@
     column-count: 2;
   }
 }
+
+// LEAFLET
+.wms-legend {
+  @extend .rounded;
+}
+.leaflet-control-zoom {
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+}

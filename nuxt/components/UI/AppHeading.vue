@@ -1,14 +1,23 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5
-      id="app-title"
-      class="text-center text-uppercase mb-4 mb-md-5"
-      :style="$mq === 'mobile' ? { fontSize: '1.25rem' } : { fontSize: '1.7rem' }"
-    >
+    <h5 id="app-title" class="text-center text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize">
       <slot></slot>
     </h5>
   </div>
 </template>
+
+<script>
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
+
+export default {
+  mixins: [fontSizeMixin],
+  computed: {
+    responsiveHeadingFontSize() {
+      return this.responsiveFontSize('fontSizeHeading')
+    }
+  }
+}
+</script>
 
 <style scoped>
 #app-title {
