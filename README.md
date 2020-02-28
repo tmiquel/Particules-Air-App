@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/efe73c64-ac42-4fb4-84bc-d85e85b2fca9/deploy-status)](https://app.netlify.com/sites/particules/deploys)
 # Particules-Air-App
 
 pro-bono project: a local media (web-based, mobile &amp; computer format) for public outreach on a local issue of Air Quality.
