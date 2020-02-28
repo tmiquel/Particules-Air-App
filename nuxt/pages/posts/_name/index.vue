@@ -6,9 +6,10 @@
 <script>
 import SanteAir from '~/components/posts/SanteAir'
 import Mortalite from '~/components/posts/Mortalite'
+import Enfants from '~/components/posts/Enfants'
 
 export default {
-  components: { 'sante-air': SanteAir, mortalite: Mortalite }
+  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants }
 }
 </script>
 
