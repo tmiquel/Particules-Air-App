@@ -1,6 +1,6 @@
 <template>
   <div class="stakeholders-page">
-        <app-post-banner
+    <app-post-banner
       :post-title="postsTitle[$route.params.name]"
       :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
     />
@@ -25,11 +25,11 @@
 import { mapState } from 'vuex'
 export default {
   computed: mapState({
-    postsTitle: state => state.postsTitle,
+    postsTitle: state => state.postsTitle
   }),
   data() {
     return {
-      mainProps: { width: 90, height: 90 },
+      mainProps: { width: 75, height: 75 },
       member: null,
       members: [
         {
