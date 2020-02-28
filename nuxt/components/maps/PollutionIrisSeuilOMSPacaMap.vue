@@ -33,7 +33,7 @@ export default {
       map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 8)
       this.map = map
       map.createPane('labels')
-      map.getPane('labels').style.zIndex = 650
+      // map.getPane('labels').style.zIndex = 650
       map.getPane('labels').style.pointerEvents = 'none'
       var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
         attribution: '©OpenStreetMap, ©CartoDB',
