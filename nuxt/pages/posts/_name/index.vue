@@ -17,9 +17,10 @@ import { mapState } from 'vuex'
 import SanteAir from '~/components/posts/SanteAir'
 import Mortalite from '~/components/posts/Mortalite'
 import Enfants from '~/components/posts/Enfants'
+import FemmesEnceintes from '~/components/posts/FemmesEnceintes'
 
 export default {
-  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants },
+  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants, 'femmes-enceintes': FemmesEnceintes },
   computed: mapState({
     postsTitle: state => state.postsTitle
   })
