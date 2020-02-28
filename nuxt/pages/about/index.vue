@@ -1,7 +1,8 @@
 <template>
   <div class="about-page">
-    <div>
-      <h1 class="text-center mt-5 mb-5">À PROPOS</h1>
+    <app-landing-banner />
+    <div class="mx-4">
+      <app-heading>À PROPOS</app-heading>
       <p
         class="mx-auto mb-4"
       >Open Air est un projet porté par 5 développeurs provençaux conseillés par 'a Lab in the AIR'. Beaucoup d'informations sur la Qualité de l'Air sont disponibles en ligne. Ces bases de données sont dispersées entre plusieurs portails d'accès, parfois impossibles à lire sans logiciel spécifique, parfois difficile à comprendre.</p>
@@ -13,7 +14,7 @@
       >Open Air est un portail où des experts publient des articles sur les centres d'intérêt des particuliers pour la thématique Qualité de l'Air. Ces articles référencent les bases de données concernées, et apportent une visualisation immédiate de cette base de donnée là où c'est utile.</p>
     </div>
 
-    <div class="team">
+    <div class="team mx-4">
       <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
       <div class="row justify-content-center">
         <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
@@ -54,11 +55,11 @@ export default {
   data() {
     return {
       visible: false,
-      mainProps: { width: 90, height: 90 },
+      mainProps: { width: 80, height: 80 },
       member: null,
       members: [
         {
-          img: 'monique.png',
+          img: 'Amine.jpg',
           name: 'Amine Sanhaji',
           description:
             'Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !'
