@@ -7,13 +7,22 @@
 
 <script>
 import CloseIcon from '~/assets/images/icons/close.svg?inline'
-import 'leaflet/dist/images/marker-icon-2x.png'
-import 'leaflet/dist/images/marker-shadow.png'
+import { Icon } from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
+// this part resolve an issue where the markers would not appear
+delete Icon.Default.prototype._getIconUrl
+
+Icon.Default.mergeOptions({
+  forceZIndex: 1000,
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+})
+
 export default { components: { CloseIcon } }
 </script>
 <style lang='scss'>
-@import 'leaflet/dist/leaflet.css';
-
 .leaflet-container {
   height: 100vh;
   width: 100vw;

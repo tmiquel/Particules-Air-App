@@ -1,26 +1,29 @@
-@supports(--css: variables) {
-
+@supports (--css: variables) {
   :root {
-    --background-color: #E7E7E7;
-    --left-gradient-color: #FFA55E;
-    --right-gradient-color: #FFF5B9;
-    --font-headers-color: #FFA555;
+    --background-color: #e7e7e7;
+    --left-gradient-color: #ffa55e;
+    --right-gradient-color: #fff5b9;
+    --font-headers-color: #ffa555;
     --font-text-color: #464646;
-    --font-text-contrast-color: #FFA555;
+    --font-text-contrast-color: #ffa555;
     --left-navbar-gradient-color: #386796;
-    --right-navbar-gradient-color: #61BAF7;
-    --footer-background-color: #4BBAC9;
+    --right-navbar-gradient-color: #61baf7;
+    --footer-background-color: #4bbac9;
+    --primary: #4b8ac9;
+    --success: #94e576;
+    --warning: #ffa55e;
+    --danger: #f54a4a;
   }
 
   [dark-theme="on"] {
-    --background-color: #1E1E1E;
+    --background-color: #1e1e1e;
     --left-gradient-color: #386796;
-    --right-gradient-color: #61BAF7;
-    --font-headers-color: #FFA555;
-    --font-text-color: #E7E7E7;
-    --font-text-contrast-color: #FFA555;
+    --right-gradient-color: #61baf7;
+    --font-headers-color: #ffa555;
+    --font-text-color: #e7e7e7;
+    --font-text-contrast-color: #ffa555;
     --left-navbar-gradient-color: #386796;
-    --right-navbar-gradient-color: #61BAF7;
-    --footer-background-color: #4BBAC9;
+    --right-navbar-gradient-color: #61baf7;
+    --footer-background-color: #4bbac9;
   }
 }
