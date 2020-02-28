@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5 id="app-title" class="text-center text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize">
+    <h5 id="app-title" class="text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize">
       <slot></slot>
     </h5>
   </div>
@@ -16,6 +16,7 @@ export default {
       return this.responsiveFontSize('fontSizeHeading')
     }
   }
+
 }
 </script>
 
@@ -31,9 +32,8 @@ export default {
   background-repeat: no-repeat;
   background-position: 0 100%;
   padding-bottom: 0.5rem;
-  font-family: var(--headings-font-family);
+  /* font-family: var(--headings-font-family); */
   font-weight: bold;
-  font-style: normal;
 
   color: var(--font-headers-color);
 }
