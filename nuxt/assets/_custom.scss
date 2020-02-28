@@ -29,6 +29,7 @@ $enable-responsive-font-sizes: true;
 @supports (--css: variables) {
   :root {
     --headings-font-family: $headings-font-family;
+    --font-family-sans-serif: $font-family-sans-serif;
 
     @each $variant, $color in $grays {
       --gray-#{$variant}: #{$color};

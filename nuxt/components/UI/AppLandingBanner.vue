@@ -72,7 +72,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 0 100%;
   padding-bottom: 0.5rem;
-  font-family: $font-family-sans-serif !important;
+  font-family: var(--font-family-sans-serif) !important;
   font-weight: bold;
   font-style: normal;
   color: white;
