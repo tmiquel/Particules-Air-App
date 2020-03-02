@@ -40,6 +40,15 @@
           </a>
         </b-card>
       </b-collapse>
+      <b-collapse id="collapse-b" class="mt-2">
+        <b-card>
+          <a href="/posts/sportifs">
+            <strong>
+              <i>Les sportifs ne sont pas épargnés par la pollution de l'air</i>
+            </strong>
+          </a>
+        </b-card>
+      </b-collapse>
     </div>
   </div>
 </template>
