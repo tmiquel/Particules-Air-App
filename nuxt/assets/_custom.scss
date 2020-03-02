@@ -19,7 +19,8 @@ $headings-font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSyste
   'Noto Color Emoji';
 $enable-responsive-font-sizes: true;
 
-
+// $body-color: var(--font-text-color);
+// $body-bg: var(--background-color);
 
 // BOOTSTRAP SASS IMPORT
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';

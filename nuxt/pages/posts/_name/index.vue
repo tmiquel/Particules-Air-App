@@ -8,6 +8,7 @@
       <!-- ICI Appeler le composant qui correspond à l'article -->
 
       <component :is="$route.params.name" />
+      <posts-list />
     </b-container>
   </div>
 </template>
@@ -18,9 +19,16 @@ import SanteAir from '~/components/posts/SanteAir'
 import Mortalite from '~/components/posts/Mortalite'
 import Enfants from '~/components/posts/Enfants'
 import FemmesEnceintes from '~/components/posts/FemmesEnceintes'
+import PostsList from '~/components/posts/PostsList'
 
 export default {
-  components: { 'sante-air': SanteAir, mortalite: Mortalite, enfants: Enfants, 'femmes-enceintes': FemmesEnceintes },
+  components: {
+    'sante-air': SanteAir,
+    mortalite: Mortalite,
+    enfants: Enfants,
+    'femmes-enceintes': FemmesEnceintes,
+    PostsList
+  },
   computed: mapState({
     postsTitle: state => state.postsTitle
   })
