@@ -18,5 +18,28 @@
         <i>Voir ici</i>
       </a>
     </p>
+    <div>
+      <!-- Single button triggers two "<b-collapse>" components -->
+      <AppButton v-b-toggle.collapse-a.collapse-b>Sujet Relatifs</AppButton>
+      <!-- Elements to collapse -->
+      <b-collapse id="collapse-a" class="mt-2">
+        <b-card>
+          <a href="/posts/enfants">
+            <strong>
+              <i>Les enfants durement impactés par la pollution de l’air</i>
+            </strong>
+          </a>
+        </b-card>
+      </b-collapse>
+      <b-collapse id="collapse-b" class="mt-2">
+        <b-card>
+          <a href="/posts/femmes-enceintes">
+            <strong>
+              <i>Femmes enceintes : les impacts de la qualité de l’air sur le foetus</i>
+            </strong>
+          </a>
+        </b-card>
+      </b-collapse>
+    </div>
   </div>
 </template>
