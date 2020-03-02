@@ -23,6 +23,13 @@ Plume_AQI_Index:
     ainsi que les directives de l’OMS et des études scientifiques pour définir le Plume AQI et les cinq niveaux de pollution.
     Le Plume AQI prend en compte les concentrations de plusieurs polluants différents et est calculé en fonction du polluant
     ayant le plus d’impact sur la santé au moment présent.
+IRIS_Exposed_Pop_Above_WHO_level:
+  title: "AtmoSud - Proportion d'habitants exposés au delà des valeurs recommandées par l'OMS par îlot"
+  link: https://trouver.datasud.fr/dataset/populations-et-territoires-exposes-au-depassement-des-valeurs-limites-sur-la-region-sud
+  description: >-
+    Populations et territoires exposés au dépassement des valeurs limites des particules fines (PM2.5 et PM10), ozone
+    (03) et dioxyde d'azote (NO2) sur la région Sud pour les 5 dernières années. Plus d'information sur le lien de Datasud.
+
 1LoremIpsum:
   title: Nom de l'auteur - Titre de ma source de données / référence
   link: http://www.google.fr
@@ -68,5 +75,3 @@ Plume_AQI_Index:
     Mauris quis orci id risus laoreet facilisis. Fusce imperdiet tellus eget
     ex mollis porta. Aliquam vel mauris non libero aliquet viverra. Aliquam
     vulputate faucibus aliquet.
-
-
