@@ -49,6 +49,15 @@
           </a>
         </b-card>
       </b-collapse>
+      <b-collapse id="collapse-b" class="mt-2">
+        <b-card>
+          <a href="/posts/personnes-agees">
+            <strong>
+              <i>Les personnes âgées : les plus fragiles en danger à cause de l’air dégradé</i>
+            </strong>
+          </a>
+        </b-card>
+      </b-collapse>
     </div>
   </div>
 </template>

@@ -20,6 +20,7 @@ import Mortalite from '~/components/posts/Mortalite'
 import Enfants from '~/components/posts/Enfants'
 import FemmesEnceintes from '~/components/posts/FemmesEnceintes'
 import Sportifs from '~/components/posts/Sportifs'
+import PersonnesAgees from '~/components/posts/PersonnesAgees'
 import PostsList from '~/components/posts/PostsList'
 
 export default {
@@ -28,6 +29,7 @@ export default {
     mortalite: Mortalite,
     enfants: Enfants,
     'femmes-enceintes': FemmesEnceintes,
+    'personnes-agees': PersonnesAgees,
     sportifs: Sportifs,
     PostsList
   },
