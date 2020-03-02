@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 export default {
   mode: "spa",
   /*
@@ -102,6 +104,28 @@ export default {
     algoliaKey: process.env.ALGOLIA_KEY
   },
   "nuxt-compress": { gzip: { cache: true }, brotli: { threshold: 10240 } },
+
+  generate: {
+    routes: function() {
+      const posts = fs
+        .readdirSync("assets/images/banners/posts/")
+        .filter(file => file.indexOf(".") !== 0 && file.slice(-4) === ".png")
+        .map(pngfilename => {
+          return pngfilename.slice(0, -4);
+          // "postname.png" --> "postname"
+        });
+      const routes = [];
+      for (const filename of posts) {
+        routes.push("/posts/" + filename);
+        routes.push("/posts/" + filename + "/sources");
+        routes.push("/posts/" + filename + "/graphs");
+        routes.push("/posts/" + filename + "/stakeholders");
+        routes.push("/posts/" + filename + "/definitions");
+      }
+      return routes;
+    }
+  },
+
   /*
    ** Build configuration
    */
