@@ -16,5 +16,5 @@ This folder shall include banner images for a post.
 
 * pages/posts/_name/index.vue
 * components/posts/AppPostBanner.vue
-
+* nuxt.config.js (generate)
 
