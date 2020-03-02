@@ -117,6 +117,10 @@ export default {
       const routes = [];
       for (const filename of posts) {
         routes.push("/posts/" + filename);
+        routes.push("/posts/" + filename + "/sources");
+        routes.push("/posts/" + filename + "/graphs");
+        routes.push("/posts/" + filename + "/stakeholders");
+        routes.push("/posts/" + filename + "/definitions");
       }
       return routes;
     }
