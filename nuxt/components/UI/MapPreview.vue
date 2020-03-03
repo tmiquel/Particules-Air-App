@@ -1,11 +1,7 @@
 <template>
-  <nuxt-link :to="'/maps/'+name" tag="div" class="my-5" id="preview-map">
+  <nuxt-link :to="'/maps/' + name" tag="div" :class="{'my-5' : hasMargins}" id="preview-map">
     <ExpandIcon />
-    <img
-      :src="require(`~/assets/images/map-previews/${name}.png`)"
-      :alt="name"
-      class="img-fluid rounded"
-    />
+    <img :src="require(`~/assets/images/map-previews/${name}.png`)" :alt="name" class="img-fluid rounded-0" />
   </nuxt-link>
 </template>
 
@@ -14,7 +10,13 @@ import ExpandIcon from '~/assets/images/icons/expand.svg?inline'
 
 export default {
   components: { ExpandIcon },
-  props: { name: { required: true, type: String } }
+  props: {
+    name: { required: true, type: String },
+    hasMargins: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 
@@ -31,8 +33,8 @@ export default {
   svg {
     fill: var(--footer-background-color);
     position: absolute;
-    top: 3vw;
-    right: 3vw;
+    top: 2rem;
+    right: 2rem;
     width: 5vw;
     height: 5vw;
     max-width: 25px;

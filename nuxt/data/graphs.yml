@@ -1,10 +1,10 @@
-pollution-par-IRIS:
+pollution-par-iris:
   title: Proportion d'habitants exposés au delà des valeurs recommandées par l'OMS par îlot
-  short_description: Populations et territoires exposés au dépassement des valeurs limites des particules fines (PM2.5 et PM10), ozone (03) et dioxyde d'azote (NO2) sur la région Sud pour l'année 2018
-  producer_id: atmosud
+  description: Populations et territoires exposés au dépassement des valeurs limites des particules fines (PM2.5 et PM10), ozone (03) et dioxyde d'azote (NO2) sur la région Sud pour l'année 2018
+  data_producer_id: atmosud
   source_id: IRIS_Exposed_Pop_Above_WHO_level
 pollution-2018:
   title: Modélisation annuelle de l'Indice Synthétique Air pour 2018
-  short_description: Indice Synthétique Air (ISA) annuel issu de la modélisation de la région Sud en 2018. Les données fournies sont sans unité. L'indice de chaque polluant est sa concentration pondérée par le seuil recommandé par l'OMS. L'indice global est la somme des indices de chaque polluant.
-  producer_id: atmosud
+  description: Indice Synthétique Air (ISA) annuel issu de la modélisation de la région Sud en 2018. Les données fournies sont sans unité. L'indice de chaque polluant est sa concentration pondérée par le seuil recommandé par l'OMS. L'indice global est la somme des indices de chaque polluant.
+  data_producer_id: atmosud
   source_id: Annual_Pollution_Modeling_AtmoSud

@@ -35,7 +35,7 @@ export default {
           desktop: "1.7rem"
         },
         fontSizeFooter: {
-          mobile: "0.7rem", // TheFooter
+          mobile: "0.7rem", // TheFooter & PostCard
           desktop: "1rem"
         }
       };
