@@ -3,7 +3,7 @@
     placement="right"
     @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')"
     :visible="state.visible"
-    width="300"
+    width="80vw"
   >
     <template v-if="selected">
       <img

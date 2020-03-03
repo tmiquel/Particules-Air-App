@@ -23,24 +23,18 @@
       <div class="row row-cols-2">
         <div class="col">
           <b-img
-            @click="showDrawer"
+            @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
             alt="Rounded image"
             src="~/assets/images/themes/Enfants-bulles.png"
           ></b-img>
-          <drawer placement="right" @close="onClose" :visible="visible" width="500">
-            <template>
-              <h2 class="mt-4">test</h2>
-              <p>test</p>
-            </template>
-          </drawer>
         </div>
 
         <div class="col">
           <b-img
-            @click="showDrawer"
+            @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -50,7 +44,7 @@
         </div>
         <div class="col">
           <b-img
-            @click="showDrawer"
+            @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -60,7 +54,7 @@
         </div>
         <div class="col">
           <b-img
-            @click="showDrawer"
+            @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -68,6 +62,20 @@
             src="~/assets/images/themes/sportifs-bulle.png"
           ></b-img>
         </div>
+        <drawer placement="right" @close="onClose" :visible="visible" width="80vw">
+          <template v-if="article">
+            <img
+              :src="require('~/assets/images/banners/posts'+ article.img)"
+              :alt="article.img"
+              class="mx-auto img-fluid mt-5"
+            />
+
+            <h2 class="mt-4" v-html="article.title"></h2>
+            <p>test test</p>
+
+            <p v-html="article.description"></p>
+          </template>
+        </drawer>
       </div>
     </div>
   </div>
@@ -76,18 +84,43 @@
 
 <script>
 import Drawer from 'ant-design-vue/lib/drawer'
+import { BCardTitle } from 'bootstrap-vue'
 
 export default {
   components: { Drawer },
   data() {
     return {
       visible: false,
-      mainProps: { width: 300, height: 300 }
+      mainProps: { width: 300, height: 300 },
+      article: null,
+      articles: [
+        {
+          img: 'personnes-agees.png',
+          title: 'Les personnes âgées : les plus fragiles en danger à cause de l’air dégradé',
+          description: 'test'
+        },
+        {
+          img: 'enfants.png',
+          title: 'Les enfants durement impactés par la pollution de l’air',
+          description: 'test'
+        },
+        {
+          img: 'femmes-enceintes.png',
+          title: 'Femmes enceintes : les impacts de la qualité de l’air sur le foetus',
+          description: 'test'
+        },
+        {
+          img: 'sportifs.png',
+          title: 'Les sportifs ne sont pas épargnés par la pollution',
+          description: 'test'
+        }
+      ]
     }
   },
 
   methods: {
-    showDrawer() {
+    showDrawer(article) {
+      this.article = article
       this.visible = true
     },
     onClose() {
