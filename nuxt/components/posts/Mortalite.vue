@@ -30,7 +30,7 @@
             alt="Rounded image"
             src="~/assets/images/themes/Enfants-bulles.png"
           ></b-img>
-          <drawer placement="right" @close="onClose" :visible="visible" width="300">
+          <drawer placement="right" @close="onClose" :visible="visible" width="500">
             <template>
               <h2 class="mt-4">test</h2>
               <p>test</p>
