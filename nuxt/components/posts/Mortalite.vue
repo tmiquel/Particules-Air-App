@@ -18,46 +18,72 @@
         <i>Voir ici</i>
       </a>
     </p>
-    <div>
-      <!-- Single button triggers two "<b-collapse>" components -->
-      <AppButton v-b-toggle.collapse-a.collapse-b>Sujet Relatifs</AppButton>
-      <!-- Elements to collapse -->
-      <b-collapse id="collapse-a" class="mt-2">
-        <b-card>
-          <a href="/posts/enfants">
-            <strong>
-              <i>Les enfants durement impactés par la pollution de l’air</i>
-            </strong>
-          </a>
-        </b-card>
-      </b-collapse>
-      <b-collapse id="collapse-b" class="mt-2">
-        <b-card>
-          <a href="/posts/femmes-enceintes">
-            <strong>
-              <i>Femmes enceintes : les impacts de la qualité de l’air sur le foetus</i>
-            </strong>
-          </a>
-        </b-card>
-      </b-collapse>
-      <b-collapse id="collapse-b" class="mt-2">
-        <b-card>
-          <a href="/posts/sportifs">
-            <strong>
-              <i>Les sportifs ne sont pas épargnés par la pollution de l'air</i>
-            </strong>
-          </a>
-        </b-card>
-      </b-collapse>
-      <b-collapse id="collapse-b" class="mt-2">
-        <b-card>
-          <a href="/posts/personnes-agees">
-            <strong>
-              <i>Les personnes âgées : les plus fragiles en danger à cause de l’air dégradé</i>
-            </strong>
-          </a>
-        </b-card>
-      </b-collapse>
+    <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
+    <div class="container">
+      <div class="row row-cols-2" @click="showDrawer">
+        <div class="col" @click="showDrawer(member)">
+          <b-img
+            class="mx-auto img-fluid mt-5"
+            v-bind="mainProps"
+            rounded
+            alt="Rounded image"
+            src="~/assets/images/themes/Enfants-bulles.png"
+          ></b-img>
+        </div>
+        <div class="col">
+          <b-img
+            class="mx-auto img-fluid mt-5"
+            v-bind="mainProps"
+            rounded
+            alt="Rounded image"
+            src="~/assets/images/themes/Femmes-enceintes-bulles.png"
+          ></b-img>
+        </div>
+        <div class="col">
+          <b-img
+            class="mx-auto img-fluid mt-5"
+            v-bind="mainProps"
+            rounded
+            alt="Rounded image"
+            src="~/assets/images/themes/Personnes-agées-bulles.png"
+          ></b-img>
+        </div>
+        <div class="col">
+          <b-img
+            class="mx-auto img-fluid mt-5"
+            v-bind="mainProps"
+            rounded
+            alt="Rounded image"
+            src="~/assets/images/themes/sportifs-bulle.png"
+          ></b-img>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+
+<script>
+import Drawer from 'ant-design-vue/lib/drawer'
+
+export default {
+  components: { Drawer },
+  data() {
+    return {
+      visible: false,
+      member: null,
+      mainProps: { width: 300, height: 300 }
+    }
+  },
+
+  methods: {
+    showDrawer(member) {
+      this.member = member
+      this.visible = true
+    },
+    onClose() {
+      this.visible = false
+    }
+  }
+}
+</script>
