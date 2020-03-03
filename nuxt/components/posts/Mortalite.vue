@@ -20,18 +20,27 @@
     </p>
     <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
     <div class="container">
-      <div class="row row-cols-2" @click="showDrawer">
-        <div class="col" @click="showDrawer(member)">
+      <div class="row row-cols-2">
+        <div class="col">
           <b-img
+            @click="showDrawer"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
             alt="Rounded image"
             src="~/assets/images/themes/Enfants-bulles.png"
           ></b-img>
+          <drawer placement="right" @close="onClose" :visible="visible" width="300">
+            <template>
+              <h2 class="mt-4">test</h2>
+              <p>test</p>
+            </template>
+          </drawer>
         </div>
+
         <div class="col">
           <b-img
+            @click="showDrawer"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -41,6 +50,7 @@
         </div>
         <div class="col">
           <b-img
+            @click="showDrawer"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -50,6 +60,7 @@
         </div>
         <div class="col">
           <b-img
+            @click="showDrawer"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
             rounded
@@ -71,14 +82,12 @@ export default {
   data() {
     return {
       visible: false,
-      member: null,
       mainProps: { width: 300, height: 300 }
     }
   },
 
   methods: {
-    showDrawer(member) {
-      this.member = member
+    showDrawer() {
       this.visible = true
     },
     onClose() {
