@@ -11,7 +11,7 @@
     </b-card-group>
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col pl-5">
           <back-to-post-link />
         </div>
       </div>
