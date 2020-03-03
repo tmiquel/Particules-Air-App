@@ -14,7 +14,7 @@
           rounded="circle"
           alt="image1"
         ></b-img>
-        <h4 v-html="member.name"></h4>
+        <h4 class="mt-2" v-html="member.name"></h4>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
   }),
   data() {
     return {
-      mainProps: { width: 75, height: 75 },
+      mainProps: { width: 80, height: 80 },
       member: null,
       members: [
         {
@@ -76,5 +76,12 @@ export default {
 <style scoped>
 .row {
   margin-right: auto;
+}
+h4 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
 }
 </style>
