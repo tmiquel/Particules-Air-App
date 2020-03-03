@@ -1,16 +1,25 @@
 <template>
-  <nuxt-link :to="url" class="link">Retourner à l’{{ destinationName }}</nuxt-link>
+  <nuxt-link :to="url" class="link" :style="responsiveLinkFontSize"
+    ><strong class="no-underline pr-1"><</strong
+    > <u>Retourner à l’{{ destinationName }}</u></nuxt-link
+  >
 </template>
 
 
 <script>
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
+
 export default {
+  mixins: [fontSizeMixin],
   computed: {
     destinationName() {
       return this.$route.params.name === 'home' ? 'accueil' : 'article'
     },
     url() {
       return this.$route.params.name === 'home' ? '/' : `/posts/${this.$route.params.name}`
+    },
+    responsiveLinkFontSize() {
+      return this.responsiveFontSize('fontSizeCardText')
     }
   }
 }
@@ -18,14 +27,6 @@ export default {
 
 <style scoped>
 .link {
-  position: absolute;
-  font-family: Barlow;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
-  /* identical to box height */
-  text-decoration-line: underline;
-  color: #454545;
+  color: var(--font-post-card-title);
 }
 </style>
