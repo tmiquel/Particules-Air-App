@@ -64,12 +64,6 @@ export default {
       },
       show: true
     }
-  },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault()
-      alert(JSON.stringify(this.form))
-    }
   }
 }
 </script>

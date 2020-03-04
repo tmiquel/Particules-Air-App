@@ -4,9 +4,9 @@
       :post-title="postsTitle[$route.params.name]"
       :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
     />
-    <App-heading class="text-center mt-5 mb-5">LES ACTEURS</App-heading>
+    <App-heading class="mt-5 mb-2">LES ACTEURS</App-heading>
     <div class="row justify-content-center mr-auto">
-      <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
+      <div class="col-4 my-2 text-center" v-for="(member, id) in members" :key="id">
         <b-img
           class="mx-auto"
           :src="require('~/assets/images/stakeholders/'+ member.img)"
@@ -29,7 +29,7 @@ export default {
   }),
   data() {
     return {
-      mainProps: { width: 80, height: 80 },
+      mainProps: { width: 91, height: 91 },
       member: null,
       members: [
         {
@@ -61,11 +61,6 @@ export default {
           img: 'monique.png',
           name: 'Clair Méduse',
           description: 'test'
-        },
-        {
-          img: 'monique.png',
-          name: 'Raphaël',
-          description: ' test'
         }
       ]
     }
