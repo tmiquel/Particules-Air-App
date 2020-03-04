@@ -1,5 +1,6 @@
 Annual_Pollution_Modeling_AtmoSud:
   title: AtmoSud - Modélisations annuelles des polluants principaux sur la région Sud
+  author_name: Atmosud
   link: https://trouver.datasud.fr/dataset/niveaux-annuels-de-polluants-dans-l-air-ambiant-issus-de-la-modelisation-sur-la-region-sud
   description: >-
     Niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10,
@@ -7,6 +8,7 @@ Annual_Pollution_Modeling_AtmoSud:
     de la région Sud par année sur les 5 dernières années.
 Report_INSEE_AtmoSud_2017:
   title: INSEE / AtmoSud - En 2017, le seuil de l’OMS dépassé pour la moitié des résidents de la région
+  author_name: INSEE
   link: https://trouver.datasud.fr/dataset/niveaux-annuels-de-polluants-dans-l-air-ambiant-issus-de-la-modelisation-sur-la-region-sud
   description: >-
     Etude de l'INSEE et d'AtmoSud. Les habitants de Provence-Alpes-Côte d’Azur sont très exposés à la pollution de l’air
@@ -17,6 +19,7 @@ Report_INSEE_AtmoSud_2017:
     les Hautes-Alpes, où les niveaux de concentration sont les plus faibles, la ligne directrice est très rarement dépassée.
 Plume_AQI_Index:
   title: Plume Labs - Indice de qualité de l'air
+  author_name: Plume Labs
   link: https://plume.readme.io/docs/live
   description: >-
     Plume Labs utilise la norme internationale établie par l’Agence Américaine de Protection de l’Environnement (EPA)
