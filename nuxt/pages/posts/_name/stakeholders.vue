@@ -5,7 +5,7 @@
       :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
     />
     <App-heading class="text-center mt-5 mb-5">LES ACTEURS</App-heading>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mr-auto">
       <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
         <b-img
           class="mx-auto"
@@ -74,9 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.row {
-  margin-right: auto;
-}
 h4 {
   font-family: Source Sans Pro;
   font-style: normal;

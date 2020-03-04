@@ -2,11 +2,7 @@
   <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
-      <b-form
-        @submit="onSubmit"
-        action="https://formspree.io/particules.app@gmail.com"
-        method="POST"
-      >
+      <b-form action="https://formspree.io/particules.app@gmail.com" method="POST">
         <b-form-row class="mb-4">
           <b-col>
             <b-input
@@ -15,7 +11,7 @@
               placeholder="Nom"
               class="rounded-0"
               autocomplete="family-name"
-              name="Lasttname"
+              name="Lastname"
             ></b-input>
           </b-col>
           <b-col>
