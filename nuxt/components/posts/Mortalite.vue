@@ -40,7 +40,6 @@
           />
 
           <h2 class="mt-4" v-html="article.title"></h2>
-          <p>test test</p>
 
           <p v-html="article.description"></p>
         </template>
