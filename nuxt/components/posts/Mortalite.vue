@@ -20,30 +20,40 @@
     </p>
     <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
     <div class="row justify-content-center">
-      <div class="col-6 my-3 text-center" v-for="(article, id) in articles" :key="id">
-        <div class="col">
-          <b-img
-            @click="showDrawer(article)"
-            class="mx-auto img-fluid mt-5"
-            v-bind="mainProps"
-            alt="Rounded image"
-            :src="require('~/assets/images/themes/'+ article.img)"
-          ></b-img>
-        </div>
+      <div
+        class="col-6 my-3 text-center"
+        v-for="(sensitivePublic, sensitivePublicId, index) in sensitivePublics"
+        :key="index"
+      >
+        <!-- <div class="col"> -->
+        <b-img
+          @click="showDrawer(sensitivePublicId)"
+          class="mx-auto img-fluid mt-5"
+          v-bind="publicsImgsLayout"
+          alt="Rounded image"
+          :src="require('~/assets/images/themes/'+ sensitivePublicId + '.png')"
+        ></b-img>
+        <!-- </div> -->
+        <drawer
+          placement="right"
+          @close="onClose"
+          :visible="visiblePublic === sensitivePublicId"
+          width="80vw"
+        >
+          <template>
+            <!-- v-if="sensitivePublic" -->
+            <img
+              :src="require('~/assets/images/banners/posts/'+ sensitivePublicId + '.png')"
+              :alt="sensitivePublicId"
+              fluid-grow
+              rounded
+              class="mx-auto img-fluid mt-5"
+            />
+            <h2 class="mt-4" v-html="sensitivePublic.sliderTitle"></h2>
+            <p v-html="sensitivePublic.description"></p>
+          </template>
+        </drawer>
       </div>
-      <drawer placement="right" @close="onClose" :visible="visible" width="80vw">
-        <template v-if="article">
-          <img
-            :src="require('~/assets/images/banners/posts/'+ article.img)"
-            :alt="article.img"
-            class="mx-auto img-fluid mt-5"
-          />
-
-          <h2 class="mt-4" v-html="article.title"></h2>
-
-          <p v-html="article.description"></p>
-        </template>
-      </drawer>
     </div>
   </div>
 </template>
@@ -52,46 +62,24 @@
 <script>
 import Drawer from 'ant-design-vue/lib/drawer'
 import { BCardTitle } from 'bootstrap-vue'
+import sensitivePublics from '~/data/publics.yml'
+import PublicCard from '@/components/publics/PublicCard'
 
 export default {
-  components: { Drawer },
+  components: { Drawer, PublicCard },
   data() {
     return {
-      visible: false,
-      mainProps: { width: 300, height: 300 },
-      article: null,
-      articles: [
-        {
-          img: 'personnes-agees.png',
-          title: 'Les personnes âgées : les plus fragiles en danger à cause de l’air dégradé',
-          description: 'test'
-        },
-        {
-          img: 'enfants.png',
-          title: 'Les enfants durement impactés par la pollution de l’air',
-          description: 'test'
-        },
-        {
-          img: 'femmes-enceintes.png',
-          title: 'Femmes enceintes : les impacts de la qualité de l’air sur le foetus',
-          description: 'test'
-        },
-        {
-          img: 'sportifs.png',
-          title: 'Les sportifs ne sont pas épargnés par la pollution',
-          description: 'test'
-        }
-      ]
+      visiblePublic: '',
+      publicsImgsLayout: { width: 300, height: 300 },
+      sensitivePublics: sensitivePublics
     }
   },
-
   methods: {
-    showDrawer(article) {
-      this.article = article
-      this.visible = true
+    showDrawer(publicName) {
+      this.visiblePublic = publicName
     },
     onClose() {
-      this.visible = false
+      this.visiblePublic = ''
     }
   }
 }
