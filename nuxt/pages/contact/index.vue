@@ -2,7 +2,7 @@
   <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
-      <b-form @submit="onSubmit">
+      <b-form action="https://formspree.io/particules.app@gmail.com" method="POST">
         <b-form-row class="mb-4">
           <b-col>
             <b-input
@@ -11,6 +11,7 @@
               placeholder="Nom"
               class="rounded-0"
               autocomplete="family-name"
+              name="Lastname"
             ></b-input>
           </b-col>
           <b-col>
@@ -20,6 +21,7 @@
               placeholder="Prénom"
               class="rounded-0"
               autocomplete="given-name"
+              name="Firstname"
             ></b-input>
           </b-col>
         </b-form-row>
@@ -30,6 +32,7 @@
           placeholder="Email"
           autocomplete="email"
           class="rounded-0 mb-4"
+          name="email"
         ></b-form-input>
         <b-form-textarea
           v-model="form.text"
@@ -37,12 +40,13 @@
           class="rounded-0"
           rows="3"
           max-rows="6"
+          name="message"
         ></b-form-textarea>
         <AppButton type="submit" class="mt-4" />
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
-        <b>contact@particules.io</b>
+        <b>contact@particules.info</b>
       </p>
     </div>
   </div>
@@ -54,10 +58,11 @@ export default {
     return {
       form: {
         email: '',
-        FirstName: '',
-        LastName: '',
+        Firstname: '',
+        Lastname: '',
         text: ''
-      }
+      },
+      show: true
     }
   },
   methods: {

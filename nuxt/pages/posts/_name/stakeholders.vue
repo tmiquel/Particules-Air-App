@@ -4,8 +4,8 @@
       :post-title="postsTitle[$route.params.name]"
       :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
     />
-    <h1 class="text-center mt-5 mb-5">LES ACTEURS</h1>
-    <div class="row justify-content-center">
+    <App-heading class="text-center mt-5 mb-5">LES ACTEURS</App-heading>
+    <div class="row justify-content-center mr-auto">
       <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
         <b-img
           class="mx-auto"
@@ -14,7 +14,7 @@
           rounded="circle"
           alt="image1"
         ></b-img>
-        <h4 v-html="member.name"></h4>
+        <h4 class="mt-2" v-html="member.name"></h4>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
   }),
   data() {
     return {
-      mainProps: { width: 75, height: 75 },
+      mainProps: { width: 80, height: 80 },
       member: null,
       members: [
         {
@@ -72,3 +72,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h4 {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+}
+</style>

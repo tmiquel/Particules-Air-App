@@ -1,5 +1,10 @@
 <template>
-  <drawer placement="right" @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')" :visible="state.visible" width="80vw">
+  <drawer
+    placement="right"
+    @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')"
+    :visible="state.visible"
+    width="80vw"
+  >
     <template v-if="selected">
       <b-img
         :src="require('~/assets/images/stakeholders/' + selected.img)"
@@ -9,7 +14,11 @@
         class="my-5"
         :style="{ maxHeight: '20vh' }"
       />
-      <h5 :style="responsiveTitleFontSize"><strong><u>{{ selected.title }}</u></strong></h5>
+      <h5 :style="responsiveTitleFontSize">
+        <strong>
+          <u>{{ selected.title }}</u>
+        </strong>
+      </h5>
       <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
     </template>
   </drawer>
@@ -25,9 +34,9 @@ export default {
   components: { Drawer },
   computed: {
     ...mapState({
-    state: state => state.stakeHolderSlider,
-    selected: state => (state.stakeHolderSlider.slug ? stakeholders[state.stakeHolderSlider.slug] : null)
-  }),
+      state: state => state.stakeHolderSlider,
+      selected: state => (state.stakeHolderSlider.slug ? stakeholders[state.stakeHolderSlider.slug] : null)
+    }),
     responsiveTitleFontSize() {
       return this.responsiveFontSize('fontSizeLateralSliderTitle')
     },
