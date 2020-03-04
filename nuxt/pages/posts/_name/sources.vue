@@ -7,11 +7,11 @@
     <app-heading>LES SOURCES</app-heading>
 
     <b-card-group columns class="container">
-      <source-card :source="source" v-for="(source, id) in sources" :key="id" />
+      <source-card  :source="source" v-for="(source, sourceId, id) in sources" :key="id" :id="sourceId" />
     </b-card-group>
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col pl-5">
           <back-to-post-link />
         </div>
       </div>

@@ -4,7 +4,7 @@
       :post-title="postsTitle[$route.params.name]"
       :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
     />
-    <app-heading>LES GRAPHES</app-heading>
+    <maps-list />
     <div class="container">
       <div class="row">
         <div class="col">
@@ -17,11 +17,15 @@
 
 
 <script>
+import MapsList from '@/components/maps/MapsList'
 import { mapState } from 'vuex'
 
 export default {
+  components: {
+    MapsList
+  },
   computed: mapState({
-    postsTitle: state => state.postsTitle,
+    postsTitle: state => state.postsTitle
   })
 }
 </script>

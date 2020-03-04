@@ -6,3 +6,20 @@ monique_renaud:
     Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
     Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente
     de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+atmosud:
+  img: atmosud.png
+  title: AtmoSud
+  description: >
+    AtmoSud est l’<b>A</b>ssociation <b>A</b>gréée par le ministère en charge de l’Environnement pour la <b>S</b>urveillance de la <b>Q</b>ualité de l’<b>A</b>ir (AASQA) de la région Sud.
+    AtmoSud remplit des missions d'intérêt public :
+    <ul>
+    <li>Surveiller et prévoir l’air et l’atmosphère par des mesures, des modélisations (cartographies et scénarisations) et des inventaires (cadastres d’émissions air et énergie). </li>
+    <li>Informer et sensibiliser la population et les acteurs locaux</li>
+    <li>Accompagner les décideurs par l’évaluation des actions de lutte contre la pollution de l’air</li>
+    <li>Améliorer les connaissances et participer aux expérimentations innovantes en Région Sud.</li>
+    </ul>
+    AtmoSud est financée par l'État, les collectivités de la Région, et les Entreprises via des dons libératoires de Taxes Générales sur les Activités Polluantes.
+    Sa gouvernance est quadripartite (État, Collectivités, Entreprises, Associations et personnalités qualifiées santé/environnement).
+  website: https://www.atmosud.org/
+  twitter: https://twitter.com/AtmoSud
+  facebook: https://www.facebook.com/AtmoSud
