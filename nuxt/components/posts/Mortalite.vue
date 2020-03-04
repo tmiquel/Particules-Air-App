@@ -20,63 +20,31 @@
     </p>
     <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
     <div class="container">
-      <div class="row row-cols-2">
-        <div class="col">
+      <div class="row row-cols-2" v-for="(article, id) in articles" :key="id">
+        <div class="col-4">
           <b-img
             @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"
             v-bind="mainProps"
-            rounded
             alt="Rounded image"
-            src="~/assets/images/themes/Enfants-bulles.png"
+            :src="require('~/assets/images/themes/'+ article.img)"
           ></b-img>
         </div>
-
-        <div class="col">
-          <b-img
-            @click="showDrawer(article)"
-            class="mx-auto img-fluid mt-5"
-            v-bind="mainProps"
-            rounded
-            alt="Rounded image"
-            src="~/assets/images/themes/Femmes-enceintes-bulles.png"
-          ></b-img>
-        </div>
-        <div class="col">
-          <b-img
-            @click="showDrawer(article)"
-            class="mx-auto img-fluid mt-5"
-            v-bind="mainProps"
-            rounded
-            alt="Rounded image"
-            src="~/assets/images/themes/Personnes-agées-bulles.png"
-          ></b-img>
-        </div>
-        <div class="col">
-          <b-img
-            @click="showDrawer(article)"
-            class="mx-auto img-fluid mt-5"
-            v-bind="mainProps"
-            rounded
-            alt="Rounded image"
-            src="~/assets/images/themes/sportifs-bulle.png"
-          ></b-img>
-        </div>
-        <drawer placement="right" @close="onClose" :visible="visible" width="80vw">
-          <template v-if="article">
-            <img
-              :src="require('~/assets/images/banners/posts'+ article.img)"
-              :alt="article.img"
-              class="mx-auto img-fluid mt-5"
-            />
-
-            <h2 class="mt-4" v-html="article.title"></h2>
-            <p>test test</p>
-
-            <p v-html="article.description"></p>
-          </template>
-        </drawer>
       </div>
+      <drawer placement="right" @close="onClose" :visible="visible" width="80vw">
+        <template v-if="article">
+          <img
+            :src="require('~/assets/images/banners/posts/'+ article.img)"
+            :alt="article.img"
+            class="mx-auto img-fluid mt-5"
+          />
+
+          <h2 class="mt-4" v-html="article.title"></h2>
+          <p>test test</p>
+
+          <p v-html="article.description"></p>
+        </template>
+      </drawer>
     </div>
   </div>
 </template>
