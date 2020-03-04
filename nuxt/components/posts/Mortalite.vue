@@ -19,9 +19,9 @@
       </a>
     </p>
     <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
-    <div class="container">
-      <div class="row row-cols-2" v-for="(article, id) in articles" :key="id">
-        <div class="col-4">
+    <div class="row justify-content-center">
+      <div class="col-6 my-3 text-center" v-for="(article, id) in articles" :key="id">
+        <div class="col">
           <b-img
             @click="showDrawer(article)"
             class="mx-auto img-fluid mt-5"

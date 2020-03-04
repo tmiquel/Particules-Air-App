@@ -15,7 +15,7 @@
     </div>
 
     <div class="team mx-4">
-      <h1 class="text-center mt-5 mb-5">L'ÉQUIPE</h1>
+      <App-heading class="text-center mt-5 mb-5">L'ÉQUIPE</App-heading>
       <div class="row justify-content-center">
         <div class="col-4 my-3 text-center" v-for="(member, id) in members" :key="id">
           <div
