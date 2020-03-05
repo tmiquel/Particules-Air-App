@@ -51,7 +51,12 @@
           max-rows="6"
           name="message"
         ></b-form-textarea>
-        <AppButton type="submit" class="mt-4" value="send message" />
+        <button
+          type="submit"
+          class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4"
+          tag="button"
+          value="send message"
+        >Envoyer</button>
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
