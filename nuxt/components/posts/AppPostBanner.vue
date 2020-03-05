@@ -83,13 +83,6 @@ export default {
 
 <style scoped>
 .banner-background-img {
-  /* background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(39, 39, 39, 0.62) 52.6%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
-    url('~assets/images/banners/landing/banner-background-image-crop.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
