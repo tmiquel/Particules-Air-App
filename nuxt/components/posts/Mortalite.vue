@@ -31,7 +31,7 @@
           class="mx-auto img-fluid mt-5"
           v-bind="publicsImgsLayout"
           alt="Rounded image"
-          :src="require('~/assets/images/themes/'+ sensitivePublicId + '.png')"
+          :src="require('~/assets/images/sensitive-publics/'+ sensitivePublicId + '.png')"
         ></b-img>
         <!-- </div> -->
         <drawer
