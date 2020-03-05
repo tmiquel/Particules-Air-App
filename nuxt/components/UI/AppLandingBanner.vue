@@ -1,15 +1,19 @@
 <template>
-  <div class="w-100 mb-5">
-    <div class="banner d-flex align-items-end">
-      <div class="px-0" id="my-banner-text-container">
-        <div>
-          <h1 class="pt-3" id="banner-title" :style="responsiveBannerTitleStyle">
-            MA SANTE &<span>MON AIR EN VUES</span>
+  <div class="container-fluid banner-background-img px-0 mb-5" :style="backImg">
+    <div class="container d-flex flex-column flex-nowrap h-100 min-height-25vh">
+      <div class="row d-flex flex-column h-100 flex-nowrap justify-content-between min-height-25vh">
+        <div class="col flex-grow-1 d-flex align-items-end">
+          <h1
+            class="pt-3 pb-md-3 pb-2 mb-0 text-uppercase flex-grow-1 font-weight-bold text-white "
+            id="banner-title"
+            :style="responsiveBannerTitleStyle"
+          >
+            MON AIR &<span>MA SANTé EN VUES</span>
           </h1>
         </div>
-        <div>
-          <p class="text-white pt-1" :style="responsiveFontSizeLandingBannerSubtitle">
-            Comprendre comment l’air impacte votre santé avec des données locales.
+        <div class="col flex-grow-0">
+          <p class="text-white pt-1 pb-md-2 mb-1" :style="responsiveFontSizeLandingBannerSubtitle">
+            Comprendre comment votre air extérieur impacte votre santé avec des données locales.
           </p>
         </div>
       </div>
@@ -22,7 +26,18 @@ import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
 export default {
   mixins: [fontSizeMixin],
+  data() {
+    return {
+      backgroundImgUrl: require('~/assets/images/banners/landing/banner-background-image-crop.jpg')
+    }
+  },
   computed: {
+    backImg() {
+      return {
+        backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
+       ${this.backgroundImgUrl})`
+      }
+    },
     responsiveBannerTitleStyle() {
       if (this.$mq === 'mobile') {
         return {
@@ -44,14 +59,12 @@ export default {
 </script>
 
 <style scoped>
-.banner {
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(39, 39, 39, 0.62) 52.6%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
-    url('~assets/images/banners/landing/banner-background-image-crop.jpg');
+
+.min-height-25vh {
+    min-height: 25vh;
+}
+
+.banner-background-img {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -59,7 +72,7 @@ export default {
   background-blend-mode: multiply;
   mix-blend-mode: darken;
   border-radius: 0px;
-  height: 25vh;
+  min-height: 25vh;
 }
 
 #my-banner-text-container {
@@ -71,11 +84,8 @@ export default {
   background-image: linear-gradient(to right, #fff, #fff 57px, transparent 57px);
   background-repeat: no-repeat;
   background-position: 0 100%;
-  padding-bottom: 0.5rem;
-  font-family: var(--font-family-sans-serif) !important;
-  font-weight: bold;
-  font-style: normal;
-  color: white;
+  font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
 }
 
 #banner-title span {

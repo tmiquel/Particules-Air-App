@@ -16,7 +16,6 @@ export default {
       return this.responsiveFontSize('fontSizeHeading')
     }
   }
-
 }
 </script>
 
@@ -32,7 +31,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 0 100%;
   padding-bottom: 0.5rem;
-  /* font-family: var(--headings-font-family); */
+  /* font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',  'Noto Color Emoji';; */
   font-weight: bold;
 
   color: var(--font-headers-color);

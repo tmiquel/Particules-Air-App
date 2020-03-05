@@ -11,7 +11,7 @@
             {{ topicTitle }}
           </h6>
         </div>
-        <div class="col flex-grow-1 pb-md-2 d-flex">
+        <div class="col flex-grow-1 pb-1 pb-md-2 d-flex">
           <h1
             class="pt-2 mb-0 text-white font-weight-bold align-self-center"
             id="banner-post-title"
@@ -90,7 +90,7 @@ export default {
   background-blend-mode: multiply;
   mix-blend-mode: darken;
   border-radius: 0px;
-  height: 25vh;
+  min-height: 25vh;
 }
 
 #banner-topic-title {
@@ -100,12 +100,14 @@ export default {
   background-position: 0 100%;
   padding-bottom: 0.5rem;
   background-size: 100% 0.3rem;
-  font-family: var(--headings-font-family) !important;
+  font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
 }
 
 #banner-post-title {
   /* fontSize defined in responsiveBannerTitleStyle() */
-  font-family: var(--headings-font-family) !important;
+  font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
 }
 
 .date-and-time-overline {
