@@ -2,16 +2,29 @@
   <div class="about-page">
     <app-landing-banner />
     <div class="mx-4">
-      <app-heading>À PROPOS</app-heading>
+      <app-heading>Qui sommes-nous ?</app-heading>
       <p
         class="mx-auto mb-4"
-      >Open Air est un projet porté par 5 développeurs provençaux conseillés par 'a Lab in the AIR'. Beaucoup d'informations sur la Qualité de l'Air sont disponibles en ligne. Ces bases de données sont dispersées entre plusieurs portails d'accès, parfois impossibles à lire sans logiciel spécifique, parfois difficile à comprendre.</p>
+      >Implantés sur Marseille et aux alentours, nous avons toutes et tous été sensibilisés à la pollution de l’air que se soient par les médias ou des articles scientifiques mais finalement très peu informés des dangers sur notre santé que celle-ci pouvait constituée.</p>
+      <app-sub-heading>Notre Histoire :</app-sub-heading>
+      <p class="mx-auto mb-4">
+        Après avoir gagné une bourse lors d’un concours, nous nous sommes rassemblés autour d’un objectif :
+        <strong>de la qualité de l’air un sujet abordable par tous !</strong>
+      </p>
+      <app-sub-heading>Comment ?</app-sub-heading>
       <p
         class="mx-auto mb-4"
-      >Un particulier doit également trouver un cheminement adapté entre ces informations, pour obtenir toutes les réponses recherchées avec un niveau de compréhension suffisant et sans oublier des parties importantes.</p>
+      >En créant des visualisations de données esthétiques et ergonomiques et en concevant un parcours utilisateur captivant dès les premiers clics.</p>
       <p
         class="mx-auto mb-4"
-      >Open Air est un portail où des experts publient des articles sur les centres d'intérêt des particuliers pour la thématique Qualité de l'Air. Ces articles référencent les bases de données concernées, et apportent une visualisation immédiate de cette base de donnée là où c'est utile.</p>
+      >Dans la joie, la bonne humeur, la bienveillance et la détermination, notre équipe de choc est constituée de différents parcours de vie et compétences diverses mais complémentaires, ce qui fait notre vraie force.</p>
+      <app-sub-heading>Notre truc en plus :</app-sub-heading>
+      <p
+        class="mx-auto mb-4"
+      >Notre goût à tous pour les défis qui nous a permis de proposer un projet abouti en un temps (presque) record et nous l’espérons qui ira loin !</p>
+      <p class="mx-auto mb-4">
+        <i>Peut être grâce à toi derrière ton écran qui a envie de faire partie de cette équipe qui ressemble à une hydre à 7 têtes pensantes ! N’hésite pas à nous parler de toi, de tes envies de ton projet, de ton chat Chaussette.... Mailto</i>
+      </p>
     </div>
 
     <div class="team mx-4">
