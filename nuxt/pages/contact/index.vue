@@ -2,7 +2,13 @@
   <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
-      <b-form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <b-form
+        name="contact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/thanks"
+      >
         <input type="hidden" name="form-name" value="contact" />
         <b-form-row class="mb-4">
           <b-col>
