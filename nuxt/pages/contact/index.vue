@@ -2,11 +2,13 @@
   <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
-      <b-form action="https://formspree.io/particules.app@gmail.com" method="POST">
+      <b-form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
         <b-form-row class="mb-4">
           <b-col>
             <b-input
-              v-model="form.LastName"
+              v-model="form.Lastname"
+              type="text"
               required
               placeholder="Nom"
               class="rounded-0"
@@ -16,7 +18,8 @@
           </b-col>
           <b-col>
             <b-input
-              v-model="form.FirstName"
+              v-model="form.Firstname"
+              type="text"
               required
               placeholder="Prénom"
               class="rounded-0"
@@ -42,7 +45,7 @@
           max-rows="6"
           name="message"
         ></b-form-textarea>
-        <AppButton type="submit" class="mt-4" />
+        <AppButton type="submit" class="mt-4" value="send message" />
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
