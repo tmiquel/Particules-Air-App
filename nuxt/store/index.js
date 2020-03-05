@@ -28,6 +28,18 @@ export const state = () => ({
   }
 });
 
+export const getters = {
+  getImgRefByID: state => stringInID => {
+    return state.imgReferencesArray.find(img =>
+      img.publicId.includes(stringInID)
+    );
+  },
+  getImgUrlByID: state => stringInID => {
+    return state.imgReferencesArray.find(img =>
+      img.publicId.includes(stringInID)).url;
+  }
+};
+
 export const mutations = {
   OPEN_STAKEHOLDER_SLIDER(state, slug) {
     state.stakeHolderSlider.visible = true;

@@ -23,15 +23,27 @@
 
 <script>
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
+// import { mapGetters, mapState } from 'vuex'
 
 export default {
   mixins: [fontSizeMixin],
   data() {
     return {
-      backgroundImgUrl: require('~/assets/images/banners/landing/banner-background-image-crop.jpg')
+      backgroundImgUrl: "https://res.cloudinary.com/particules/image/upload/w_auto,g_auto,c_fill_pad,f_auto/banners/landing/banner-background-image-crop_owtwsk.jpg"
     }
   },
+  mounted() {
+    console.log(this.backgroundImgUrl);
+    console.log(this.imgReferencesArray);
+    console.log(this.$store.state.darkMode, "dark")
+    console.log(this.$store.state.imgReferencesArray, "imgReferencesArray")
+    // console.log(this.$store.getters.getImgUrlByID("landing"), "getters")
+    console.log("test", this.$store.state.imgReferencesArray.find(img =>
+      img.publicId.includes("landing")))
+
+  },
   computed: {
+    // ...mapState(['imgReferencesArray']),
     backImg() {
       return {
         backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
@@ -59,9 +71,8 @@ export default {
 </script>
 
 <style scoped>
-
 .min-height-25vh {
-    min-height: 25vh;
+  min-height: 25vh;
 }
 
 .banner-background-img {
