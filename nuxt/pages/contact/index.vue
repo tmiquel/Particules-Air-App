@@ -117,7 +117,6 @@ export default {
   align-items: center;
   text-align: center;
 }
-
 button {
   background: linear-gradient(
     89.86deg,
@@ -127,19 +126,16 @@ button {
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 }
-
 input,
 textarea {
   background: #f0f0f0;
 }
-
 #title {
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-
   color: #454545;
 }
 </style>
