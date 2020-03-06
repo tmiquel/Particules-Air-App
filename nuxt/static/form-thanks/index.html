@@ -1,6 +1,19 @@
-<form name="customcontact" action="/allok/" netlify netlify-honeypot="bot-field">
-  <input type="text" name="Lastname" />
-  <input type="text" name="Firstname" />
-  <input type="email" name="email" />
-  <textarea name="message"></textarea>
-</form>
+<b-form name="customcontact" data-netlify="true" data-netlify-honeypot="bot-field" action="/allok/">
+  <input type="hidden" name="form-name" value="customcontact" />
+  <b-form-row class="mb-4">
+    <b-col>
+      <b-input v-model="form.Lastname" type="text" required placeholder="Nom" class="rounded-0"
+        autocomplete="family-name" name="Lastname"></b-input>
+    </b-col>
+    <b-col>
+      <b-input v-model="form.Firstname" type="text" required placeholder="Prénom" class="rounded-0"
+        autocomplete="given-name" name="Firstname"></b-input>
+    </b-col>
+  </b-form-row>
+  <b-form-input v-model="form.email" type="email" required placeholder="Email" autocomplete="email"
+    class="rounded-0 mb-4" name="email"></b-form-input>
+  <b-form-textarea v-model="form.text" placeholder="Votre message" class="rounded-0" rows="3" max-rows="6"
+    name="message"></b-form-textarea>
+  <button type="submit" class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4" tag="button"
+    value="send message">Envoyer</button>
+</b-form>
