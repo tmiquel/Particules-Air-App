@@ -23,31 +23,41 @@
 
 <script>
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
-// import { mapGetters, mapState } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   mixins: [fontSizeMixin],
-  data() {
-    return {
-      backgroundImgUrl: "https://res.cloudinary.com/particules/image/upload/w_auto,g_auto,c_fill_pad,f_auto/banners/landing/banner-background-image-crop_owtwsk.jpg"
-    }
+  created() {
+    console.log('created AppLandingB')
+    console.log(this.backgroundImgUrl)
+    console.log(this.imgReferencesArray)
+    console.log(this.$store.state.darkMode, 'dark')
+    console.log(JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray)), 'imgReferencesArray')
+    console.log(this.$store.getters.getImgUrlByID('landing'), 'getters')
+    console.log(
+      'test',
+      JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray.find(img => img.publicId.includes('landing'))))
+    )
   },
   mounted() {
-    console.log(this.backgroundImgUrl);
-    console.log(this.imgReferencesArray);
-    console.log(this.$store.state.darkMode, "dark")
-    console.log(this.$store.state.imgReferencesArray, "imgReferencesArray")
-    // console.log(this.$store.getters.getImgUrlByID("landing"), "getters")
-    console.log("test", this.$store.state.imgReferencesArray.find(img =>
-      img.publicId.includes("landing")))
-
+    console.log('mounted AppLandingB')
+    console.log(this.backgroundImgUrl)
+    console.log(this.imgReferencesArray)
+    console.log(this.$store.state.darkMode, 'dark')
+    console.log(JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray)), 'imgReferencesArray')
+    console.log(this.$store.getters.getImgUrlByID('landing'), 'getters')
+    console.log(
+      'test',
+      JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray.find(img => img.publicId.includes('landing'))))
+    )
   },
   computed: {
-    // ...mapState(['imgReferencesArray']),
+    ...mapState(['imgReferencesArray']),
+    ...mapGetters(['getImgUrlByID']),
     backImg() {
       return {
         backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
-       ${this.backgroundImgUrl})`
+       ${this.getImgUrlByID('landing')})`
       }
     },
     responsiveBannerTitleStyle() {

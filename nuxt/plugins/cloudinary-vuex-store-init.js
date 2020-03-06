@@ -13,7 +13,7 @@ Vue.use(Cloudinary, {
 });
 
 
-// idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux
+// idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux (Sept 4th 2017)
 export default async ctx => {
   await ctx.store.dispatch("cloudinaryInit", ctx);
 };

@@ -57,9 +57,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    { src: "~/plugins/cloudinary-vuex-store-init.js", ssr: false },
     "~plugins/global-components.js",
     //idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux
-    { src: "~/plugins/cloudinary-vuex-store-init.js", ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
