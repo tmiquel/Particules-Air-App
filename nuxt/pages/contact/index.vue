@@ -3,7 +3,7 @@
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form
-        @submit.prevent="handleSubmit"
+        action="/thanks/"
         name="customcontact"
         method="post"
         data-netlify="true"
@@ -79,14 +79,6 @@ export default {
         text: ''
       },
       show: true
-    }
-  },
-  methods: {
-    handleSubmit() {
-      post('/')
-      then(() => {
-        this.$router.push('thanks')
-      })
     }
   }
 }
