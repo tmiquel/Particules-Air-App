@@ -3,13 +3,13 @@
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form
-        name="contact"
+        name="customcontact"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/success/"
+        action="/allok/"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="customcontact" />
         <b-form-row class="mb-4">
           <b-col>
             <b-input
