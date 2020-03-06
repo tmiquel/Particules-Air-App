@@ -3,11 +3,11 @@
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form
+        @submit.prevent="handleSubmit"
         name="customcontact"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/allok/"
       >
         <input type="hidden" name="form-name" value="customcontact" />
         <b-form-row class="mb-4">
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import SubmissionSuccess from '~/components/submission/SubmissionSuccess.vue'
 export default {
   data() {
     return {
@@ -77,6 +79,30 @@ export default {
         text: ''
       },
       show: true
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join('&')
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios
+        .post(
+          '/',
+          this.encode({
+            'form-name': 'customcontact',
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.$router.push('thanks')
+        })
     }
   }
 }
