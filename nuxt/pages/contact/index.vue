@@ -82,11 +82,6 @@ export default {
     }
   },
   methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&')
-    },
     handleSubmit() {
       const axiosConfig = {
         header: { 'Content-Type': 'application/x-www-form-urlencoded' }
@@ -94,10 +89,7 @@ export default {
       axios
         .post(
           '/',
-          this.encode({
-            'form-name': 'customcontact',
-            ...this.form
-          }),
+
           axiosConfig
         )
         .then(() => {
