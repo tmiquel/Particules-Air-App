@@ -3,7 +3,6 @@
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form
-        @submit="onSubmit"
         name="customcontact"
         method="post"
         data-netlify="true"
@@ -78,12 +77,6 @@ export default {
         text: ''
       },
       show: true
-    }
-  },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault()
-      alert('Merci ! Un membre de notre équipe vous contactera dans les plus brefs délais. ')
     }
   }
 }
