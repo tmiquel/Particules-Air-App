@@ -2,11 +2,19 @@
   <div id="contact-page" class="mx-2">
     <div>
       <app-heading>Contactez-nous</app-heading>
-      <b-form action="https://formspree.io/particules.app@gmail.com" method="POST">
+      <b-form
+        @submit.prevent="handleSubmit"
+        name="customcontact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="customcontact" />
         <b-form-row class="mb-4">
           <b-col>
             <b-input
-              v-model="form.LastName"
+              v-model="form.Lastname"
+              type="text"
               required
               placeholder="Nom"
               class="rounded-0"
@@ -16,7 +24,8 @@
           </b-col>
           <b-col>
             <b-input
-              v-model="form.FirstName"
+              v-model="form.Firstname"
+              type="text"
               required
               placeholder="Prénom"
               class="rounded-0"
@@ -42,7 +51,12 @@
           max-rows="6"
           name="message"
         ></b-form-textarea>
-        <AppButton type="submit" class="mt-4" />
+        <button
+          type="submit"
+          class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4"
+          tag="button"
+          value="send message"
+        >Envoyer</button>
       </b-form>
       <p class="mt-4">
         <i>Ou écrivez directement à :</i>
@@ -53,6 +67,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import SubmissionSuccess from '~/components/submission/SubmissionSuccess.vue'
 export default {
   data() {
     return {
@@ -66,9 +82,27 @@ export default {
     }
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault()
-      alert(JSON.stringify(this.form))
+    encode(data) {
+      return Object.keys(data)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join('&')
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios
+        .post(
+          '/',
+          this.encode({
+            'form-name': 'customcontact',
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.$router.push('thanks')
+        })
     }
   }
 }
@@ -83,7 +117,6 @@ export default {
   align-items: center;
   text-align: center;
 }
-
 button {
   background: linear-gradient(
     89.86deg,
@@ -93,19 +126,16 @@ button {
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 }
-
 input,
 textarea {
   background: #f0f0f0;
 }
-
 #title {
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: bold;
   font-size: 21px;
   line-height: 26px;
-
   color: #454545;
 }
 </style>
