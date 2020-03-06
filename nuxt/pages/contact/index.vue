@@ -83,18 +83,10 @@ export default {
   },
   methods: {
     handleSubmit() {
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      }
-      axios
-        .post(
-          '/',
-
-          axiosConfig
-        )
-        .then(() => {
-          this.$router.push('thanks')
-        })
+      post('/')
+      then(() => {
+        this.$router.push('thanks')
+      })
     }
   }
 }
