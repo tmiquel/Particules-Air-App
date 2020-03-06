@@ -27,37 +27,22 @@ import { mapGetters, mapState } from 'vuex'
 
 export default {
   mixins: [fontSizeMixin],
-  created() {
-    console.log('created AppLandingB')
-    console.log(this.backgroundImgUrl)
-    console.log(this.imgReferencesArray)
-    console.log(this.$store.state.darkMode, 'dark')
-    console.log(JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray)), 'imgReferencesArray')
-    console.log(this.$store.getters.getImgUrlByID('landing'), 'getters')
-    console.log(
-      'test',
-      JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray.find(img => img.publicId.includes('landing'))))
-    )
-  },
-  mounted() {
-    console.log('mounted AppLandingB')
-    console.log(this.backgroundImgUrl)
-    console.log(this.imgReferencesArray)
-    console.log(this.$store.state.darkMode, 'dark')
-    console.log(JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray)), 'imgReferencesArray')
-    console.log(this.$store.getters.getImgUrlByID('landing'), 'getters')
-    console.log(
-      'test',
-      JSON.parse(JSON.stringify(this.$store.state.imgReferencesArray.find(img => img.publicId.includes('landing'))))
-    )
-  },
   computed: {
-    ...mapState(['imgReferencesArray']),
-    ...mapGetters(['getImgUrlByID']),
     backImg() {
+      const imgUrl = this.$cloudinary.url(this.$store.getters.getImgPublicID('landing'), {
+        client_hints: true,
+        sizes: '100vw',
+        transformation: [
+          { width: 'auto:1600', crop: 'fill', gravity: 'north', format: 'auto', quality: 'auto', dpr: 'auto'},
+          //https://cloudinary.com/documentation/responsive_images#default_value_for_browsers_that_don_39_t_support_client_hints
+          // https://cloudinary.com/documentation/image_transformations#embedding_images_in_web_pages
+          // { width: '1600', height:'600', gravity:'north', format: 'jpg', crop: 'crop'}
+          //https://help.outofthesandbox.com/hc/en-us/articles/115013833028-Image-Size-Guide
+        ]
+      })
       return {
         backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
-       ${this.getImgUrlByID('landing')})`
+       ${imgUrl})`
       }
     },
     responsiveBannerTitleStyle() {

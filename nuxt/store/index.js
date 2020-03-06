@@ -38,6 +38,11 @@ export const getters = {
     return state.imgReferencesArray.find(img =>
       img.publicId.includes(stringInID)
     ).responsiveUrl;
+  },
+  getImgPublicID: state => stringInID => {
+    return state.imgReferencesArray.find(img =>
+      img.publicId.includes(stringInID)
+    ).publicId;
   }
 };
 

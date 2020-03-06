@@ -2,7 +2,7 @@
   <div>
     <app-post-banner
       :post-title="postsTitle[$route.params.name]"
-      :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
+      :background-img-id="$route.params.name"
     />
     <b-container>
       <!-- ICI Appeler le composant qui correspond à l'article -->

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid banner-background-img px-0 mb-5" :style="backImg">
-    <div class="container d-flex flex-column flex-nowrap h-100">
-      <div class="row d-flex flex-column h-100 flex-nowrap justify-content-between">
+    <div class="container d-flex flex-column flex-nowrap h-100 min-height-25vh">
+      <div class="row d-flex flex-column h-100 flex-nowrap justify-content-between min-height-25vh">
         <div class="col flex-grow-0">
           <h6
             class="mt-2 mb-0 font-weight-bold text-uppercase text-white pt-md-2"
@@ -39,7 +39,7 @@ import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 export default {
   mixins: [fontSizeMixin],
   props: {
-    backgroundImgUrl: {
+    backgroundImgId: {
       type: String,
       required: true
       // Working example: <app-post-banner post-title="Les Sources" :background-img-url="require('~/assets/images/banners/landing/banner-background-image-crop.jpg')"/>
@@ -63,9 +63,20 @@ export default {
   },
   computed: {
     backImg() {
+      const imgUrl = this.$cloudinary.url(this.$store.getters.getImgPublicID(this.backgroundImgId), {
+        client_hints: true,
+        sizes: '100vw',
+        transformation: [
+          { width: 'auto:1600', crop: 'fill', gravity: 'auto', format: 'auto', quality: 'auto', dpr: 'auto'},
+          //https://cloudinary.com/documentation/responsive_images#default_value_for_browsers_that_don_39_t_support_client_hints
+          // https://cloudinary.com/documentation/image_transformations#embedding_images_in_web_pages
+          // { width: '1600', height:'600', gravity:'north', format: 'jpg', crop: 'crop'}
+          //https://help.outofthesandbox.com/hc/en-us/articles/115013833028-Image-Size-Guide
+        ]
+      })
       return {
         backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
-       ${this.backgroundImgUrl})`
+       ${imgUrl})`
       }
     },
     responsiveBannerTopicTitleStyle() {
@@ -82,6 +93,11 @@ export default {
 </script>
 
 <style scoped>
+
+.min-height-25vh {
+  min-height: 25vh;
+}
+
 .banner-background-img {
   background-size: cover;
   background-repeat: no-repeat;
