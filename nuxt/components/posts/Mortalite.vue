@@ -37,14 +37,7 @@
           >
           </cld-image>
         </div>
-        <!--
-        <b-img
-          @click="showDrawer(sensitivePublicId)"
-          class="mx-auto img-fluid mt-5"
-          v-bind="publicsImgsLayout"
-          alt="Rounded image"
-          :src="require('~/assets/images/sensitive-publics/' + sensitivePublicId + '.png')"
-        ></b-img> -->
+
         <drawer placement="right" @close="onClose" :visible="visiblePublic === sensitivePublicId" width="80vw">
           <template>
             <cld-image

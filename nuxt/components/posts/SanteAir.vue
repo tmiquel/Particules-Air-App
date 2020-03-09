@@ -3,12 +3,6 @@
     <div class="row">
       <div class="col">
         <app-heading>Pourquoi la qualité de l’air devrait-elle être si difficile à comprendre ? </app-heading>
-
-        <!-- <cld-image publicId="sensitive-publics/sportifs_xtjvfx" /> -->
-
-
-
-
         <p class="text-justify">
           Se réapproprier les données de la qualité de l’air n’a jamais été aussi simple. Vous allez trouver des cartes
           interactives, des infographies explicatives, un lexique, des sources étayées sur des sujets pointus, vous
