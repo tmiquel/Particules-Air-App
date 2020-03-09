@@ -1,9 +1,6 @@
 <template>
   <div class="stakeholders-page">
-    <app-post-banner
-      :post-title="postsTitle[$route.params.name]"
-      :background-img-url="require('~/assets/images/banners/posts/' + $route.params.name + '.png')"
-    />
+
     <App-heading class="mt-5 mb-2">LES ACTEURS</App-heading>
     <div class="row justify-content-center mr-auto">
       <div class="col-4 my-2 text-center" v-for="(member, id) in members" :key="id">
@@ -22,11 +19,7 @@
 
 
 <script>
-import { mapState } from 'vuex'
 export default {
-  computed: mapState({
-    postsTitle: state => state.postsTitle
-  }),
   data() {
     return {
       mainProps: { width: 91, height: 91 },
