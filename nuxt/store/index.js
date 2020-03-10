@@ -29,16 +29,6 @@ export const state = () => ({
 });
 
 export const getters = {
-  getImgRefByID: state => stringInID => {
-    return state.imgReferencesArray.find(img =>
-      img.publicId.includes(stringInID)
-    );
-  },
-  getImgUrlByID: state => stringInID => {
-    return state.imgReferencesArray.find(img =>
-      img.publicId.includes(stringInID)
-    ).responsiveUrl;
-  },
   getImgPublicID: state => stringInID => {
     return state.imgReferencesArray.find(img =>
       img.publicId.includes(stringInID)
@@ -73,24 +63,27 @@ export const actions = {
     await axios
       .get("https://res.cloudinary.com/particules/image/list/particules.json")
       .then(res => {
-                     vuexContext.commit(
-                       "SET_IMAGES_REF_ARRAY",
-                       res.data.resources.map(image => {
-                         return {
-                           publicId: image.public_id,
-                           url: `https://res.cloudinary.com/particules/image/upload/v${image.version}/${image.public_id}.${image.format}`,
-                           version: image.version,
-                           responsiveUrl: `https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints:500/v${image.version}/${image.public_id}.${image.format}`,
-                           format: image.format,
-                           width: image.width,
-                           height: image.height
-                         };
-                       })
-                     );
-                     //https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints_200_1920_30_15:500,g_auto,c_fill_pad,f_auto/v1583486501/banners/landing/banner-background-image-crop_owtwsk.jpg
-                   })
+        vuexContext.commit(
+          "SET_IMAGES_REF_ARRAY",
+          res.data.resources.map(image => {
+            return {
+              publicId: image.public_id,
+              url: `https://res.cloudinary.com/particules/image/upload/v${image.version}/${image.public_id}.${image.format}`,
+              version: image.version,
+              responsiveUrl: `https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints:500/v${image.version}/${image.public_id}.${image.format}`,
+              format: image.format,
+              width: image.width,
+              height: image.height
+            };
+          })
+        );
+        //https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints_200_1920_30_15:500,g_auto,c_fill_pad,f_auto/v1583486501/banners/landing/banner-background-image-crop_owtwsk.jpg
+      })
       .catch(error => {
-        console.log("Error - Axios getting particules list of imgs from Cloudinary:",  error.response);
-      });;
+        console.log(
+          "Error - Axios getting particules list of imgs from Cloudinary:",
+          error.response
+        );
+      });
   }
 };
