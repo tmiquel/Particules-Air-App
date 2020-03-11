@@ -70,7 +70,7 @@ export const actions = {
               publicId: image.public_id,
               url: `https://res.cloudinary.com/particules/image/upload/v${image.version}/${image.public_id}.${image.format}`,
               version: image.version,
-              responsiveUrl: `https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints:500/v${image.version}/${image.public_id}.${image.format}`,
+              defaultResponsiveUrl: `https://res.cloudinary.com/particules/image/upload/w_auto:breakpoints:500/v${image.version}/${image.public_id}.${image.format}`,
               format: image.format,
               width: image.width,
               height: image.height
