@@ -14,12 +14,12 @@
               <cld-transformation dpr="auto" fetchFormat="auto" gravity="auto" quality="auto:best" />
             </cld-image>
             <div class="d-flex-inline mt-3">
-            <h5 :style="responsiveTitleFontSize">
-              <strong>
-                <u>{{ selected.title }}</u>
-              </strong>
-            </h5>
-            <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
+              <h5 :style="responsiveTitleFontSize">
+                <strong>
+                  <u>{{ selected.title }}</u>
+                </strong>
+              </h5>
+              <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
             </div>
           </div>
         </div>
@@ -32,6 +32,7 @@
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 import Drawer from 'ant-design-vue/lib/drawer'
 import stakeholders from '~/data/stakeholders.yml'
+import particulesTeamMembers from '~/data/particules-team.yml'
 import { mapState } from 'vuex'
 export default {
   mixins: [fontSizeMixin],
@@ -39,7 +40,15 @@ export default {
   computed: {
     ...mapState({
       state: state => state.stakeHolderSlider,
-      selected: state => (state.stakeHolderSlider.slug ? stakeholders[state.stakeHolderSlider.slug] : null)
+      selected: state => {
+        if (state.stakeHolderSlider.slug) {
+          if (state.stakeHolderSlider.slug in stakeholders) {
+            return stakeholders[state.stakeHolderSlider.slug]
+          } else if (state.stakeHolderSlider.slug in particulesTeamMembers) {
+            return particulesTeamMembers[state.stakeHolderSlider.slug]
+          }
+        } else return null
+      }
     }),
     responsiveTitleFontSize() {
       return this.responsiveFontSize('fontSizeLateralSliderTitle')
