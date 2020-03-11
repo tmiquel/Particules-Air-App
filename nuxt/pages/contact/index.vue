@@ -68,7 +68,6 @@
 
 <script>
 import axios from 'axios'
-import SubmissionSuccess from '~/components/submission/SubmissionSuccess.vue'
 export default {
   data() {
     return {
