@@ -3,7 +3,7 @@
     <div>
       <app-heading>Contactez-nous</app-heading>
       <b-form
-        action="/thanks/"
+        @submit.prevent="handleSubmit"
         name="customcontact"
         method="post"
         data-netlify="true"
@@ -44,7 +44,7 @@
           name="email"
         ></b-form-input>
         <b-form-textarea
-          v-model="form.text"
+          v-model="form.message"
           placeholder="Votre message"
           class="rounded-0"
           rows="3"
@@ -76,9 +76,33 @@ export default {
         email: '',
         Firstname: '',
         Lastname: '',
-        text: ''
+        message: ''
       },
       show: true
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join('&')
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios
+        .post(
+          '/',
+          this.encode({
+            'form-name': 'customcontact',
+            ...this.form
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          this.$router.push('thanks')
+        })
     }
   }
 }
