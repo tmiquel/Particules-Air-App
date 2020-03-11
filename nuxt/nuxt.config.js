@@ -105,11 +105,11 @@ export default {
     bootstrapVueCSS: false // Or `bvCSS: false`
   },
   env: {
-    algoliaApp: process.env.ALGOLIA_APP,
-    algoliaKey: process.env.ALGOLIA_KEY,
-    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    cloudinaryApiKey: process.env.CLOUDINARY_CLOUD_API_KEY,
-    cloudinaryApiSecret: process.env.CLOUDINARY_CLOUD_API_SECRET
+    ALGOLIA_APP: process.env.ALGOLIA_APP,
+    ALGOLIA_KEY: process.env.ALGOLIA_KEY,
+    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_CLOUD_API_KEY: process.env.CLOUDINARY_CLOUD_API_KEY,
+    CLOUDINARY_CLOUD_API_SECRET: process.env.CLOUDINARY_CLOUD_API_SECRET
   },
   "nuxt-compress": { gzip: { cache: true }, brotli: { threshold: 10240 } },
 
