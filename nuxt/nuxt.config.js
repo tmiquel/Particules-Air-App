@@ -56,7 +56,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~plugins/global-components.js"],
+  plugins: [
+    '~/plugins/cloudinary-core-inject.js',
+    { src: "~/plugins/cloudinary-vuex-store-init.js", ssr: false },
+    "~plugins/global-components.js",
+    //idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -88,7 +93,7 @@ export default {
           desktop: Infinity
         }
       }
-    ]
+    ],
   ],
   /*
    ** Axios module configuration
@@ -100,8 +105,11 @@ export default {
     bootstrapVueCSS: false // Or `bvCSS: false`
   },
   env: {
-    algoliaApp: process.env.ALGOLIA_APP,
-    algoliaKey: process.env.ALGOLIA_KEY
+    ALGOLIA_APP: process.env.ALGOLIA_APP,
+    ALGOLIA_KEY: process.env.ALGOLIA_KEY,
+    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_CLOUD_API_KEY: process.env.CLOUDINARY_CLOUD_API_KEY,
+    CLOUDINARY_CLOUD_API_SECRET: process.env.CLOUDINARY_CLOUD_API_SECRET
   },
   "nuxt-compress": { gzip: { cache: true }, brotli: { threshold: 10240 } },
 

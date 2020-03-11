@@ -23,11 +23,11 @@ export default {
           desktop: "1.5rem"
         },
         fontSizeCardTitle: {
-          mobile: "0.9rem", // SourcesCard & DefinitionsCard
+          mobile: "0.9rem", // SourcesCard & DefinitionsCard & StakeholderCard
           desktop: "1.1rem"
         },
         fontSizeCardText: {
-          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink
+          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink  & StakeholderCard
           desktop: "1rem"
         },
         fontSizeHeading: {

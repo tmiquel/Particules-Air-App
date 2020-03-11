@@ -14,8 +14,8 @@ export default {
   data: () => ({ marker: null }),
   mounted() {
     var placesAutocomplete = places({
-      appId: process.env.algoliaApp,
-      apiKey: process.env.algoliaKey,
+      appId: process.env.ALGOLIA_APP,
+      apiKey: process.env.ALGOLIA_KEY,
       container: document.querySelector('#input-map'),
       type: 'address',
       countries: ['fr'],
