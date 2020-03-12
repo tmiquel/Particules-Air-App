@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="errorpage row row-cols-2">
       <div class="col">
         <app-heading v-if="error.statusCode === 404">Houston, we’ve had a problem here.</app-heading>
