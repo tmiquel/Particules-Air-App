@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <div class="errorpage mt-5">
-      <app-heading v-if="error.statusCode === 404">Houston, we’ve had a problem here.</app-heading>
-      <app-heading v-else>Une erreur s'est produite</app-heading>
+    <div class="errorpage row row-cols-2">
+      <div class="col">
+        <app-heading v-if="error.statusCode === 404">Houston, we’ve had a problem here.</app-heading>
+        <app-heading v-else>Une erreur s'est produite</app-heading>
+      </div>
     </div>
     <button class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4">
       <nuxt-link id="link" to="/">Retour à l'accueil</nuxt-link>
