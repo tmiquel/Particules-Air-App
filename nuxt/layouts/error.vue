@@ -5,7 +5,7 @@
       <app-heading v-else>Une erreur s'est produite</app-heading>
     </div>
     <button class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4">
-      <nuxt-link to="/">Retour à l'accueil</nuxt-link>
+      <nuxt-link id="link" to="/">Retour à l'accueil</nuxt-link>
     </button>
   </div>
 </template>
@@ -26,5 +26,8 @@ button {
   );
   padding-left: 2rem !important;
   padding-right: 2rem !important;
+}
+#link {
+  color: cornsilk;
 }
 </style>
