@@ -11,19 +11,16 @@
       </div>
     </div>
     <div style="width:100%;height:0;padding-bottom:75%;position:relative;">
-      <iframe
+      <img
         src="https://giphy.com/embed/pH3KMJtWheyT6"
-        width="100%"
-        height="100%"
+        width="39%"
+        height="39%"
         style="position:absolute"
         frameborder="0"
         class="giphy-embed"
         allowfullscreen
-      ></iframe>
+      />
     </div>
-    <p>
-      <a href="https://giphy.com/gifs/space-nasa-problem-pH3KMJtWheyT6">via GIPHY</a>
-    </p>
     <button class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4">
       <nuxt-link id="link" to="/">Retour à l'accueil</nuxt-link>
     </button>
