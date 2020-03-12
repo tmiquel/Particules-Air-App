@@ -1,19 +1,12 @@
 <template>
   <div class="container">
-    <app-heading v-if="error.statusCode === 404">Houston, we’ve had a problem here.</app-heading>
-    <app-heading v-else>Une erreur s'est produite</app-heading>
-    <svg
-      xmlns="https://svgsilh.com/svg/1952347.svg"
-      width="90"
-      height="90"
-      fill="#DBE1EC"
-      viewBox="0 0 48 48"
-    >
-      <path
-        d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"
-      />
-    </svg>
-    <nuxt-link to="/">Accueil</nuxt-link>
+    <div class="errorpage mt-5">
+      <app-heading v-if="error.statusCode === 404">Houston, we’ve had a problem here.</app-heading>
+      <app-heading v-else>Une erreur s'est produite</app-heading>
+    </div>
+    <button class="btn rounded-pill font-weight-bold border-0 mt-2 mb-4 text-white mt-4">
+      <nuxt-link to="/">Retour à l'accueil</nuxt-link>
+    </button>
   </div>
 </template>
 
@@ -23,3 +16,15 @@ export default {
   layout: '404'
 }
 </script>
+
+<style scoped>
+button {
+  background: linear-gradient(
+    89.86deg,
+    var(--left-navbar-gradient-color) -79.71%,
+    var(--right-navbar-gradient-color) 167.69%
+  );
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+</style>
