@@ -2,7 +2,7 @@
   <div class="__nuxt-error-page">
     <div class="error">
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://svgsilh.com/svg/149265.svg"
         width="90"
         height="90"
         fill="#DBE1EC"
