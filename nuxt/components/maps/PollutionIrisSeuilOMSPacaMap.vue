@@ -24,13 +24,13 @@ export default {
   },
   mounted() {
     this.createMap()
-    axios.get('/iris_2018_pop14_formatted_simplified_light.json').then(resp => {
+    axios.get('/iris_2018_pop14_formatted_simplified_light1.json').then(resp => {
       this.addLayer(resp.data)
     })
   },
   methods: {
     createMap() {
-      map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 8)
+      map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
       this.map = map
       map.createPane('labels')
       // map.getPane('labels').style.zIndex = 650
