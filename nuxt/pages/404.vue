@@ -17,8 +17,7 @@
       <p v-if="statusCode === 404" class="description">
         <NuxtLink class="error-link" to="/"><%= messages.back_to_home %></NuxtLink>
       </p><% if(debug) { %>
-      <p class="description" v-else><%= messages.client_error_details %></p>
-<% } %>
+      <p class="description" v-else><%= messages.client_error_details %></p><% } %>
       <div class="logo">
         <a href="https://nuxtjs.org" target="_blank" rel="noopener"><%= messages.nuxtjs %></a>
       </div>
