@@ -3,11 +3,15 @@ import axios from "axios";
 export const state = () => ({
   darkMode: true,
   imgReferencesArray: [],
-  stakeHolderSlider: {
+  stakeholderSlider: {
     visible: false,
     slug: null
   },
   definitionSlider: {
+    visible: false,
+    slug: null
+  },
+  particulesTeamMemberSlider: {
     visible: false,
     slug: null
   },
@@ -38,12 +42,12 @@ export const getters = {
 
 export const mutations = {
   OPEN_STAKEHOLDER_SLIDER(state, slug) {
-    state.stakeHolderSlider.visible = true;
-    state.stakeHolderSlider.slug = slug;
+    state.stakeholderSlider.visible = true;
+    state.stakeholderSlider.slug = slug;
   },
   CLOSE_STAKEHOLDER_SLIDER(state) {
-    state.stakeHolderSlider.visible = false;
-    state.stakeHolderSlider.slug = null;
+    state.stakeholderSlider.visible = false;
+    state.stakeholderSlider.slug = null;
   },
   OPEN_DEFINITION_SLIDER(state, slug) {
     state.definitionSlider.visible = true;
@@ -52,6 +56,14 @@ export const mutations = {
   CLOSE_DEFINITION_SLIDER(state) {
     state.definitionSlider.visible = false;
     state.definitionSlider.slug = null;
+  },
+  OPEN_TEAM_MEMBER_SLIDER(state, slug) {
+    state.particulesTeamMemberSlider.visible = true;
+    state.particulesTeamMemberSlider.slug = slug;
+  },
+  CLOSE_TEAM_MEMBER_SLIDER(state) {
+    state.particulesTeamMemberSlider.visible = false;
+    state.particulesTeamMemberSlider.slug = null;
   },
   SET_IMAGES_REF_ARRAY(state, slug) {
     state.imgReferencesArray = slug;

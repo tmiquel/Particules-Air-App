@@ -32,21 +32,16 @@
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 import Drawer from 'ant-design-vue/lib/drawer'
 import stakeholders from '~/data/stakeholders.yml'
-import particulesTeamMembers from '~/data/particules-team.yml'
 import { mapState } from 'vuex'
 export default {
   mixins: [fontSizeMixin],
   components: { Drawer },
   computed: {
     ...mapState({
-      state: state => state.stakeHolderSlider,
+      state: state => state.stakeholderSlider,
       selected: state => {
-        if (state.stakeHolderSlider.slug) {
-          if (state.stakeHolderSlider.slug in stakeholders) {
-            return stakeholders[state.stakeHolderSlider.slug]
-          } else if (state.stakeHolderSlider.slug in particulesTeamMembers) {
-            return particulesTeamMembers[state.stakeHolderSlider.slug]
-          }
+        if (state.stakeholderSlider.slug in stakeholders) {
+          return stakeholders[state.stakeholderSlider.slug]
         } else return null
       }
     }),

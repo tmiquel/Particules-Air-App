@@ -5,6 +5,7 @@ Elise:
     Prévenante, multi-tâches et brillante,  Elise est notre spécialiste des données en tout genre ! Une vraie magicienne qui transforme d’obscurs Excel en carte animées !
   website:
   twitter:
+  email: elise_pupier@hotmail.com
   facebook:
   instagram:
 Raphael:
@@ -13,6 +14,7 @@ Raphael:
   description: >
     Le designer engagé de l’équipe, il a conçu graphiquement l’application particules avec précision et style ! What else !?
   website:
+  email: cinelliraphael@gmail.com
   twitter:
   facebook:
   instagram:
@@ -22,6 +24,7 @@ Claire:
   description: >
     Dernière arrivée dans l’équipe mais celle dont nous avions besoin. Claire fait des merveilles en design et sa formation scientifique nous permet à la fois de créer des contenus exacts mais surtout vulgarisés.
   twitter:
+  email: claire.marc@meduse-communication.fr
   website:
   facebook:
   instagram:
@@ -31,6 +34,7 @@ Emilie:
   description: >
    Le lancement de nouveaux produits, elle connaît par coeur, elle en a fait son coeur de métier. Pourquoi Particules ? Parce qu`il fait écho à ses engagements personnels dans l’écologie et le bien être du vivant (et ceux qui veulent le rester).
   website:
+  email: emilierembert3@gmail.com
   twitter:
   facebook:
   instagram:
@@ -41,6 +45,7 @@ Amine:
     Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !
   website:
   twitter:
+  email: thpamine@gmail.com
   facebook:
   instagram:
 Kevin:
@@ -49,6 +54,7 @@ Kevin:
   description: >
     Le super sage de l’équipe et surtout un développeur de talent, il transmet son savoir à Thibaut et Amine et conçoit les cartes du projet.
   website:
+  email: berthier.kevin.y@gmail.com
   twitter:
   facebook:
   instagram:
@@ -56,9 +62,10 @@ Thibaut:
   start-of-cloudinary-filename: Thibaut
   name: Thibaut
   description: >
-    bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.
+    Bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.
   website:
-  twitter:
+  email: thibaut.miquel@quantal.eu
+  twitter: https://twitter.com/MiquelThibaut/
   facebook:
 Luciana:
   start-of-cloudinary-filename: 1303110-579379-3
