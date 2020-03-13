@@ -11,7 +11,7 @@
         <b-row class="row-cols-1">
           <b-col :style="imgHeightStyle" class="d-flex justify-content-center align-items-center">
             <cld-image
-              class="d-flex h-100 justify-content-center"
+              class="d-flex h-100 justify-content-center w-100"
               :publicId="stakeholderImgPublicId"
               :alt="selected.title"
               responsive="height"
