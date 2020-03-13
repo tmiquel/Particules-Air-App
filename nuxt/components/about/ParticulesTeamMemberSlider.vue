@@ -9,7 +9,7 @@
     <template v-if="selected">
       <div class="mt-4" :class="[this.$mq === 'mobile' ? 'container-fluid' : 'container']">
         <b-row class="row-cols-1">
-          <b-col :style="{ minHeight: '1rem' }">
+          <b-col :style="imgHeightStyle" class="d-flex justify-content-center align-items-center">
             <cld-image
               class="d-flex h-100 justify-content-center"
               :publicId="stakeholderImgPublicId"
@@ -84,6 +84,9 @@ export default {
         height: '20vw',
         maxHeight: '20vh'
       }
+    },
+    imgHeightStyle() {
+      return (this.$mq === 'mobile' ? {minHeight: '1rem'} : {height : '25vh'} )
     }
   }
 }
