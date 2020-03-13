@@ -68,13 +68,3 @@ export default {
   // }
 }
 </script>
-
-<style scoped>
-/* h4 {
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-} */
-</style>
