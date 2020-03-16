@@ -5,6 +5,7 @@
       <nuxt />
     </div>
     <TheFooter />
+    <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
   </div>

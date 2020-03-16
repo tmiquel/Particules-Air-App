@@ -1,11 +1,11 @@
 <template>
-  <h2><slot></slot></h2>
+  <h6 class="text-uppercase"><slot></slot></h6>
 </template>
 
 
 <style scoped>
 
-h2 {
+h6 {
   color: var(--primary);
 
     background-image: linear-gradient(

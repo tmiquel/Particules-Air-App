@@ -14,12 +14,12 @@
               <cld-transformation dpr="auto" fetchFormat="auto" gravity="auto" quality="auto:best" />
             </cld-image>
             <div class="d-flex-inline mt-3">
-            <h5 :style="responsiveTitleFontSize">
-              <strong>
-                <u>{{ selected.title }}</u>
-              </strong>
-            </h5>
-            <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
+              <h5 :style="responsiveTitleFontSize">
+                <strong>
+                  <u>{{ selected.title }}</u>
+                </strong>
+              </h5>
+              <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
             </div>
           </div>
         </div>
@@ -38,8 +38,12 @@ export default {
   components: { Drawer },
   computed: {
     ...mapState({
-      state: state => state.stakeHolderSlider,
-      selected: state => (state.stakeHolderSlider.slug ? stakeholders[state.stakeHolderSlider.slug] : null)
+      state: state => state.stakeholderSlider,
+      selected: state => {
+        if (state.stakeholderSlider.slug in stakeholders) {
+          return stakeholders[state.stakeholderSlider.slug]
+        } else return null
+      }
     }),
     responsiveTitleFontSize() {
       return this.responsiveFontSize('fontSizeLateralSliderTitle')
