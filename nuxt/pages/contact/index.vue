@@ -44,7 +44,7 @@
           name="email"
         ></b-form-input>
         <b-form-textarea
-          v-model="form.text"
+          v-model="form.message"
           placeholder="Votre message"
           class="rounded-0"
           rows="3"
@@ -68,7 +68,6 @@
 
 <script>
 import axios from 'axios'
-import SubmissionSuccess from '~/components/submission/SubmissionSuccess.vue'
 export default {
   data() {
     return {
@@ -76,7 +75,7 @@ export default {
         email: '',
         Firstname: '',
         Lastname: '',
-        text: ''
+        message: ''
       },
       show: true
     }
