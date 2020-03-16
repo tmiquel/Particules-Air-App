@@ -11,11 +11,11 @@
         <b-row class="row-cols-1">
           <b-col :style="imgHeightStyle" class="d-flex justify-content-center align-items-center">
             <cld-image
-              class="d-flex h-100 justify-content-center w-100"
+              class="d-flex h-100 justify-content-center"
               :publicId="stakeholderImgPublicId"
               :alt="selected.title"
               responsive="height"
-              :style="responsiveHeight"
+              :style="maxWidthAndResponsiveHeight"
             >
               <!-- https://github.com/cloudinary/cloudinary-vue/blob/master/src/components/CldImage/CldImage.md -->
               <!-- https://cloudinary.com/documentation/image_transformation_reference -->
@@ -78,15 +78,16 @@ export default {
     stakeholderImgPublicId() {
       return this.$store.getters.getImgPublicID(this.selected['start-of-cloudinary-filename'])
     },
-    responsiveHeight() {
-      const respHeight = this.$mq === 'mobile' ? '20vw' : '45vh'
+    maxWidthAndResponsiveHeight() {
+      const respHeight = this.$mq === 'mobile' ? '30vh' : '25vh'
       return {
-        height: '20vw',
-        maxHeight: '20vh'
+        height: respHeight,
+        maxHeight: '30vh',
+        maxWidth: '100%',
       }
     },
     imgHeightStyle() {
-      return (this.$mq === 'mobile' ? {minHeight: '1rem'} : {height : '25vh'} )
+      return (this.$mq === 'mobile' ? {height: '30vh'} : {height : '25vh'} )
     }
   }
 }
