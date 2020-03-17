@@ -33,7 +33,7 @@ export default {
         client_hints: true,
         sizes: '100vw',
         transformation: [
-          { width: 'auto:1600', height: '500' , crop: 'fill', gravity: 'north'},
+          { width: 'auto:50:1600', height: '400' , crop: 'fill', gravity: 'north'},
           { format: 'auto', quality: 'auto', dpr: 'auto'},
           //https://cloudinary.com/documentation/responsive_images#default_value_for_browsers_that_don_39_t_support_client_hints
           // https://cloudinary.com/documentation/image_transformations#embedding_images_in_web_pages
@@ -74,7 +74,6 @@ export default {
 .banner-background-img {
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position-x: center;
   background-blend-mode: multiply;
   mix-blend-mode: darken;
