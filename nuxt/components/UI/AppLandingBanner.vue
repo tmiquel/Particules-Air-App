@@ -1,11 +1,11 @@
 <template>
-  <div class="container-fluid banner-background-img px-0 mb-5" :style="backImg">
+  <div class="container-fluid landing-banner-container px-0 mb-5  min-height-25vh">
     <div class="container d-flex flex-column flex-nowrap h-100 min-height-25vh">
       <div class="row d-flex flex-column h-100 flex-nowrap justify-content-between min-height-25vh">
         <div class="col flex-grow-1 d-flex align-items-end">
           <h1
             class="pt-3 pb-md-3 pb-2 mb-0 text-uppercase flex-grow-1 font-weight-bold text-white "
-            id="banner-title"
+            id="landing-banner-title"
             :style="responsiveBannerTitleStyle"
           >
             MON AIR &<span>MA SANTé EN VUES</span>
@@ -18,6 +18,29 @@
         </div>
       </div>
     </div>
+    <cld-image
+      :publicId="bannerBackgroundImgPublicId"
+      responsive="width"
+      lazy
+      class="below h-100 w-100 overlaid img-fluid"
+    >
+      <!-- https://github.com/AlexandreBonaventure/vue-mq -->
+      <mq-layout mq="mobile">
+        <cld-transformation width="auto:50:700" height="180" crop="fill" gravity="north" />
+      </mq-layout>
+      <mq-layout mq="desktop">
+        <cld-transformation width="auto:50:1600" height="400" crop="fill" gravity="north" />
+      </mq-layout>
+
+      <cld-transformation dpr="auto" fetchFormat="auto" quality="auto:best" />
+      <!-- https://cloudinary.com/documentation/image_transformations#color_effects -->
+      <!-- https://cloudinary.com/documentation/image_transformation_reference -->
+      <!--   //https://cloudinary.com/documentation/responsive_images#default_value_for_browsers_that_don_39_t_support_client_hints
+     https://cloudinary.com/documentation/image_transformations#embedding_images_in_web_pages
+     https://cloudinary.com/documentation/image_transformation_reference
+    https://help.outofthesandbox.com/hc/en-us/articles/115013833028-Image-Size-Guide
+ -->
+    </cld-image>
   </div>
 </template>
 
@@ -28,24 +51,6 @@ import { mapGetters, mapState } from 'vuex'
 export default {
   mixins: [fontSizeMixin],
   computed: {
-    backImg() {
-      const imgUrl = this.$cloudinary.url(this.$store.getters.getImgPublicID('landing'), {
-        client_hints: true,
-        sizes: '100vw',
-        transformation: [
-          { width: 'auto:50:1600', height: '400' , crop: 'fill', gravity: 'north'},
-          { format: 'auto', quality: 'auto', dpr: 'auto'},
-          //https://cloudinary.com/documentation/responsive_images#default_value_for_browsers_that_don_39_t_support_client_hints
-          // https://cloudinary.com/documentation/image_transformations#embedding_images_in_web_pages
-          // { width: '1600', height:'600', gravity:'north', format: 'jpg', crop: 'crop'}
-          //https://help.outofthesandbox.com/hc/en-us/articles/115013833028-Image-Size-Guide
-        ]
-      })
-      return {
-        backgroundImage: `linear-gradient(180deg,rgba(255, 255, 255, 0) 0%,rgba(39, 39, 39, 0.62) 52.6%,rgba(0, 0, 0, 0.6) 100%),url(
-       ${imgUrl})`
-      }
-    },
     responsiveBannerTitleStyle() {
       if (this.$mq === 'mobile') {
         return {
@@ -61,32 +66,40 @@ export default {
     },
     responsiveFontSizeLandingBannerSubtitle() {
       return this.responsiveFontSize('fontSizeLandingBannerSubtitle')
+    },
+    bannerBackgroundImgPublicId() {
+      return this.$store.getters.getImgPublicID('landing/')
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.overlaid {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+.below {
+  z-index: -1;
+}
 .min-height-25vh {
   min-height: 25vh;
 }
 
-.banner-background-img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-blend-mode: multiply;
-  mix-blend-mode: darken;
-  border-radius: 0px;
+.landing-banner-container {
+  position: relative !important;
   min-height: 25vh;
 }
 
-#my-banner-text-container {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.landing-banner-container [src*='cloudinary.com'] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-#banner-title {
+#landing-banner-title {
   background-image: linear-gradient(to right, #fff, #fff 57px, transparent 57px);
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -94,7 +107,7 @@ export default {
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
 }
 
-#banner-title span {
+#landing-banner-title span {
   display: table;
 }
 
