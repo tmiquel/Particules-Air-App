@@ -2,7 +2,6 @@
 
 
   <b-card class="border-0 mt-2 mb-4" no-body>
-    <!-- <b-card-img :src="require(`~/assets/images/banners/posts/${route}.png`)" alt="Image" class="rounded-0" /> -->
     <cld-image :publicId="postPublicId" responsive="width" lazy>
       <cld-transformation width="1024" gravity="auto" height="576" crop="fill" effect="improve" />
       <cld-transformation dpr="auto"  fetchFormat="auto" quality="auto:best" />

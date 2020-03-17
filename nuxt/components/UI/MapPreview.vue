@@ -10,7 +10,6 @@
           <!-- https://cloudinary.com/documentation/image_transformation_reference -->
 
     </cld-image>
-    <!-- <img :src="require(`~/assets/images/map-previews/${name}.png`)" :alt="name" class="img-fluid rounded-0" /> -->
   </nuxt-link>
 </template>
 

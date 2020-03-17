@@ -60,7 +60,6 @@ export default {
     backgroundImgId: {
       type: String,
       required: true
-      // Working example: <app-post-banner post-title="Les Sources" :background-img-url="require('~/assets/images/banners/landing/banner-background-image-crop.jpg')"/>
     },
     topicTitle: {
       type: String,
