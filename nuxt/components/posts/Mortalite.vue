@@ -20,7 +20,7 @@
       </a>
     </p>
     <App-sub-heading>LES THÉMATIQUES</App-sub-heading>
-    <div class="row justify-content-center">
+    <div class="row row-cols-2 row-cols-md-4 justify-content-center">
       <div class="col-6 my-3" v-for="(sensitivePublic, sensitivePublicId, index) in sensitivePublics" :key="index">
         <!-- https://cloudinary.com/documentation/image_transformation_reference -->
         <!-- https://cloudinary.com/documentation/vue_image_manipulation -->
@@ -29,7 +29,7 @@
             dpr="auto"
             ar="1"
             responsive="width"
-            width="auto:200"
+            width="auto:40:400"
             fetchFormat="auto"
             crop="fit"
             quality="auto:best"
@@ -45,7 +45,7 @@
             dpr="auto"
             ar="1"
             responsive="width"
-            width="auto:200"
+            width="auto:40:500"
             fetchFormat="auto"
             crop="fit"
             quality="auto:best"

@@ -57,9 +57,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/cloudinary-core-inject.js',
+    "~/plugins/cloudinary-core-inject.js",
     { src: "~/plugins/cloudinary-vuex-store-init.js", ssr: false },
-    "~plugins/global-components.js",
+    "~plugins/global-components.js"
     //idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux
   ],
   /*
@@ -93,7 +93,7 @@ export default {
           desktop: Infinity
         }
       }
-    ],
+    ]
   ],
   /*
    ** Axios module configuration
@@ -116,11 +116,18 @@ export default {
   generate: {
     routes: function() {
       const posts = fs
-        .readdirSync("assets/images/banners/posts/")
-        .filter(file => file.indexOf(".") !== 0 && file.slice(-4) === ".png")
-        .map(pngfilename => {
-          return pngfilename.slice(0, -4);
-          // "postname.png" --> "postname"
+        .readdirSync("components/posts/")
+        .filter(file => file.indexOf(".") !== 0 && file.slice(-4) === ".vue")
+        .map(vuefilename => {
+          return vuefilename
+            .slice(0, -4)
+            .match(
+              /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+            )
+            .map(x => x.toLowerCase())
+            .join("-");
+          // "PostName.vue" --> "post-name"
+          // source : https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149
         });
       const routes = [];
       for (const filename of posts) {

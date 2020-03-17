@@ -16,7 +16,7 @@ import Enfants from '~/components/posts/Enfants'
 import FemmesEnceintes from '~/components/posts/FemmesEnceintes'
 import Sportifs from '~/components/posts/Sportifs'
 import PersonnesAgees from '~/components/posts/PersonnesAgees'
-import PostsList from '~/components/posts/PostsList'
+import PostsList from '~/components/posts/UI/PostsList'
 
 export default {
   components: {

@@ -1,8 +1,8 @@
 <template>
   <div class="stakeholders-page">
     <App-heading class="mt-5 mb-2">LES ACTEURS</App-heading>
-    <b-container>
-      <b-row class="row-cols-3">
+    <b-container class="justify-content-between">
+      <b-row class="d-flex justify-content-between row-cols-3 row-cols-md-4 row-cols-lg-5">
         <b-col v-for="(stakeholder, stakeholderId, index) in stakeholders" :key="index">
           <stakeholder-card :stakeholder-id="stakeholderId" :stakeholder="stakeholder" />
         </b-col>

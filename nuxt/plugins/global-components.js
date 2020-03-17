@@ -6,7 +6,7 @@ import DefinitionLink from "@/components/UI/DefinitionLink";
 import AppHeading from "@/components/UI/AppHeading";
 import AppSubHeading from "@/components/UI/AppSubHeading";
 import AppLandingBanner from "@/components/UI/AppLandingBanner";
-import AppPostBanner from "@/components/posts/AppPostBanner";
+import AppPostBanner from "@/components/posts/UI/AppPostBanner";
 import BackToPostLink from "@/components/UI/BackToPostLink";
 import MapPreview from "@/components/UI/MapPreview";
 
