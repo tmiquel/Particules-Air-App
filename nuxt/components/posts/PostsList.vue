@@ -2,7 +2,7 @@
   <div class="mt-5">
     <app-heading>Les articles</app-heading>
     <b-container>
-      <b-row :no-gutters="true" :class="{'row-cols-2' : (this.$mq === 'mobile'), 'row-cols-3' : (this.$mq === 'desktop')}">
+      <b-row :no-gutters="true" class="row-cols-2 row-cols-md-3 row-cols-lg-4">
         <b-col v-for="(title, route, index) in postsTitle" :key="index">
           <post-card :title="title" :route="route"/>
         </b-col>

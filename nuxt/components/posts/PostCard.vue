@@ -1,6 +1,12 @@
 <template>
+
+
   <b-card class="border-0 mt-2 mb-4" no-body>
-    <b-card-img :src="require(`~/assets/images/banners/posts/${route}.png`)" alt="Image" class="rounded-0" />
+    <!-- <b-card-img :src="require(`~/assets/images/banners/posts/${route}.png`)" alt="Image" class="rounded-0" /> -->
+    <cld-image :publicId="postPublicId" responsive="width" lazy>
+      <cld-transformation width="1024" gravity="auto" height="576" crop="fill" effect="improve" />
+      <cld-transformation dpr="auto"  fetchFormat="auto" quality="auto:best" />
+    </cld-image>
     <b-link :to="'/posts/' + route" :style="responsiveTitleFontSize" class="no-underline font-weight-bold gray text-dark stretched-link">{{
       title
     }}</b-link>
@@ -26,6 +32,9 @@ export default {
   computed: {
     responsiveTitleFontSize() {
       return this.responsiveFontSize('fontSizeFooter')
+    },
+    postPublicId() {
+      return this.$store.getters.getImgPublicID('posts/' + this.route)
     }
   }
 }
