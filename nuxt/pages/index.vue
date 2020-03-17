@@ -8,7 +8,7 @@
 
 <script>
 import SanteAir from '@/components/posts/SanteAir'
-import PostsList from '~/components/posts/PostsList'
+import PostsList from '~/components/posts/UI/PostsList'
 
 export default {
   components: {
