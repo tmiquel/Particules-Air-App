@@ -32,13 +32,6 @@ export default {
     }
   },
   computed: {
-    responsiveHeight() {
-      const respHeight = this.$mq === 'mobile' ? '20vw' : '45vh'
-      return {
-        height: '20vw',
-        maxHeight: '20vh'
-      }
-    },
     responsiveTitleFontSize() {
       return this.responsiveFontSize('fontSizeCardTitle')
     },

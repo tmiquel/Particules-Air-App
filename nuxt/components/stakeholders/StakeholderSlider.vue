@@ -1,19 +1,25 @@
 <template>
-  <drawer placement="right" @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')" :visible="state.visible" width="65vw">
+  <drawer
+    :bodyStyle="antBodyStyleProp"
+    placement="right"
+    @close="$store.commit('CLOSE_STAKEHOLDER_SLIDER')"
+    :visible="state.visible"
+    :width="respDrawerWidth"
+  >
     <template v-if="selected">
       <div class="container mt-4">
         <div class="row">
           <div class="col">
             <cld-image
               class="d-flex justify-content-center"
-              :publicId="stakeholderImgPublicId"
-              :alt="selected.title"
               responsive="height"
               :style="responsiveHeight"
+              :publicId="stakeholderImgPublicId"
+              :alt="selected.title"
             >
               <cld-transformation dpr="auto" fetchFormat="auto" gravity="auto" quality="auto:best" />
             </cld-image>
-            <div class="d-flex-inline mt-3">
+            <div class="d-flex-inline pt-4 pt-md-5 px-md-3">
               <h5 :style="responsiveTitleFontSize">
                 <strong>
                   <u>{{ selected.title }}</u>
@@ -35,6 +41,11 @@ import stakeholders from '~/data/stakeholders.yml'
 import { mapState } from 'vuex'
 export default {
   mixins: [fontSizeMixin],
+  data() {
+    return {
+      antBodyStyleProp: { padding: '2rem 0' }
+    }
+  },
   components: { Drawer },
   computed: {
     ...mapState({
@@ -60,6 +71,9 @@ export default {
         height: '20vw',
         maxHeight: '20vh'
       }
+    },
+    respDrawerWidth() {
+      return this.$mq === 'mobile' ? '80vw' : '65vw'
     }
   }
 }
