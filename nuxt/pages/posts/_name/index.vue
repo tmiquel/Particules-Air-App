@@ -1,10 +1,8 @@
 <template>
   <div>
-    <b-container>
       <!-- ICI Appeler le composant qui correspond à l'article -->
       <component :is="$route.params.name" />
       <posts-list />
-    </b-container>
   </div>
 </template>
 
