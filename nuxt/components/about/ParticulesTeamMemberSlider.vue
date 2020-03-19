@@ -4,7 +4,7 @@
     placement="right"
     @close="$store.commit('CLOSE_TEAM_MEMBER_SLIDER')"
     :visible="state.visible"
-    width="65vw"
+    :width="respDrawerWidth"
   >
     <template v-if="selected">
       <div class="mt-4" :class="[this.$mq === 'mobile' ? 'container-fluid' : 'container']">
@@ -88,6 +88,9 @@ export default {
     },
     imgHeightStyle() {
       return (this.$mq === 'mobile' ? {height: '30vh'} : {height : '25vh'} )
+    },
+    respDrawerWidth() {
+      return this.$mq === 'mobile' ? '80vw' : '65vw'
     }
   }
 }
