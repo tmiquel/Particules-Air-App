@@ -8,6 +8,8 @@
 <script>
 import SearchAddress from '~/components/maps/SearchAddress.vue'
 import axios from 'axios'
+import Pbf from 'pbf'
+import geobuf from 'geobuf'
 var L
 if (process.client) L = require('leaflet')
 var geojson
@@ -22,19 +24,32 @@ export default {
       map: null
     }
   },
-  created() {
-    this.$geoJSONCall = axios.get('/iris_2018_pop14_formatted_simplified_light1.json')
+  beforeCreate() {
+    this.$geoJSONCall = axios.request({
+      responseType: 'arraybuffer',
+      url: '/iris_2018_pop14_formatted_simplified_light1.pbf',
+      method: 'get'
+    })
   },
   async mounted() {
-    let [mapDone, fetchedGeoJSON] = await Promise.all([this.createMap(), this.$geoJSONCall])
-    this.addLayer(fetchedGeoJSON.data)
+    let [mapMounted, geoJSONResponse] = await Promise.all([this.createMap(), this.$geoJSONCall])
+    let data = geoJSONResponse.data
+    // console.log(data)
+    var geojson = geobuf.decode(new Pbf(data))
+    // console.log(geojson)
+    this.addLayer(geojson)
   },
   methods: {
     createMap() {
-      var that = this
-      new Promise(function(resolve, reject) {
+      new Promise((resolve, reject) => {
         map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
-        that.map = map
+        this.map = map
+        this.addLayers(map)
+        resolve()
+      })
+    },
+    addLayers(map) {
+      new Promise((resolve, reject) => {
         map.createPane('labels')
         // map.getPane('labels').style.zIndex = 650
         map.getPane('labels').style.pointerEvents = 'none'
