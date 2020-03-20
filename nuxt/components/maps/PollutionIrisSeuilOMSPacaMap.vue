@@ -22,30 +22,35 @@ export default {
       map: null
     }
   },
-  mounted() {
-    this.createMap()
-    axios.get('/iris_2018_pop14_formatted_simplified_light1.json').then(resp => {
-      this.addLayer(resp.data)
-    })
+  created() {
+    this.$geoJSONCall = axios.get('/iris_2018_pop14_formatted_simplified_light1.json')
+  },
+  async mounted() {
+    let [mapDone, fetchedGeoJSON] = await Promise.all([this.createMap(), this.$geoJSONCall])
+    this.addLayer(fetchedGeoJSON.data)
   },
   methods: {
     createMap() {
-      map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
-      this.map = map
-      map.createPane('labels')
-      // map.getPane('labels').style.zIndex = 650
-      map.getPane('labels').style.pointerEvents = 'none'
-      var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-        attribution: '©OpenStreetMap, ©CartoDB',
-        detectRetina: true
-      }).addTo(map)
+      var that = this
+      new Promise(function(resolve, reject) {
+        map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
+        that.map = map
+        map.createPane('labels')
+        // map.getPane('labels').style.zIndex = 650
+        map.getPane('labels').style.pointerEvents = 'none'
+        var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+          attribution: '©OpenStreetMap, ©CartoDB',
+          detectRetina: true
+        }).addTo(map)
 
-      var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-        attribution: '©OpenStreetMap, ©CartoDB',
-        pane: 'labels',
-        detectRetina: true
-      }).addTo(map)
-      L.control.zoom({ position: 'bottomright' }).addTo(map)
+        var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+          attribution: '©OpenStreetMap, ©CartoDB',
+          pane: 'labels',
+          detectRetina: true
+        }).addTo(map)
+        L.control.zoom({ position: 'bottomright' }).addTo(map)
+        resolve()
+      })
     },
     toPerc(val, base) {
       let result = (val / base) * 100
