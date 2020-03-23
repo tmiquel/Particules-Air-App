@@ -15,7 +15,7 @@
           vivraient dans un environnement pollué.
         </p>
         <p class="text-justify">
-          En 2017, 54 % des habitants de Provence-Alpes-Côt:bodyStyle="antBodyStyleProp"e d’Azur sont exposés, sur leur lieu de résidence, à une
+          En 2017, 54 % des habitants de Provence-Alpes-Côte d’Azur sont exposés, sur leur lieu de résidence, à une
           concentration annuelle moyenne en PM10 supérieure à la ligne directrice de l’OMS.
           <a href="https://www.insee.fr/fr/statistiques/4250618">
             <i>Voir ici</i>
