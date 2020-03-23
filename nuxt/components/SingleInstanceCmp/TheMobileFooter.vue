@@ -7,7 +7,7 @@
     type="dark"
     class="footer-bar d-flex justify-content-between fixed-bottom text-center flex-nowrap"
   >
-    <b-nav-text class="footer-item px-0 flex-grow-1 justify-content-center mt-4">
+    <b-nav-text class="footer-item px-0 flex-grow-1 justify-content-center mt-3">
       Fait à Marseille avec
       <img
         src="~/assets/images/icons/desktop/footer_coeur.svg"
@@ -46,7 +46,7 @@ img {
 }
 .footer-bar {
   background: #016fbf;
-  height: 120px;
+  height: 100px;
 }
 .footer-item {
   width: 176px;
@@ -58,6 +58,7 @@ img {
   font-weight: 600;
   font-size: 20px;
   line-height: 50px;
+  text-align: right;
   /* identical to box height */
 
   text-align: center;
