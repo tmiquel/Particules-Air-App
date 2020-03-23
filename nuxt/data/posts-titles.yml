@@ -4,3 +4,7 @@ mortalite:
 sante-air:
   title: >
     Respirer des Particules fines, des Oxydes d'azotes, de l'Ozone : en quoi ma santé est impacté?
+home:
+  redirect-to: mortalite
+
+
