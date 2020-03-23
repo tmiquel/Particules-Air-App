@@ -6,7 +6,7 @@
         tag="div"
         class="link border border-primary d-flex justify-content-center align-items-center"
       >
-        <span class="label font-weight-bold text-truncate">{{nameFor(menu)}}</span>
+          <span class="label font-weight-bold text-truncate">{{nameFor(menu)}}</span>
         <img :src="require(`~/assets/images/icons/${menu}.svg`)" class="img-fluid" />
       </nuxt-link>
     </div>
@@ -15,10 +15,7 @@
 
 
 <script>
-// import graphsIcon from '~/assets/images/icons/graphs.svg?inline'
-// import stakeholdersIcon from '~/assets/images/icons/stakeholders.svg?inline'
-// import definitionsIcon from '~/assets/images/icons/definitions.svg?inline'
-// import sourcesIcon from '~/assets/images/icons/sources.svg?inline'
+
 export default {
   data() {
     return {
