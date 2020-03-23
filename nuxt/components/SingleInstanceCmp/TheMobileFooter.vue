@@ -1,21 +1,19 @@
 <template>
   <b-nav
+    tabs
+    align="right"
     :justified="true"
     :small="true"
     type="dark"
     class="footer-bar d-flex justify-content-between fixed-bottom text-center flex-nowrap"
-    tabs
   >
-    <b-button squared class="footer-item px-0 flex-grow-1 justify-content-center">
-      <span :style="footerTextStyle" class="font-weight-bold">
-        Fait à Marseille avec
-        {{ responsiveSourcesText }}
-        <img
-          src="~/assets/images/icons/desktop/footer_coeur.svg"
-          class="filter-white ml-1"
-        />
-      </span>
-    </b-button>
+    <b-nav-text class="footer-item px-0 flex-grow-1 justify-content-center mt-4">
+      Fait à Marseille avec
+      <img
+        src="~/assets/images/icons/desktop/footer_coeur.svg"
+        class="filter-white ml-1"
+      />
+    </b-nav-text>
   </b-nav>
 </template>
 
@@ -46,9 +44,25 @@ img {
 .filter-white {
   filter: invert(100%) sepia(0%) saturate(5959%) hue-rotate(237deg) brightness(111%) contrast(81%);
 }
-.footer-item {
+.footer-bar {
   background: #016fbf;
   height: 120px;
+}
+.footer-item {
+  width: 176px;
+  height: 24px;
+  left: 1131px;
+  top: 1808px;
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
 }
 </style>
 
