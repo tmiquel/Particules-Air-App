@@ -14,7 +14,10 @@
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveGraphText }}
-        <b-icon-pie-chart class="ml-1" />
+        <img
+          src="~/assets/images/icons/mobile/chart_smart.svg"
+          class="ml-1"
+        />
       </span>
     </b-button>
     <b-button
@@ -25,7 +28,10 @@
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveStakeholdersText }}
-        <b-icon-people class="ml-1" />
+        <img
+          src="~/assets/images/icons/mobile/acteurs_smart.svg"
+          class="ml-1"
+        />
       </span>
     </b-button>
     <b-button
@@ -36,7 +42,12 @@
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveDefinitionsText }}
-        <b-icon-list-check class="ml-1" scale="1.4" shift-v="-1" />
+        <img
+          src="~/assets/images/icons/mobile/lexique_smart.svg"
+          class="ml-1"
+          scale="1.4"
+          shift-v="-1"
+        />
       </span>
     </b-button>
     <b-button
@@ -47,7 +58,10 @@
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveSourcesText }}
-        <b-icon-documents class="ml-1" />
+        <img
+          src="~/assets/images/icons/mobile/sources_smart.svg"
+          class="ml-1"
+        />
       </span>
     </b-button>
   </b-nav>
@@ -97,6 +111,12 @@ export default {
 .footer-item span {
   font-family: 'Source Sans Pro', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+img {
+  width: 22.26px;
+  height: 17.5px;
+  left: 1316px;
+  top: 1813px;
 }
 </style>
 

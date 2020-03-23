@@ -27,7 +27,7 @@ export default {
           desktop: "1.1rem"
         },
         fontSizeCardText: {
-          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink 
+          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink
           desktop: "1rem"
         },
         fontSizeHeading: {
@@ -35,7 +35,7 @@ export default {
           desktop: "1.7rem"
         },
         fontSizeFooter: {
-          mobile: "0.7rem", // TheFooter & PostCard
+          mobile: "0.7rem", // ThePostsMenu & PostCard
           desktop: "1rem"
         },
         fontSizeLateralSliderTitle: {
