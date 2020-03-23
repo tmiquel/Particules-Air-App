@@ -42,8 +42,19 @@ export default {
   },
   manifest: {
     name: "Particules",
+    short_name: "Particules",
     lang: "fr",
     description: ""
+  },
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: '/iris_2018_pop14_formatted_simplified_light1.pbf',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+    ]
   },
   /*
    ** Customize the progress-bar color
