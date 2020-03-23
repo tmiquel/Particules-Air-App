@@ -4,7 +4,7 @@
     <div id="pages-container" class="justify-content-center">
       <nuxt />
     </div>
-    <TheFooter />
+    <TheMobileFooter />
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
@@ -13,16 +13,18 @@
 
 <script>
 import TheNavbar from '~/components/SingleInstanceCmp/TheNavbar.vue'
-import TheFooter from '~/components/SingleInstanceCmp/TheFooter.vue'
+import ThePostsMenu from '~/components/SingleInstanceCmp/ThePostsMenu.vue'
 import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
 import DefinitionSlider from '~/components/definitions/DefinitionSlider.vue'
+import TheMobileFooter from '~/components/SingleInstanceCmp/TheMobileFooter.vue'
 
 export default {
   components: {
     TheNavbar,
-    TheFooter,
+    ThePostsMenu,
     StakeholderSlider,
-    DefinitionSlider
+    DefinitionSlider,
+    TheMobileFooter
   }
 }
 </script>
