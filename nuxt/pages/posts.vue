@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-post-banner
-      :post-title="postsTitle[$route.params.name]"
+      :post-title="postsTitles[$route.params.name].title"
       :background-img-id="$route.params.name"
     />
     <nuxt-child />
@@ -10,10 +10,12 @@
 
 
 <script>
-import { mapState } from 'vuex'
+import postsTitles from '~/data/posts-titles.yml'
 export default {
-  computed: mapState({
-    postsTitle: state => state.postsTitle
-  })
+  data() {
+    return {
+      postsTitles
+    }
+  }
 }
 </script>
