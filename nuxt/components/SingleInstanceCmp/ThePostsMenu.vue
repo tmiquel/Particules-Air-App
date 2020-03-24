@@ -16,7 +16,7 @@
         {{ responsiveGraphText }}
         <img
           src="~/assets/images/icons/mobile/chart_smart.svg"
-          class="ml-1"
+          class="filter-white ml-1"
         />
       </span>
     </b-button>
@@ -30,7 +30,7 @@
         {{ responsiveStakeholdersText }}
         <img
           src="~/assets/images/icons/mobile/acteurs_smart.svg"
-          class="ml-1"
+          class="filter-white ml-1"
         />
       </span>
     </b-button>
@@ -44,7 +44,7 @@
         {{ responsiveDefinitionsText }}
         <img
           src="~/assets/images/icons/mobile/lexique_smart.svg"
-          class="ml-1"
+          class="filter-white ml-1"
           scale="1.4"
           shift-v="-1"
         />
@@ -60,7 +60,7 @@
         {{ responsiveSourcesText }}
         <img
           src="~/assets/images/icons/mobile/sources_smart.svg"
-          class="ml-1"
+          class="filter-white ml-1"
         />
       </span>
     </b-button>
@@ -117,6 +117,9 @@ img {
   height: 17.5px;
   left: 1316px;
   top: 1813px;
+}
+.filter-white {
+  filter: invert(100%) sepia(0%) saturate(5959%) hue-rotate(237deg) brightness(111%) contrast(81%);
 }
 </style>
 
