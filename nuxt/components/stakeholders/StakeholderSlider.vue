@@ -8,8 +8,8 @@
   >
     <template v-if="selected">
       <div class="container mt-4">
-        <div class="row">
-          <div class="col">
+        <b-row class="row-cols-1">
+          <b-col>
             <cld-image
               class="d-flex justify-content-center"
               responsive="height"
@@ -27,8 +27,8 @@
               </h5>
               <p :style="responsiveTextFontSize" class="text-justify" v-html="selected.description"></p>
             </div>
-          </div>
-        </div>
+          </b-col>
+        </b-row>
       </div>
     </template>
   </drawer>
