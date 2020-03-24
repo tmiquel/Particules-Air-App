@@ -62,13 +62,18 @@
         <i>Ou écrivez directement à :</i>
         <b>contact@particules.info</b>
       </p>
+      <DesktopFooter v-if="$mq === 'mobile'"></DesktopFooter>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import DesktopFooter from '~/components/SingleInstanceCmp/DesktopFooter.vue'
 export default {
+  components: {
+    DesktopFooter
+  },
   data() {
     return {
       form: {

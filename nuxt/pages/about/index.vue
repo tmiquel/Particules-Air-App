@@ -14,9 +14,17 @@
             <app-sub-heading>Notre Histoire :</app-sub-heading>
             <p class="mx-auto mb-4">
               Après avoir gagné une bourse lors d’un hackathon
-              <a href="https://www.dataweek.fr/" target="_self">Dataweek</a>, nous nous sommes rassemblés autour d’un
-              objectif : <strong>faire de la qualité de l’air un sujet abordable par tous !</strong> L'équipe Provence
-              de <a href="https://dataforgood.fr/" target="_self">Data4Good</a> s'est jointe au projet.
+              <a
+                href="https://www.dataweek.fr/"
+                target="_self"
+              >Dataweek</a>, nous nous sommes rassemblés autour d’un
+              objectif :
+              <strong>faire de la qualité de l’air un sujet abordable par tous !</strong> L'équipe Provence
+              de
+              <a
+                href="https://dataforgood.fr/"
+                target="_self"
+              >Data4Good</a> s'est jointe au projet.
             </p>
             <app-sub-heading>Comment ?</app-sub-heading>
             <p class="mx-auto mb-4">
@@ -35,10 +43,11 @@
 
             <app-sub-heading>Envie de nous rejoindre ?</app-sub-heading>
             <p class="mx-auto mb-4">
-              <i
-                >Peut être que nous irons plus loin grâce à toi derrière ton écran qui a envie de faire partie de cette
+              <i>
+                Peut être que nous irons plus loin grâce à toi derrière ton écran qui a envie de faire partie de cette
                 équipe qui ressemble à une hydre à 7 têtes pensantes ! N’hésite pas à nous parler de toi, de tes envies,
-                de ton projet, ou de ton chat Chaussette.... <nuxt-link to="/contact">écris-nous !</nuxt-link>
+                de ton projet, ou de ton chat Chaussette....
+                <nuxt-link to="/contact">écris-nous !</nuxt-link>
               </i>
             </p>
           </div>
@@ -49,7 +58,10 @@
                 v-for="(particulesTeamMember, particulesTeamMemberId, index) in particulesTeamMembers"
                 :key="index"
               >
-                <particules-team-member-card :member-id="particulesTeamMemberId" :member="particulesTeamMember" />
+                <particules-team-member-card
+                  :member-id="particulesTeamMemberId"
+                  :member="particulesTeamMember"
+                />
               </b-col>
             </b-row>
           </b-container>
@@ -57,6 +69,7 @@
       </div>
     </div>
     <ParticulesTeamMemberSlider />
+    <DesktopFooter v-if="$mq === 'mobile'"></DesktopFooter>
   </div>
 </template>
 
@@ -65,9 +78,10 @@ import Drawer from 'ant-design-vue/lib/drawer'
 import ParticulesTeamMemberCard from '@/components/about/ParticulesTeamMemberCard'
 import particulesTeamMembers from '~/data/particules-team.yml'
 import ParticulesTeamMemberSlider from '~/components/about/ParticulesTeamMemberSlider.vue'
+import DesktopFooter from '~/components/SingleInstanceCmp/DesktopFooter.vue'
 
 export default {
-  components: { Drawer },
+  components: { Drawer, DesktopFooter },
   data() {
     return {
       particulesTeamMembers: particulesTeamMembers
@@ -75,7 +89,8 @@ export default {
   },
   components: {
     ParticulesTeamMemberCard,
-    ParticulesTeamMemberSlider
+    ParticulesTeamMemberSlider,
+    DesktopFooter
   }
 }
 </script>

@@ -9,6 +9,7 @@
       :background-img-id="$route.params.name"
      v-if="postsTitles[$route.params.name]['redirect-to']" />
     <nuxt-child />
+    <ThePostsMenu v-if="$mq === 'mobile'"></ThePostsMenu>
   </div>
 </template>
 
