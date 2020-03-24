@@ -27,7 +27,7 @@ export default {
           desktop: "1.1rem"
         },
         fontSizeCardText: {
-          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink 
+          mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink
           desktop: "1rem"
         },
         fontSizeHeading: {
@@ -39,11 +39,11 @@ export default {
           desktop: "1rem"
         },
         fontSizeLateralSliderTitle: {
-          mobile: "1.1rem", // SourcesCard & DefinitionsCard
+          mobile: "1.1rem", // SourcesCard & DefinitionsCard & Mortalite
           desktop: "1.6rem"
         },
         fontSizeLateralSliderText: {
-          mobile: "0.9rem", // SourcesCard & DefinitionsCard
+          mobile: "0.9rem", // SourcesCard & DefinitionsCard & Mortalite
           desktop: "1.2rem"
         }
       };
