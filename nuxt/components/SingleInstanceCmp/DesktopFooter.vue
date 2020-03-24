@@ -1,5 +1,9 @@
 <template>
-  <b-nav tabs align="right" class="footer-bar">
+  <b-nav
+    tabs
+    align="right"
+    class="footer-bar d-flex justify-content-between fixed-bottom text-center flex-nowrap"
+  >
     <b-nav-text class="footer-item flex-grow-1 mt-3 mr-5">
       Fait à Marseille avec
       <img
@@ -39,7 +43,7 @@ img {
 }
 .footer-bar {
   background: #016fbf;
-  height: 100px;
+  height: 90px;
 }
 .footer-item {
   font-family: Barlow;

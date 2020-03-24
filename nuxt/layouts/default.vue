@@ -5,7 +5,7 @@
       <nuxt />
     </div>
     <DesktopFooter v-if="$mq === 'desktop'"></DesktopFooter>
-    <ThePostsMenu v-if="$mq === 'mobile'"></ThePostsMenu>
+
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
