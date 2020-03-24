@@ -15,7 +15,7 @@
           vivraient dans un environnement pollué.
         </p>
         <p class="text-justify">
-          En 2017, 54 % des habitants de Provence-Alpes-Côt:bodyStyle="antBodyStyleProp"e d’Azur sont exposés, sur leur lieu de résidence, à une
+          En 2017, 54 % des habitants de Provence-Alpes-Côte d’Azur sont exposés, sur leur lieu de résidence, à une
           concentration annuelle moyenne en PM10 supérieure à la ligne directrice de l’OMS.
           <a href="https://www.insee.fr/fr/statistiques/4250618">
             <i>Voir ici</i>
@@ -44,33 +44,40 @@
           </cld-image>
         </div>
 
+        <!-- DRAWER -->
         <drawer
-          :bodyStyle="antBodyStyleProp"
+          :bodyStyle="$mq === 'mobile' ? antBodyStyleProp : {}"
           placement="right"
           @close="onClose"
           :visible="visiblePublic === sensitivePublicId"
           :width="respDrawerWidth"
         >
           <b-container class="mt-4 px-0" fluid>
-            <cld-image
-              class="d-flex justify-content-center"
-              responsive="width"
-              :publicId="getImgPublicId('banners/posts/' + sensitivePublicId)"
-              :alt="sensitivePublicId"
-            >
-              <cld-transformation width="1600" height="900" gravity="auto" crop="fill" />
-              <cld-transformation width="auto" gravity="auto" dpr="auto" fetchFormat="auto" quality="auto:best" />
-            </cld-image>
-          </b-container>
-          <b-container>
-            <b-row class="row-cols-1">
-              <b-col>
-                <h2 class="mt-4" v-html="sensitivePublic.sliderTitle"></h2>
-                <p v-html="sensitivePublic.description"></p>
+            <b-row no-gutters class="row-cols-1 row-cols-md-2">
+              <b-col cols="12" md="4">
+                <cld-image
+                  class="d-flex justify-content-center"
+                  responsive="width"
+                  :publicId="getImgPublicId('banners/posts/' + sensitivePublicId)"
+                  :alt="sensitivePublicId"
+                >
+                  <mq-layout mq="mobile">
+                    <cld-transformation width="800" height="450" gravity="auto" crop="fill" />
+                  </mq-layout>
+                  <mq-layout mq="desktop">
+                    <cld-transformation width="900" height="900" gravity="auto" crop="fill" />
+                  </mq-layout>
+                  <cld-transformation width="auto" gravity="auto" dpr="auto" fetchFormat="auto" quality="auto:best" />
+                </cld-image>
+              </b-col>
+              <b-col class="px-3" cols="12" md="8">
+                <h2 class="mt-4 mt-md-0" :style="responsiveTitleFontSize" v-html="sensitivePublic.sliderTitle"></h2>
+                <p :style="responsiveTextFontSize" v-html="sensitivePublic.description"></p>
               </b-col>
             </b-row>
           </b-container>
         </drawer>
+        <!-- END DRAWER -->
       </b-col>
     </b-row>
   </b-container>
@@ -78,11 +85,13 @@
 
 
 <script>
+import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 import Drawer from 'ant-design-vue/lib/drawer'
 import sensitivePublics from '~/data/publics.yml'
 import PublicCard from '@/components/publics/PublicCard'
 
 export default {
+  mixins: [fontSizeMixin],
   components: { Drawer, PublicCard },
   data() {
     return {
@@ -106,6 +115,12 @@ export default {
   computed: {
     respDrawerWidth() {
       return this.$mq === 'mobile' ? '80vw' : '65vw'
+    },
+    responsiveTitleFontSize() {
+      return this.responsiveFontSize('fontSizeLateralSliderTitle')
+    },
+    responsiveTextFontSize() {
+      return this.responsiveFontSize('fontSizeLateralSliderText')
     }
   }
 }

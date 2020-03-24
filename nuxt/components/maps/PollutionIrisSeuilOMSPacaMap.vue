@@ -8,6 +8,8 @@
 <script>
 import SearchAddress from '~/components/maps/SearchAddress.vue'
 import axios from 'axios'
+import Pbf from 'pbf'
+import geobuf from 'geobuf'
 var L
 if (process.client) L = require('leaflet')
 var geojson
@@ -22,30 +24,48 @@ export default {
       map: null
     }
   },
-  mounted() {
-    this.createMap()
-    axios.get('/iris_2018_pop14_formatted_simplified_light1.json').then(resp => {
-      this.addLayer(resp.data)
+  beforeCreate() {
+    this.$geoJSONCall = axios.request({
+      responseType: 'arraybuffer',
+      url: '/iris_2018_pop14_formatted_simplified_light1.pbf',
+      method: 'get'
     })
+  },
+  async mounted() {
+    let [mapMounted, geoJSONResponse] = await Promise.all([this.createMap(), this.$geoJSONCall])
+    let data = geoJSONResponse.data
+    // console.log(data)
+    var geojson = geobuf.decode(new Pbf(data))
+    // console.log(geojson)
+    this.addLayer(geojson)
   },
   methods: {
     createMap() {
-      map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
-      this.map = map
-      map.createPane('labels')
-      // map.getPane('labels').style.zIndex = 650
-      map.getPane('labels').style.pointerEvents = 'none'
-      var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-        attribution: '©OpenStreetMap, ©CartoDB',
-        detectRetina: true
-      }).addTo(map)
+      new Promise((resolve, reject) => {
+        map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
+        this.map = map
+        this.addLayers(map)
+        resolve()
+      })
+    },
+    addLayers(map) {
+      new Promise((resolve, reject) => {
+        map.createPane('labels')
+        // map.getPane('labels').style.zIndex = 650
+        map.getPane('labels').style.pointerEvents = 'none'
+        var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+          attribution: '©OpenStreetMap, ©CartoDB',
+          detectRetina: true
+        }).addTo(map)
 
-      var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-        attribution: '©OpenStreetMap, ©CartoDB',
-        pane: 'labels',
-        detectRetina: true
-      }).addTo(map)
-      L.control.zoom({ position: 'bottomright' }).addTo(map)
+        var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+          attribution: '©OpenStreetMap, ©CartoDB',
+          pane: 'labels',
+          detectRetina: true
+        }).addTo(map)
+        L.control.zoom({ position: 'bottomright' }).addTo(map)
+        resolve()
+      })
     },
     toPerc(val, base) {
       let result = (val / base) * 100

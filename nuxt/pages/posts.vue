@@ -1,8 +1,14 @@
 <template>
   <div>
     <app-post-banner
-      :post-title="postsTitle[$route.params.name]"
+      :post-title="postsTitles[$route.params.name].title"
       :background-img-id="$route.params.name"
+      v-if="postsTitles[$route.params.name].title"
+    />
+    <app-post-banner
+      :post-title="postsTitles[postsTitles[$route.params.name]["redirect-to"]].title"
+      :background-img-id="$route.params.name"
+      v-if="postsTitles[$route.params.name]['redirect-to']"
     />
     <nuxt-child />
     <ThePostsMenu v-if="$mq === 'mobile'"></ThePostsMenu>
@@ -11,12 +17,14 @@
 
 
 <script>
-import { mapState } from 'vuex'
+import postsTitles from '~/data/posts-titles.yml'
 import ThePostsMenu from '~/components/SingleInstanceCmp/ThePostsMenu.vue'
 export default {
-  computed: mapState({
-    postsTitle: state => state.postsTitle
-  }),
+  data() {
+    return {
+      postsTitles
+    }
+  },
   components: {
     ThePostsMenu
   }
