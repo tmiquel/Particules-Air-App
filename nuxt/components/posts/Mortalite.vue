@@ -51,7 +51,6 @@
           @close="onClose"
           :visible="visiblePublic === sensitivePublicId"
           :width="respDrawerWidth"
-          :style="{ maxWidth: '600px' }"
         >
           <b-container class="mt-4 px-0" fluid>
             <b-row no-gutters class="row-cols-1 row-cols-md-2">
