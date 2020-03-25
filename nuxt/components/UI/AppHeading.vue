@@ -1,8 +1,13 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5 id="app-title" class="text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize">
+    <h5 id="app-title-mobile" class="text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize" v-if="$mq === 'mobile'">
       <slot></slot>
     </h5>
+
+    <h1 id="app-title-desktop" class="display-2 text-uppercase mb-4 mb-md-5" v-if="$mq === 'desktop'">
+      <slot></slot>
+      <app-blue-centered-line />
+    </h1>
   </div>
 </template>
 
@@ -19,8 +24,8 @@ export default {
 }
 </script>
 
-<style scoped>
-#app-title {
+<style scoped lang='scss'>
+#app-title-mobile {
   background-image: linear-gradient(
     to right,
     var(--left-gradient-color),
@@ -35,6 +40,11 @@ export default {
   font-weight: bold;
 
   color: var(--font-headers-color);
+}
+
+#app-title-desktop {
+  font-weight: bold;
+  color: var(--dark-grey);
 }
 </style>
 
