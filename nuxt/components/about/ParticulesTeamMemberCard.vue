@@ -5,8 +5,8 @@
     <!-- https://github.com/cloudinary/cloudinary-vue/blob/master/src/components/CldImage/CldImage.md -->
     <!-- https://cloudinary.com/documentation/image_transformation_reference -->
     <cld-image :publicId="memberImgPublicId" responsive="width" lazy>
-      <cld-transformation width="200" gravity="face:center" height="200" crop="thumb" effect="improve" />
-      <cld-transformation radius="max" />
+      <cld-transformation width="213" gravity="face:center" height="254" crop="thumb" effect="improve" />
+      <!-- <cld-transformation radius="max" /> -->
       <cld-transformation dpr="auto"  fetchFormat="auto" quality="auto:best" />
 
     </cld-image>
