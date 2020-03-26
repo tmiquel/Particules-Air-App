@@ -51,25 +51,37 @@
               </i>
             </p>
 
-            <b-container class='px-0'>
-              <app-sub-heading :isCenteredOnDesktop="true" class="mt-5 text-center">côté tech et data visualisation</app-sub-heading>
-              <b-row class="row-cols-2 row-cols-md-4">
-                <b-col v-for="(particulesTeamMember, particulesTeamMemberId, index) in techTeam" :key="index">
-                  <particules-team-member-card :member-id="particulesTeamMemberId" :member="particulesTeamMember" />
-                </b-col>
-              </b-row>
-            </b-container>
+          <b-container v-if="$mq === 'desktop'">
+            <b-row>
+              <b-col offset="2" cols="8">
+                <p class="mx-auto mb-4" :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']">
+                  {{ introText }}
+                </p>
+              </b-col>
+            </b-row>
+          </b-container>
 
-            <b-container class="pb-md-5 px-0">
-              <app-sub-heading :isCenteredOnDesktop="true"  class="mt-5 text-center">côté produit, design et marketing</app-sub-heading>
-              <b-row class="row-cols-2 row-cols-md-4">
-                <b-col v-for="(particulesTeamMember, particulesTeamMemberId, index) in productTeam" :key="index">
-                  <particules-team-member-card :member-id="particulesTeamMemberId" :member="particulesTeamMember" />
-                </b-col>
-              </b-row>
-            </b-container>
+          <p
+            v-if="$mq === 'mobile'"
+            class="mx-auto mb-4"
+            :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']"
+          >
+            {{ introText }}
+          </p>
+        </b-col>
+      </b-row>
+    </b-container>
 
-            <app-blue-centered-line class="mb-5 pb-1" v-if="$mq === 'desktop'" />
+    <b-container>
+      <app-sub-heading :isCenteredOnDesktop="true" class="mt-5 mb-md-5 text-center"
+        >côté tech et data visualisation</app-sub-heading
+      >
+      <b-row class="row-cols-2 row-cols-md-4 justify-content-around">
+        <b-col v-for="(particulesTeamMember, particulesTeamMemberId, index) in techTeam" :key="index">
+          <particules-team-member-card :member-id="particulesTeamMemberId" :member="particulesTeamMember" />
+        </b-col>
+      </b-row>
+    </b-container>
 
             <b-container class="pt-md-5 mb-5 px-0">
               <b-row>
@@ -133,7 +145,7 @@
 </template>
 
 <script>
-import Drawer from 'ant-design-vue/lib/drawer'
+import Carousel from '@/components/about/ParticulesTeamMemberCarousel'
 import ParticulesTeamMemberCard from '@/components/about/ParticulesTeamMemberCard'
 import particulesTeamMembers from '~/data/particules-team.yml'
 import ParticulesTeamMemberSlider from '~/components/about/ParticulesTeamMemberSlider.vue'
@@ -178,9 +190,7 @@ a {
 // inspiration: https://alligator.io/vuejs/vue-media-queries/, #Responsive Class
 
 .my-column-heading {
-
   font-size: 25px;
   color: var(--dark-grey);
 }
-
 </style>

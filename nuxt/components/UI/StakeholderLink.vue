@@ -1,5 +1,5 @@
 <template>
-  <a href="#" target="_self" @click="$store.commit('OPEN_STAKEHOLDER_SLIDER', to)">
+  <a href="#!" target="_self" @click="$store.commit('OPEN_STAKEHOLDER_SLIDER', to)">
     <slot />
   </a>
 </template>
