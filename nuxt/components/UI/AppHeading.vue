@@ -1,13 +1,13 @@
 <template>
   <div class="d-flex justify-content-center">
-    <h5 id="app-title-mobile" class="text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize" v-if="$mq === 'mobile'">
-      <slot></slot>
-    </h5>
-
-    <h1 id="app-title-desktop" class="display-2 text-uppercase mb-4 mb-md-5" v-if="$mq === 'desktop'">
+    <h1 id="app-title-desktop" class="display-2 text-uppercase mb-4 mb-md-5" v-if="($mq === 'desktop') && ($route.path === '/about')">
       <slot></slot>
       <app-blue-centered-line />
     </h1>
+    <h5 id="app-title-mobile" class="text-uppercase mb-4 mb-md-5" :style="responsiveHeadingFontSize" v-else>
+      <slot></slot>
+    </h5>
+
   </div>
 </template>
 
