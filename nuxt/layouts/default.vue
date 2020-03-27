@@ -1,6 +1,7 @@
 <template>
   <div>
-    <TheNavbarDesktop />
+    <TheNavbarDesktop v-if="$mq === 'desktop'"></TheNavbarDesktop>
+    <TheNavbarMobile v-else />
     <div id="pages-container" class="justify-content-center">
       <nuxt />
     </div>
