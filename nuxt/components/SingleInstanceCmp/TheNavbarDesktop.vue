@@ -7,12 +7,9 @@
         <b-nav-item href="/contact">contact</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
-    <b-navbar-brand class="title mx-auto" active href="/">Particules</b-navbar-brand>
+    <b-navbar-brand class="title" active href="/">Particules</b-navbar-brand>
   </b-navbar>
 </template>
-
-
-
 
 <style scoped>
 .navbar {
@@ -25,10 +22,9 @@
   font-weight: 500;
   font-size: 35px;
   line-height: 42px;
-
   /* identical to box height */
 
-  color: #016fbf;
+  color: #016fbf !important;
 }
 .text {
   font-family: cursive;
@@ -38,6 +34,13 @@
   line-height: 20px;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: #454545 !important;
+  color: #454545;
+}
+.navbar-brand {
+  position: absolute;
+  left: 44.65%;
+  right: 44.65%;
+  display: block;
+  width: 100%;
 }
 </style>
