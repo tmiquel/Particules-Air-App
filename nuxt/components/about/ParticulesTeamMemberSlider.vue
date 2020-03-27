@@ -31,7 +31,7 @@
               class="d-flex justify-content-center"
               responsive="width"
               :publicId="stakeholderImgPublicId"
-              :alt="selected.title"
+              :alt="selected.name"
             >
               <!-- https://github.com/cloudinary/cloudinary-vue/blob/master/src/components/CldImage/CldImage.md -->
               <!-- https://cloudinary.com/documentation/image_transformation_reference -->
