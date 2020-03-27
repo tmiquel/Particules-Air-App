@@ -77,10 +77,11 @@ Thibaut:
   jobtitle: Coordinateur Développeur
   description: >
     Bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.
-  website:
+  website: http
+  linkedin: http
   email: thibaut.miquel@gmail.com
   twitter: https://twitter.com/MiquelThibaut/
-  facebook:
+  facebook: http
 # Luciana:
 #   start-of-cloudinary-filename: 1303110-579379-3
 #   name: <small><b>Les Data4Good!</b></small>

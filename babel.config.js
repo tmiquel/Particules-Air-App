@@ -66,7 +66,9 @@ module.exports = function(api) {
         {
           async: false
         }
-      ]
+      ],
+      ['import', { libraryName: 'ant-design-vue', libraryDirectory: 'es', style: true }]
+      // https://www.antdv.com/docs/vue/use-with-vue-cli/
     ].filter(Boolean)
   }
 }
