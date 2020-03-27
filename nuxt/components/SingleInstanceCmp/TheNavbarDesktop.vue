@@ -41,6 +41,5 @@
   left: 44.65%;
   right: 44.65%;
   display: block;
-  width: 100%;
 }
 </style>
