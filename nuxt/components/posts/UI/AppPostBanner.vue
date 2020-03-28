@@ -43,7 +43,7 @@
       <mq-layout mq="desktop">
         <cld-transformation width="auto:50:1600" height="400" crop="fill" gravity="auto" />
       </mq-layout>
-
+      <cld-transformation background="rgb:000000" effect="gradient_fade:10" y="-0.5" />
       <cld-transformation dpr="auto" fetchFormat="auto" quality="auto:best" />
       <!-- https://cloudinary.com/documentation/image_transformations#color_effects -->
       <!-- https://cloudinary.com/documentation/image_transformation_reference -->

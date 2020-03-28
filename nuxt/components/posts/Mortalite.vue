@@ -37,7 +37,7 @@
             fetchFormat="auto"
             crop="fit"
             quality="auto:best"
-            :publicId="getImgPublicId(sensitivePublicId)"
+            :publicId="getImgPublicId('sensitive-publics/'+ sensitivePublicId)"
           >
             <!-- https://cloudinary.com/documentation/image_transformation_reference -->
             <!-- https://cloudinary.com/documentation/vue_image_manipulation -->
