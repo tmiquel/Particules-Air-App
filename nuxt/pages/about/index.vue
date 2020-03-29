@@ -69,36 +69,44 @@
               <span class="text-left py-3" :style="{ fontSize: '25px' }">
                 <b v-html="particulesTeamMember.name"></b>
               </span>
-              <div class="line mr-auto">&nbsp;</div>
+              <div class="blueline mr-auto">&nbsp;</div>
               <p class="text-left" :style="{ fontSize: '22px' }">{{ particulesTeamMember.jobtitle }}</p>
               <p :style="{ fontSize: '22px' }" class="text-left pt-3" v-html="particulesTeamMember.description"></p>
 
               <span :style="{ width: '55%' }" class="d-inline-flex justify-content-between">
                 <div :style="{cursor: 'pointer'}" v-b-hover="handleHoverEmail" v-if="particulesTeamMember.email">
+                  <a target="_blank" :href="'mailto:'+particulesTeamMember.email">
                   <a-icon type="mail" :theme="isEmailHovered ? 'filled' : 'outlined'" :style="{ fontSize: '30px' }" />
+                  </a>
                 </div>
                 <div :style="{cursor: 'pointer'}" v-b-hover="handleHoverLinkedin" v-if="particulesTeamMember.linkedin">
+                  <a target="_blank" :href="particulesTeamMember.linkedin">
                   <a-icon
                     type="linkedin"
                     :theme="isLinkedinHovered ? 'outlined' : 'filled'"
                     :style="{ fontSize: '30px', color: '#0e76a8' }"
                     fill="#0e76a8"
                   />
+                  </a>
                 </div>
                 <div :style="{cursor: 'pointer'}" v-b-hover="handleHoverTwitter" v-if="particulesTeamMember.twitter">
+                  <a target="_blank" :href="particulesTeamMember.twitter">
                   <a-icon
                     type="twitter"
                     :style="{ fontSize: '30px', color: '#00acee' }"
                     fill="#00acee"
                   />
+                  </a>
                 </div>
                 <div :style="{cursor: 'pointer'}" v-b-hover="handleHoverFacebook" v-if="particulesTeamMember.facebook">
+                  <a target="_blank" :href="particulesTeamMember.facebook">
                   <a-icon
                     type="facebook"
                     :theme="isFacebookHovered ? 'outlined' : 'filled'"
                     :style="{ fontSize: '30px', color: '#3b5998' }"
                     fill="#3b5998"
                   />
+                  </a>
                 </div>
               </span>
             </b-col>
@@ -136,9 +144,9 @@
           <app-sub-heading>Notre Histoire</app-sub-heading>
           <p :class="$mq" class="mx-auto mb-4 text-left">
             Après avoir gagné une bourse lors d’un hackathon
-            <a href="https://www.dataweek.fr/" target="_self">Dataweek</a>, nous nous sommes rassemblés autour d’un
+            Dataweek, nous nous sommes rassemblés autour d’un
             objectif : faire de la qualité de l’air un sujet abordable par tous! L'équipe Provence de
-            <a href="https://dataforgood.fr/" target="_self">Data4Good</a> s'est jointe au projet.
+            <a href="https://dataforgood.fr/" target="_blank">Data4Good</a> s'est jointe au projet.
           </p>
         </b-col>
         <b-col cols="12" md="4" class="px-md-4 py-4">
@@ -188,7 +196,6 @@
 </template>
 
 <script>
-import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 import { Carousel, Icon } from 'ant-design-vue'
 import ParticulesTeamMemberCard from '@/components/about/ParticulesTeamMemberCard'
 import particulesTeamMembers from '~/data/particules-team.yml'
@@ -199,15 +206,14 @@ export default {
   directives: {
     'b-hover': VBHover
   },
-  mixins: [fontSizeMixin],
   data() {
     return {
       particulesTeamMembers: particulesTeamMembers,
       introText:
-        'Habitants de Marseille et de seset de ses alentours, \
-      nous avons toutes et tous été sensiété sensibilisés à la pollution de l’air \
-      que se soit par les média ou des arou des articles\
-       scientifiques mais finalement trèsment très peu informés des dangers sur notre santé \
+        'Habitants de Marseille et de ses alentours, \
+      nous avons toutes et tous été sensibilisés à la pollution de l’air \
+      que ce soit par les média ou des articles\
+       scientifiques mais finalement très peu informés des dangers sur notre santé \
        que celle-ci pouvait constituer.',
       isTwitterHovered: false,
       isFacebookHovered: false,
@@ -240,9 +246,6 @@ export default {
       })
       return productTeam
     },
-    responsiveTextFontSize() {
-      return this.responsiveFontSize('fontSizeLateralSliderText')
-    },
     imgPublicIds() {
       const imgPublicIds = {}
       Object.keys(particulesTeamMembers).forEach(memberId => {
@@ -269,6 +272,8 @@ export default {
   }
 }
 </script>
+
+
 
 <style lang="scss" scoped>
 p {
@@ -299,7 +304,7 @@ a {
   padding-bottom: 118px !important;
 }
 
-.line {
+.blueline {
   width: 65px;
   height: 8px;
   /* margin: 0px auto; */
@@ -315,7 +320,6 @@ a {
   text-align: center;
   /* height: 160px; */
   /* line-height: 160px; */
-  background: whitesmoke;
   overflow: hidden;
 }
 
