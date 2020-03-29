@@ -27,7 +27,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Barlow|Source+Sans+Pro&display=swap"
+          "https://fonts.googleapis.com/css?family=Barlow:300,400,700|Source+Sans+Pro:300,400,700&display=swap"
       }
     ]
   },
@@ -49,11 +49,11 @@ export default {
   workbox: {
     runtimeCaching: [
       {
-        urlPattern: '/iris_2018_pop14_formatted_simplified_light1.pbf',
-        handler: 'cacheFirst',
-        method: 'GET',
+        urlPattern: "/iris_2018_pop14_formatted_simplified_light1.pbf",
+        handler: "cacheFirst",
+        method: "GET",
         strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
-      },
+      }
     ]
   },
   /*

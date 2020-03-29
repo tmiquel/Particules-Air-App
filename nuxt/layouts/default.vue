@@ -10,6 +10,7 @@
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
+    <ParticulesTeamCarouselModal />
   </div>
 </template>
 
