@@ -6,7 +6,7 @@
       v-if="postsTitles[$route.params.name].title"
     />
     <app-post-banner
-      :post-title="postsTitles[postsTitles[$route.params.name]["redirect-to"]].title"
+      :post-title="postsTitles[postsTitles[$route.params.name]['redirect-to']].title"
       :background-img-id="$route.params.name"
       v-if="postsTitles[$route.params.name]['redirect-to']"
     />
