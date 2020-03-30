@@ -178,7 +178,7 @@ export default {
     handleHoverEmail(hovered) {
       this.isEmailHovered = hovered
     },
-    
+
   }
 }
 </script>
