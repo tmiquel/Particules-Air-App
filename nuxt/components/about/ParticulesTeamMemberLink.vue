@@ -1,5 +1,5 @@
 <template>
-  <a href="#!" target="_self" @click="onclick">
+  <a href="#!" :style='{color: "#454545"}' target="_self" @click="onclick">
     <slot />
   </a>
 </template>
@@ -19,3 +19,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+a {
+  text-decoration: none;
+}
+</style>

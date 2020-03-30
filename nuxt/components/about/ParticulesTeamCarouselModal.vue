@@ -43,7 +43,7 @@
             <h5 :style="{ fontSize: '18px' }" class="text-primary text-left text-uppercase">
               <b>{{ particulesTeamMembers[particulesTeamMemberId].squad }}</b>
             </h5>
-            <span class="text-left py-3" :style="{ fontSize: '25px' }">
+            <span class="text-left py-3 text-capitalize" :style="{ fontSize: '25px' }">
               <b v-html="particulesTeamMembers[particulesTeamMemberId].name"></b>
             </span>
             <div class="blueline mr-auto">&nbsp;</div>

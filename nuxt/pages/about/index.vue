@@ -6,7 +6,7 @@
     <b-container class="pt-md-5">
       <b-row class="row-cols-1">
         <b-col class="text-center">
-          <h6 v-if="$mq === 'desktop'" class="my-column-heading text-uppercase py-3 text-center">
+          <h6 v-if="$mq === 'desktop'" class="my-column-heading text-uppercase text-primary py-3 text-center">
             <div class="py-5 my-4"></div>
             <b>L'équipe</b>
           </h6>
@@ -15,7 +15,7 @@
           <b-container v-if="$mq === 'desktop'">
             <b-row>
               <b-col offset="2" cols="8">
-                <p class="mx-auto mb-4" :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']">
+                <p class="mx-auto mb-4 text-dark-gray" :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']">
                   {{ introText }}
                 </p>
               </b-col>
@@ -24,7 +24,7 @@
 
           <p
             v-if="$mq === 'mobile'"
-            class="mx-auto mb-4"
+            class="mx-auto mb-4 text-dark-grey"
             :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']"
           >
             {{ introText }}
@@ -53,12 +53,12 @@
         </b-col>
       </b-row>
     </b-container>
-    <app-blue-centered-line class="mb-5 pb-1" v-if="$mq === 'desktop'" />
+    <app-gray-centered-line class="mb-5 pb-1" v-if="$mq === 'desktop'" />
 
     <b-container class="pt-md-5 mb-5">
       <b-row>
         <b-col cols="12" md="4" class="px-md-4 py-4 pt-5 pt-md-4">
-          <app-sub-heading>Notre Histoire</app-sub-heading>
+          <h6 class="text-uppercase py-3 about-sub-heading text-primary"><b>Notre Histoire</b></h6>
           <p :class="$mq" class="mx-auto mb-4 text-left">
             Après avoir gagné une bourse lors d’un hackathon
             Dataweek, nous nous sommes rassemblés autour d’un
@@ -67,7 +67,7 @@
           </p>
         </b-col>
         <b-col cols="12" md="4" class="px-md-4 py-4">
-          <app-sub-heading>Comment ?</app-sub-heading>
+          <h6 class="text-uppercase py-3 about-sub-heading text-primary"><b>Comment ?</b></h6>
           <p :class="$mq" class="mx-auto mb-4 text-left">
             En créant des visualisations de données esthétiques et ergonomiques et en concevant un parcours utilisateur
             captivant dès les premiers clics.
@@ -78,7 +78,7 @@
           </p>
         </b-col>
         <b-col cols="12" md="4" class="px-md-4 py-4">
-          <app-sub-heading>Notre truc en plus</app-sub-heading>
+          <h6 class="text-uppercase py-3 about-sub-heading text-primary"><b>Notre truc en plus</b></h6>
           <p :class="$mq" class="mx-auto mb-4 text-left">
             Notre goût à tous pour les défis qui nous a permis de proposer un projet abouti en un temps (presque) record
             et nous l’espérons qui ira loin !
@@ -100,9 +100,9 @@
             class="d-inline-flex mx-auto px-4 my-0 my-md-5"
             variant="primary"
             size="lg"
-            pill
+
             to="/contact"
-            ><b>Rejoins-nous :)</b></b-button
+            >Rejoins-nous :)</b-button
           >
         </b-col>
       </b-row>
@@ -157,6 +157,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.about-sub-heading {
+  font-size: 25px;
+}
+
+.text-dark-gray {
+  color: var(--dark-grey) !important;
+}
+
+
 p {
   &.desktop {
     font-size: 1.5rem;

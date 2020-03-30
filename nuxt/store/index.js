@@ -60,7 +60,6 @@ export const mutations = {
   },
   CLOSE_TEAM_CAROUSEL(state) {
     state.teamCarousel.visible = false;
-    state.teamCarousel.slug = null;
   },
   SET_IMAGES_REF_ARRAY(state, slug) {
     state.imgReferencesArray = slug;

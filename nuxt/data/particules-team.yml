@@ -1,6 +1,6 @@
 Elise:
   start-of-cloudinary-filename: 0_y1knni
-  name: Elise
+  name: élise
   jobtitle: Data Scientist
   squad: tech et data visualisation
   description: >
@@ -36,7 +36,7 @@ Claire:
   instagram:
 Emilie:
   start-of-cloudinary-filename: Emilie
-  name: Emilie
+  name: émilie
   squad: produit, design et marketing
   jobtitle: Coordinatrice Marketing
   description: >
@@ -66,8 +66,9 @@ Kevin:
   description: >
     Le super sage de l’équipe et surtout un développeur de talent, il transmet son savoir à Thibaut et Amine et conçoit les cartes du projet.
   website:
-  email: berthier.kevin.y@gmail.com
+  email:
   twitter:
+  linkedin: http
   facebook:
   instagram:
 Thibaut:
