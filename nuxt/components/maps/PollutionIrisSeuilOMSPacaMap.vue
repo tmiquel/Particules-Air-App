@@ -1,12 +1,8 @@
 <template>
-  <div>
-    <SearchAddress :map="map" v-if="map" />
-    <div id="map"></div>
-  </div>
+  <div id="map"></div>
 </template>
 
 <script>
-import SearchAddress from '~/components/maps/SearchAddress.vue'
 import axios from 'axios'
 import Pbf from 'pbf'
 import geobuf from 'geobuf'
@@ -18,12 +14,6 @@ var info
 var legend
 
 export default {
-  components: { SearchAddress },
-  data() {
-    return {
-      map: null
-    }
-  },
   beforeCreate() {
     this.$geoJSONCall = axios.request({
       responseType: 'arraybuffer',
@@ -43,7 +33,7 @@ export default {
     createMap() {
       new Promise((resolve, reject) => {
         map = L.map('map', { zoomControl: false }).setView([43.3, 5.4], 12)
-        this.map = map
+        this.$root.map = map
         this.addLayers(map)
         resolve()
       })

@@ -10,7 +10,6 @@ if (process.client) places = require('places.js')
 import leafletPip from '@mapbox/leaflet-pip'
 
 export default {
-  props: { map: { required: true } },
   data: () => ({ marker: null }),
   mounted() {
     var placesAutocomplete = places({
@@ -36,9 +35,9 @@ export default {
       if (this.marker) {
         this.marker.setLatLng(latLng)
       } else {
-        this.marker = L.marker(latLng).addTo(this.map)
+        this.marker = L.marker(latLng).addTo(this.$root.map)
       }
-      this.map.setView(latLng, 15)
+      this.$root.map.setView(latLng, 15)
     },
     clear() {
       this.marker.setLatLng([0, 0])

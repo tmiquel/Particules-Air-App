@@ -1,25 +1,19 @@
 <template>
-  <div>
-    <SearchAddress :map="map" v-if="map" />
-    <div id="map"></div>
-  </div>
+  <div id="map"></div>
 </template>
 
 <script>
-import SearchAddress from '~/components/maps/SearchAddress.vue'
 var L
 if (process.client) L = require('leaflet')
 
 export default {
-  components: { SearchAddress },
-  data: () => ({ map: null }),
   mounted() {
     this.buildMap()
   },
   methods: {
     buildMap() {
       var map = L.map('map', { zoomControl: false }).setView([43.307827, 5.404262], 12)
-      this.map = map
+      this.$root.map = map
       map.createPane('labels')
       // map.getPane('labels').style.zIndex = 650
       map.getPane('labels').style.pointerEvents = 'none'
