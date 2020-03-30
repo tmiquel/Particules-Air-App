@@ -17,7 +17,7 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .title {
-  font-family: cursive;
+  font-family: Barlow;
   font-style: normal;
   font-weight: 500;
   font-size: 35px;
@@ -27,7 +27,7 @@
   color: #016fbf !important;
 }
 .text {
-  font-family: cursive;
+  font-family: Barlow;
   font-style: normal;
   font-weight: 600;
   font-size: 17px;
