@@ -54,7 +54,7 @@
           <b-container v-if="$mq === 'desktop'">
             <b-row>
               <b-col offset="2" cols="8">
-                <p class="mx-auto mb-4" :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']">
+                <p class="mx-auto mb-4 text-dark-gray" :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']">
                   {{ introText }}
                 </p>
               </b-col>
@@ -63,7 +63,7 @@
 
           <p
             v-if="$mq === 'mobile'"
-            class="mx-auto mb-4"
+            class="mx-auto mb-4 text-dark-grey"
             :class="[$mq, $mq === 'mobile' ? 'text-left' : 'text-center']"
           >
             {{ introText }}
@@ -171,6 +171,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.about-sub-heading {
+  font-size: 25px;
+}
+
+.text-dark-gray {
+  color: var(--dark-grey) !important;
+}
+
+
 p {
   &.desktop {
     font-size: 1.5rem;

@@ -9,13 +9,15 @@
       <!-- <cld-transformation radius="max" /> -->
       <cld-transformation dpr="auto" fetchFormat="auto" quality="auto:best" />
     </cld-image>
-    <particules-team-member-link
-      :to="memberId"
-      class="card-link pt-md-3 no-underline font-weight-bold gray text-dark stretched-link"
-      :style="responsiveMemberNameFontSize"
-      v-html="member.name"
-    ></particules-team-member-link>
-    <span v-if="$mq ==='desktop'" :style="{fontSize: '22px'}" class="text-primary">{{member.jobtitle}}</span>
+    <div class="d-flex flex-column">
+      <particules-team-member-link
+        :to="memberId"
+        class="card-link text-capitalize pt-md-3 no-underline stretched-link"
+        :style="responsiveMemberNameFontSize"
+        v-html="member.name"
+      ></particules-team-member-link>
+      <span v-if="$mq === 'desktop'" :style="{ fontSize: '22px' }" class="text-primary">{{ member.jobtitle }}</span>
+    </div>
   </b-card>
 </template>
 
@@ -48,3 +50,4 @@ export default {
   }
 }
 </script>
+
