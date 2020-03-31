@@ -1,6 +1,8 @@
 Elise:
   start-of-cloudinary-filename: 0_y1knni
-  name: Elise
+  name: élise
+  jobtitle: Data Scientist
+  squad: tech et data visualisation
   description: >
     Prévenante, multi-tâches et brillante,  Elise est notre spécialiste des données en tout genre ! Une vraie magicienne qui transforme d’obscurs Excel en carte animées !
   website:
@@ -11,6 +13,8 @@ Elise:
 Raphael:
   start-of-cloudinary-filename: a0d3531916035.587b7eaebaa5b_zm8eze
   name: Raphaël
+  squad: produit, design et marketing
+  jobtitle: Coordinateur Graphiste
   description: >
     Le designer engagé de l’équipe, il a conçu graphiquement l’application particules avec précision et style ! What else !?
   website:
@@ -21,6 +25,8 @@ Raphael:
 Claire:
   start-of-cloudinary-filename: IMG_2278
   name: Claire
+  squad: produit, design et marketing
+  jobtitle: Médiatrice Scientifique
   description: >
     Dernière arrivée dans l’équipe mais celle dont nous avions besoin. Claire fait des merveilles en design et sa formation scientifique nous permet à la fois de créer des contenus exacts mais surtout vulgarisés.
   twitter:
@@ -30,7 +36,9 @@ Claire:
   instagram:
 Emilie:
   start-of-cloudinary-filename: Emilie
-  name: Emilie
+  name: émilie
+  squad: produit, design et marketing
+  jobtitle: Coordinatrice Marketing
   description: >
    Le lancement de nouveaux produits, elle connaît par coeur, elle en a fait son coeur de métier. Pourquoi Particules ? Parce qu`il fait écho à ses engagements personnels dans l’écologie et le bien être du vivant (et ceux qui veulent le rester).
   website:
@@ -41,6 +49,8 @@ Emilie:
 Amine:
   start-of-cloudinary-filename: Amine
   name: Amine
+  squad: tech et data visualisation
+  jobtitle: Développeur
   description: >
     Notre développeur junior à la bonne humeur communicative, il n’hésite pas à participer ardemment au projet tout en se consacrant à ses études.  Et nous l’admirons pour ça !
   website:
@@ -51,28 +61,34 @@ Amine:
 Kevin:
   start-of-cloudinary-filename: KEVIN
   name: Kevin
+  jobtitle: Développeur Consultant
+  squad: tech et data visualisation
   description: >
     Le super sage de l’équipe et surtout un développeur de talent, il transmet son savoir à Thibaut et Amine et conçoit les cartes du projet.
   website:
-  email: berthier.kevin.y@gmail.com
+  email:
   twitter:
+  linkedin: http
   facebook:
   instagram:
 Thibaut:
   start-of-cloudinary-filename: Thibaut
   name: Thibaut
+  squad: tech et data visualisation
+  jobtitle: Coordinateur Développeur
   description: >
     Bi-coordinateur du projet, tombé dans la marmite de la gestion de projets quand il était petit, Thibaut coordonne avec brillo l’équipe technique. Ingénieur dans le spatial de formation,  il s’est lancé un nouveau défi avec le projet Particules.
-  website:
+  website: http
+  linkedin: http
   email: thibaut.miquel@gmail.com
   twitter: https://twitter.com/MiquelThibaut/
-  facebook:
-Luciana:
-  start-of-cloudinary-filename: 1303110-579379-3
-  name: <small><b>Les Data4Good!</b></small>
-  description: >
-    Luciana, Bernard, ...., Data4Good se lance en Provence et espère bien se pérenniser. Revue de design, revues de contenue, réflexion sur l'ergonomie... tout est possible pour quelqu'un qui a déjà pleins d'activités dans sa vie et peu de temps.
-  website:
-  twitter:
-  facebook:
-  instagram:
+  facebook: http
+# Luciana:
+#   start-of-cloudinary-filename: 1303110-579379-3
+#   name: <small><b>Les Data4Good!</b></small>
+#   description: >
+#     Luciana, Bernard, ...., Data4Good se lance en Provence et espère bien se pérenniser. Revue de design, revues de contenue, réflexion sur l'ergonomie... tout est possible pour quelqu'un qui a déjà pleins d'activités dans sa vie et peu de temps.
+#   website:
+#   twitter:
+#   facebook:
+#   instagram:

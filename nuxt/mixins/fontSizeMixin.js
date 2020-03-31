@@ -26,6 +26,10 @@ export default {
           mobile: "0.9rem", // SourcesCard & DefinitionsCard & StakeholderCard
           desktop: "1.1rem"
         },
+        fontSizeParticulesMemberCardTitle: {
+          mobile: "0.9rem", // Particules Member Card
+          desktop: "25px"
+        },
         fontSizeCardText: {
           mobile: "0.8rem", // SourcesCard & DefinitionsCard & BackToPostLink
           desktop: "1rem"

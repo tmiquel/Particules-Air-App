@@ -1,7 +1,6 @@
 <template>
   <nuxt-link :to="url" class="link" :style="responsiveLinkFontSize"
-    ><strong class="no-underline pr-1"><</strong
-    > <u>Retourner à l’{{ destinationName }}</u></nuxt-link
+    ><strong class="no-underline pr-1"><</strong> <u>Retourner à l’{{ destinationName }}</u></nuxt-link
   >
 </template>
 
@@ -27,6 +26,6 @@ export default {
 
 <style scoped>
 .link {
-  color: var(--font-post-card-title);
+  color: var(--dark-grey);
 }
 </style>

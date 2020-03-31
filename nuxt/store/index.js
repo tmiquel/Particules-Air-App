@@ -1,22 +1,25 @@
 import axios from "axios";
 
 export const state = () => ({
-         darkMode: true,
-         imgReferencesArray: [],
-         stakeholderSlider: {
-           visible: false,
-           slug: null
-         },
-         definitionSlider: {
-           visible: false,
-           slug: null
-         },
-         particulesTeamMemberSlider: {
-           visible: false,
-           slug: null
-         }
-       });
-
+  darkMode: true,
+  imgReferencesArray: [],
+  stakeholderSlider: {
+    visible: false,
+    slug: null
+  },
+  definitionSlider: {
+    visible: false,
+    slug: null
+  },
+  particulesTeamMemberSlider: {
+    visible: false,
+    slug: null
+  },
+  teamCarousel: {
+    visible: false,
+    slug: null
+  }
+});
 
 export const getters = {
   getImgPublicID: state => stringInID => {
@@ -50,6 +53,13 @@ export const mutations = {
   CLOSE_TEAM_MEMBER_SLIDER(state) {
     state.particulesTeamMemberSlider.visible = false;
     state.particulesTeamMemberSlider.slug = null;
+  },
+  OPEN_TEAM_CAROUSEL(state, slug) {
+    state.teamCarousel.visible = true;
+    state.teamCarousel.slug = slug;
+  },
+  CLOSE_TEAM_CAROUSEL(state) {
+    state.teamCarousel.visible = false;
   },
   SET_IMAGES_REF_ARRAY(state, slug) {
     state.imgReferencesArray = slug;
