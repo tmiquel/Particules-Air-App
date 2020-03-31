@@ -23,7 +23,7 @@
         class="rounded d-flex justify-content-between align-items-center text-primary"
         :style="{cursor: 'pointer'}"
       >
-        <h6 class="font-weight-bold m-0">PANNEAU DE CONTRÔLE</h6>
+        <h6 class="font-weight-bold m-0 text-uppercase">Légende</h6>
         <BIconChevronDown class="when-closed h4 m-0" />
         <BIconChevronUp class="when-opened h4 m-0" />
       </b-list-group-item>

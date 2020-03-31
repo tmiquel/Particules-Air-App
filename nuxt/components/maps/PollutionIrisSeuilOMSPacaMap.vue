@@ -2,18 +2,22 @@
   <div id="map">
     <portal to="map-menu">
       <b-list-group-item>
-        Surexposition à la pollution atmosphérique par ilôt d’habitation
-        <br />Personnes cvivant au dela du seuil de recommendation de l’OMS
-        <br />
+        <h6>Proportion d’habitants par îlot (quartier en zone urbaine, commune en zone rurale) vivant au delà des seuils de recommandations de l’OMS
+        </h6>
         <template v-if="currentIris">
-          <span
-            class="text-secondary"
-          >{{currentIris.insee_com}} {{currentIris.nom_com}} - {{currentIris.nom_iris}}</span>
 
-          <h3>{{currentIris.IRIS_POP14}} Habitants</h3>
+          <h4>{{currentIris.nom_iris}} - <small
+            class="text-secondary"
+          >{{currentIris.insee_com}} {{currentIris.nom_com}}</small> </h4>
+
+          <h3 class="text-danger">{{exposedPopulation}} Habitants / {{currentIris.IRIS_POP14}} <small>vivent au delà des recommandations de l’OMS</small></h6>
+ </h3>
+
           <h6
             class="text-danger"
           >Dont {{Math.floor(currentIris.IRIS_POP14 * (averagePerc(currentIris)/100))}} sensibles</h6>
+          <b-progress :value="100" variant="danger" :animated="animate" class="mt-3"></b-progress>
+
         </template>
       </b-list-group-item>
       <b-list-group-item>
@@ -55,6 +59,9 @@
 </template>
 
 <script>
+
+
+import { ProgressPlugin } from 'bootstrap-vue'
 import axios from 'axios'
 import Pbf from 'pbf'
 import geobuf from 'geobuf'
@@ -76,6 +83,11 @@ export default {
       },
       grades: [0, 10, 20, 50, 70],
       currentIris: null
+    }
+  },
+  computed: {
+    exposedPopulation() {
+      return Math.floor(this.currentIris.IRIS_POP14 * (this.averagePerc(this.currentIris) / 100))
     }
   },
   beforeCreate() {
@@ -105,7 +117,7 @@ export default {
     addLayers(map) {
       new Promise((resolve, reject) => {
         map.createPane('labels')
-        // map.getPane('labels').style.zIndex = 650
+        // map.this.$root.map.$root.mapthis.$root.mapPane('labels').style.zIndex = 650
         map.getPane('labels').style.pointerEvents = 'none'
         var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
           attribution: '©OpenStreetMap, ©CartoDB',
