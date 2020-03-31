@@ -49,7 +49,7 @@ export default {
   workbox: {
     runtimeCaching: [
       {
-        urlPattern: '/iris_2018_pop14_formatted_simplified_light1.pbf',
+        urlPattern: '/iris_2018_pop14_formatted_simplified_light1_picked-p4.pbf',
         handler: 'cacheFirst',
         method: 'GET',
         strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
