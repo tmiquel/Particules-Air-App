@@ -84,6 +84,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    'portal-vue/nuxt',
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage

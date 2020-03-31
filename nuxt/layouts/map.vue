@@ -1,15 +1,17 @@
 <template>
   <div>
     <!-- <CloseIcon id="close-icon" class="mt-3 mr-3 d-none d-sm-block" @click="$router.back()" /> -->
-    <MapHeader />
+    <MapSideMenu class="d-none d-lg-block" />
+    <SearchAddress />
 
     <nuxt />
   </div>
 </template>
 
 <script>
-import MapHeader from '~/components/maps/MapHeader.vue'
 import CloseIcon from '~/assets/images/icons/close.svg?inline'
+import MapSideMenu from '~/components/maps/MapSideMenu.vue'
+import SearchAddress from '~/components/maps/SearchAddress.vue'
 import { Icon } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
@@ -23,7 +25,7 @@ Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 })
 
-export default { components: { CloseIcon, MapHeader } }
+export default { components: { CloseIcon, MapSideMenu, SearchAddress } }
 </script>
 <style lang='scss'>
 .leaflet-container {

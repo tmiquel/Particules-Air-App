@@ -20,6 +20,9 @@
     "bootstrap-vue": "^2.5.0",
     "cloudinary-vue": "^1.0.0",
     "geobuf": "^3.0.1",
+    "geojson-pick": "^1.0.0",
+    "geojson-precision": "^1.0.0",
+    "global": "^4.4.0",
     "js-yaml-loader": "^1.2.2",
     "leaflet": "^1.6.0",
     "node-sass": "^4.13.1",
@@ -28,6 +31,7 @@
     "nuxt-mq": "^2.0.1",
     "pbf": "^3.2.1",
     "places.js": "^1.18.1",
+    "portal-vue": "^2.1.7",
     "sass-loader": "^8.0.2",
     "underscore": "^1.9.2",
     "vue-bootstrap-typeahead": "^0.2.6"
