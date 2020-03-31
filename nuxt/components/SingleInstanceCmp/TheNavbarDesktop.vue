@@ -3,11 +3,11 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="text">
-        <b-nav-item href="/">ACCUEIL</b-nav-item>
+        <b-nav-item to="/">ACCUEIL</b-nav-item>
         <b-nav-item href="/#">ARTICLES</b-nav-item>
         <b-nav-item href="#">CARTE</b-nav-item>
-        <b-nav-item href="/about">L'ÉQUIPE</b-nav-item>
-        <b-nav-item href="/contact">CONTACT</b-nav-item>
+        <b-nav-item to="/about">L'ÉQUIPE</b-nav-item>
+        <b-nav-item to="/contact">CONTACT</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <b-navbar-brand variant="faded" type="light" href="/">
@@ -32,9 +32,11 @@
   font-size: 13px;
   line-height: 16px;
 }
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
   color: #1680a5;
 }
+
 .navbar-dark .navbar-nav .nav-link {
   color: #454545;
 }
