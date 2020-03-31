@@ -58,8 +58,8 @@
 import axios from 'axios'
 import Pbf from 'pbf'
 import geobuf from 'geobuf'
-var L
-if (process.client) L = require('leaflet')
+import L from 'leaflet'
+
 var geojson
 var map
 var info
