@@ -32,6 +32,9 @@
   font-size: 13px;
   line-height: 16px;
 }
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #1680a5;
+}
 .navbar-dark .navbar-nav .nav-link {
   color: #454545;
 }
