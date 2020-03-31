@@ -3,11 +3,11 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="text">
-        <b-nav-item to="/">ACCUEIL</b-nav-item>
-        <b-nav-item href="/#">ARTICLES</b-nav-item>
-        <b-nav-item href="#">CARTE</b-nav-item>
-        <b-nav-item to="/about">L'ÉQUIPE</b-nav-item>
-        <b-nav-item to="/contact">CONTACT</b-nav-item>
+        <b-nav-item active to="/" exact>ACCUEIL</b-nav-item>
+        <b-nav-item active to="/posts/mortalite" exact>ARTICLES</b-nav-item>
+        <b-nav-item active to="/posts/home/graphs" exact>CARTE</b-nav-item>
+        <b-nav-item active to="/about">L'ÉQUIPE</b-nav-item>
+        <b-nav-item active to="/contact">CONTACT</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     <b-navbar-brand variant="faded" type="light" href="/">
@@ -32,9 +32,19 @@
   font-size: 13px;
   line-height: 16px;
 }
+
 .navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link:focus {
+.navbar-dark .navbar-nav .nuxt-link-active:focus {
   color: #1680a5;
+}
+.navbar-dark .navbar-nav .nuxt-link-active {
+  color: #1680a5 !important;
+  background-image: linear-gradient(to right, #1680a5, white 50px, transparent 37px);
+  background-size: 100% 0.2rem;
+  background-repeat: no-repeat;
+  background-position: bottom 25px top;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .navbar-dark .navbar-nav .nav-link {
