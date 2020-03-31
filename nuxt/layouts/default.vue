@@ -9,6 +9,7 @@
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
+    <ParticulesTeamCarouselModal />
   </div>
 </template>
 
@@ -18,6 +19,8 @@ import TheNavbar from '~/components/SingleInstanceCmp/TheNavbar.vue'
 import TheFooter from '~/components/SingleInstanceCmp/TheFooter.vue'
 import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
 import DefinitionSlider from '~/components/definitions/DefinitionSlider.vue'
+import ParticulesTeamCarouselModal from '@/components/about/ParticulesTeamCarouselModal'
+
 
 export default {
   components: {
@@ -25,7 +28,8 @@ export default {
     TheNavbar,
     TheFooter,
     StakeholderSlider,
-    DefinitionSlider
+    DefinitionSlider,
+    ParticulesTeamCarouselModal
   }
 }
 </script>

@@ -1,6 +1,6 @@
 @supports (--css: variables) {
   :root {
-    --background-color: #E5E5E5;
+    --background-color: #e5e5e5;
     --left-gradient-color: #ffa55e;
     --right-gradient-color: #fff5b9;
     --font-headers-color: #ffa555;
@@ -9,11 +9,13 @@
     --left-navbar-gradient-color: #386796;
     --right-navbar-gradient-color: #61baf7;
     --footer-background-color: #4bbac9;
-    --primary: #4b8ac9;
+    // Theming Bootstrap requires manual change of _custom.scss
+    --primary: #1680A5;
     --success: #94e576;
     --warning: #ffa55e;
     --danger: #f54a4a;
-    --font-post-card-title: #454545;
+    --dark-grey: #454545;
+
   }
 
   [dark-theme="on"] {
