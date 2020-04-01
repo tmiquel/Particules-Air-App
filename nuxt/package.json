@@ -15,7 +15,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg": "^0.1.6",
-    "ant-design-vue": "^1.4.11",
+    "ant-design-vue": "^1.4.12",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.5.0",
     "cloudinary-vue": "^1.0.0",

@@ -11,6 +11,7 @@
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
     <DefinitionSlider />
+    <ParticulesTeamCarouselModal />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import TheSideMenuDesktop from '~/components/SingleInstanceCmp/TheSideMenuDeskto
 import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
 import DefinitionSlider from '~/components/definitions/DefinitionSlider.vue'
 import DesktopFooter from '~/components/SingleInstanceCmp/DesktopFooter.vue'
+import ParticulesTeamCarouselModal from '@/components/about/ParticulesTeamCarouselModal'
 
 export default {
   components: {
@@ -31,7 +33,8 @@ export default {
     TheSideMenuDesktop,
     StakeholderSlider,
     DefinitionSlider,
-    DesktopFooter
+    DesktopFooter,
+    ParticulesTeamCarouselModal
   }
 }
 </script>
