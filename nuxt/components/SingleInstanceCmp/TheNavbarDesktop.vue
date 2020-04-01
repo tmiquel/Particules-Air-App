@@ -39,10 +39,10 @@
 }
 .navbar-dark .navbar-nav .nuxt-link-active {
   color: #1680a5 !important;
-  background-image: linear-gradient(to right, #1680a5, white 50px, transparent 37px);
+  background-image: linear-gradient(to right, #1680a5, white 100px, transparent 37px);
   background-size: 100% 0.2rem;
   background-repeat: no-repeat;
-  background-position: bottom 25px top;
+  background-position: 100% 0;
   padding-bottom: 0.5rem;
   font-weight: bold;
 }
