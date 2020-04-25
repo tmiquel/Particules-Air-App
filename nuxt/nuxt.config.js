@@ -8,12 +8,12 @@ export default {
   head: {
     titleTemplate: pageTitle =>
       pageTitle ? `${pageTitle} - Particules` : "Particules",
-    meta: [
-      { charset: "utf-8" },
+    meta: [{
+        charset: "utf-8"
+      },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       },
       {
         hid: "description",
@@ -21,13 +21,19 @@ export default {
         content: ""
       }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    link: [{
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/apple-touch-icon.png"
+      },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Barlow:300,400,700|Source+Sans+Pro:300,400,700&display=swap"
+        href: "https://fonts.googleapis.com/css?family=Barlow:300,400,700|Source+Sans+Pro:300,400,700|Averia+Serif+Libre:300,700&family=Manrope:800&family=Source+Sans+Pro&display=swap"
+
       }
     ]
   },
@@ -47,19 +53,23 @@ export default {
     description: ""
   },
   workbox: {
-    runtimeCaching: [
-      {
-        urlPattern: "/iris_2018_pop14_formatted_simplified_light1.pbf",
-        handler: "cacheFirst",
-        method: "GET",
-        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+    runtimeCaching: [{
+      urlPattern: "/iris_2018_pop14_formatted_simplified_light1.pbf",
+      handler: "cacheFirst",
+      method: "GET",
+      strategyOptions: {
+        cacheableResponse: {
+          statuses: [0, 200]
+        }
       }
-    ]
+    }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#386796" },
+  loading: {
+    color: "#386796"
+  },
   /*
    ** Global CSS
    */
@@ -69,7 +79,10 @@ export default {
    */
   plugins: [
     "~/plugins/cloudinary-core-inject.js",
-    { src: "~/plugins/cloudinary-vuex-store-init.js", ssr: false },
+    {
+      src: "~/plugins/cloudinary-vuex-store-init.js",
+      ssr: false
+    },
     "~plugins/global-components.js"
     //idea based on https://github.com/nuxt/nuxt.js/issues/240 comment from Atinux
   ],
@@ -122,10 +135,17 @@ export default {
     CLOUDINARY_CLOUD_API_KEY: process.env.CLOUDINARY_CLOUD_API_KEY,
     CLOUDINARY_CLOUD_API_SECRET: process.env.CLOUDINARY_CLOUD_API_SECRET
   },
-  "nuxt-compress": { gzip: { cache: true }, brotli: { threshold: 10240 } },
+  "nuxt-compress": {
+    gzip: {
+      cache: true
+    },
+    brotli: {
+      threshold: 10240
+    }
+  },
 
   generate: {
-    routes: function() {
+    routes: function () {
       const posts = fs
         .readdirSync("components/posts/")
         .filter(file => file.indexOf(".") !== 0 && file.slice(-4) === ".vue")
