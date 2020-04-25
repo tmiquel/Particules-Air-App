@@ -1,38 +1,57 @@
 <template>
   <div>
-    <div class="video">
-      <h1 id="titre">
-        Comprendre
-        <br />la santé publique
-        <br />avec Particules
-      </h1>
-      <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
-      <p>Nous utilisons publications scientifique et données publiques pour vous proposer des contenus ludiques, éducatifs et vous donner les clés de votre santé.</p>
-      <img src="~/assets/images/icons/desktop/texture.svg" class="texture" />
-      <button
-        type="button"
-        class="btn rounded-pill font-weight-bold border-0 text-white"
-        tag="button"
-      >
-        Lancer la vidéo
-        <img src="~/assets/images/icons/desktop/fleche.svg" class="fleche" />
-      </button>
+    <div class="container">
+      <div class="video">
+        <h1 id="titre1">
+          Comprendre
+          <br />la santé publique
+          <br />avec Particules
+        </h1>
+        <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
+        <p
+          id="art1"
+        >Nous utilisons publications scientifique et données publiques pour vous proposer des contenus ludiques, éducatifs et vous donner les clés de votre santé.</p>
+        <img src="~/assets/images/icons/desktop/texture.svg" class="texture" />
+        <button
+          type="button"
+          class="btn rounded-pill font-weight-bold border-0 text-white"
+          tag="button"
+        >
+          Lancer la vidéo
+          <img src="~/assets/images/icons/desktop/fleche.svg" class="fleche" />
+        </button>
 
-      <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
-      <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
+        <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
+        <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
+      </div>
+      <div class="map">
+        <h1 id="titre2">Visualisez les données en temps réel</h1>
+        <p id="art2">
+          Nous développons un outil cartographique puissant et configurable. Une compilation et une fusion de données libres totalement partageable.
+          <br />
+          <br />
+          <a href="#" id="linkk">
+            Voir nos cartes
+            <img src="~/assets/images/icons/desktop/arrowright.svg" class="arrow" />
+          </a>
+        </p>
+        <img src="~/assets/images/icons/desktop/Rectangle52.svg" class="rec" />
+        <img src="~/assets/images/icons/desktop/Rectangle53.svg" class="rec2" />
+        <img src="~/assets/images/icons/desktop/carte.svg" class="carte" />
+        <img src="~/assets/images/icons/desktop/encart.svg" class="encart" />
+      </div>
     </div>
-    <div class="map"></div>
-    <div></div>
   </div>
 </template>
 
 
 <script>
-import { BIcon, BIconPlay } from 'bootstrap-vue'
+import { BIcon, BIconPlay, BIconArrowRight } from 'bootstrap-vue'
 export default {
   components: {
     BIcon,
-    BIconPlay
+    BIconPlay,
+    BIconArrowRight
   }
 }
 </script>
@@ -41,14 +60,14 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/_custom.scss';
-#titre {
+#titre1 {
   @include maintitle;
   width: 563px;
   //height: 204px;
   left: 144px;
   top: 254px;
 }
-p {
+#art1 {
   position: absolute;
   width: 503px;
   height: 126px;
@@ -76,15 +95,20 @@ p {
   height: 326px;
   left: 878px;
   top: 257px;
-  box-shadow: 0px 15px 25px #e8e8e8;
+  //box-shadow: 0px 15px 25px #e8e8e8;
 }
 button {
   background: linear-gradient(89.87deg, #1680a5 -79.71%, #62bad9 167.69%);
   position: relative;
-  left: 10%;
+  left: -5%;
   right: 75.83%;
   top: 420px;
   bottom: 81.14%;
+  font-family: source sans pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
 }
 .fleche {
   left: 21.94%;
@@ -113,5 +137,86 @@ button {
   //background: #709db6;
   mix-blend-mode: multiply;
   transform: rotate(-101.94);
+}
+#titre2 {
+  @include maintitle;
+  width: 333px;
+  height: 154px;
+  left: 149px;
+  top: 1313px;
+}
+#art2 {
+  position: absolute;
+  width: 402px;
+  height: 100px;
+  left: 149px;
+  top: 1450px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 133.3%;
+  /* or 27px */
+
+  color: #454545;
+}
+.carte {
+  position: absolute;
+  width: 615px;
+  height: 369px;
+  left: 675px;
+  top: 1329px;
+  //box-shadow: 0px 15px 25px #e5e5e5;
+  border-radius: 0px 0px 3px 3px;
+}
+.encart {
+  position: absolute;
+  width: 159px;
+  height: 343px;
+  left: 597px;
+  top: 1341px;
+
+  //box-shadow: 0px 15px 25px #e6e6e6;
+  border-radius: 10px;
+}
+.arrow {
+  //position: absolute;
+  width: 16.42px;
+  height: 24.15px;
+  left: 297px;
+  top: 1661.42px;
+
+  transform: rotate(-90);
+}
+#linkk {
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  /* or 20px */
+
+  color: #1680a5;
+}
+.rec {
+  position: absolute;
+  width: 1071px;
+  height: 437.5px;
+  left: 0px;
+  top: 1202px;
+
+  //border: 3px solid #f3f7f9;
+  box-sizing: border-box;
+}
+.rec2 {
+  position: absolute;
+  width: 214.01px;
+  height: 176.81px;
+  left: 860px;
+  top: 1660px;
+
+  //background: #f3f7f9;
+  transform: rotate(0.18);
 }
 </style>
