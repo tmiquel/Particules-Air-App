@@ -40,6 +40,47 @@
         <img src="~/assets/images/icons/desktop/carte.svg" class="carte" />
         <img src="~/assets/images/icons/desktop/encart.svg" class="encart" />
       </div>
+      <div>
+        <h1 id="titre3">Des notions claires</h1>
+        <p
+          class="art3"
+        >Un récit ponctué par des points de repères chiffrés pour vous aider à quantifier et comprendre les enjeux de santé publique.</p>
+        <a href="#" id="linkk4">
+          Quelques chiffres en vidéo
+          <img
+            src="~/assets/images/icons/desktop/arrowright.svg"
+            class="arrow"
+          />
+        </a>
+        <img src="~/assets/images/icons/desktop/illus.svg" class="illus" />
+      </div>
+      <div>
+        <img src="~/assets/images/icons/desktop/bg.svg" class="bg" />
+        <img src="~/assets/images/icons/desktop/icone-simple.svg" class="icone1" />
+        <h1 id="titre4">Apprenez simplement</h1>
+        <p
+          id="art4"
+        >Des articles interactifs et ludiques ponctué d’infographies et d’illustration, pour comprendre des sujets pointus et complexes.</p>
+        <a href="#" id="linkk2">
+          Lire notre 1er article
+          <img
+            src="~/assets/images/icons/desktop/arrowright.svg"
+            class="arrow"
+          />
+        </a>
+        <img src="~/assets/images/icons/desktop/icone-transparence.svg" class="icone2" />
+        <h1 id="titre5">En toute transparence</h1>
+        <p
+          id="art5"
+        >Notre travail est scrupuleusement référencé et nos sources sont triées, catégorisées et accessibles en un clic depuis chaque article.</p>
+        <a href="#" id="linkk3">
+          Voir les sources de notre 1er article
+          <img
+            src="~/assets/images/icons/desktop/arrowright.svg"
+            class="arrow"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -218,5 +259,158 @@ button {
 
   //background: #f3f7f9;
   transform: rotate(0.18);
+}
+#titre3 {
+  @include maintitle;
+  width: 467px;
+  height: 47px;
+  left: 823px;
+  top: 2113px;
+}
+.art3 {
+  position: absolute;
+  width: 417px;
+  height: 89px;
+  left: 829px;
+  top: 2194px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 133.3%;
+  /* or 27px */
+
+  color: #454545;
+}
+.illus {
+  position: absolute;
+  width: 580px;
+  height: 504.62px;
+  left: 150px;
+  top: 1954px;
+}
+.bg {
+  position: absolute;
+  width: 1518px;
+  height: 690px;
+  left: 0px;
+  right: 0px;
+  top: 2674px;
+
+  background: #f3f7f9;
+}
+.icone1 {
+  position: absolute;
+  left: 25.01%;
+  right: 64.44%;
+  top: 350%;
+  bottom: 22.33%;
+}
+.icone2 {
+  position: absolute;
+  left: 61.88%;
+  right: 30.41%;
+  top: 350%;
+  bottom: 22.45%;
+
+  //background: #1680A5;
+  //border: 0.1px solid #1680a5;
+}
+#titre4 {
+  @include maintitle;
+  width: 365px;
+  height: 27px;
+  left: 276px;
+  top: 3002px;
+  font-size: 35px;
+}
+#art4 {
+  position: absolute;
+  width: 397px;
+  height: 81px;
+  left: 276px;
+  top: 3057px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 133.3%;
+  /* or 27px */
+
+  color: #454545;
+}
+#titre5 {
+  @include maintitle;
+  width: 380px;
+  height: 27px;
+  left: 767px;
+  top: 3002px;
+  font-size: 35px;
+}
+#art5 {
+  position: absolute;
+  width: 391px;
+  height: 78px;
+  left: 767px;
+  top: 3057px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 133.3%;
+  /* or 27px */
+
+  color: #454545;
+}
+#linkk2 {
+  position: absolute;
+  width: 200px;
+  height: 21px;
+  left: 276px;
+  top: 3157px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  /* or 20px */
+
+  color: #1680a5;
+}
+#linkk3 {
+  position: absolute;
+  width: 339px;
+  height: 18px;
+  left: 769px;
+  top: 3157px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  /* or 20px */
+
+  color: #1680a5;
+}
+#linkk4 {
+  position: absolute;
+  width: 265px;
+  height: 22px;
+  left: 830px;
+  top: 2301px;
+
+  font-family: Barlow;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  /* or 20px */
+
+  color: #1680a5;
 }
 </style>
