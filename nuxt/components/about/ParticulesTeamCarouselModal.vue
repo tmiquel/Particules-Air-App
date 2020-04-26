@@ -114,8 +114,7 @@
 
 <script>
 import particulesTeamMembers from '~/data/particules-team.yml'
-import { Carousel, Modal, Icon } from 'ant-design-vue'
-import { Button } from 'ant-design-vue'
+import { Carousel, Modal, Icon, Button } from 'ant-design-vue'
 import { mapState } from 'vuex'
 import { VBHover } from 'bootstrap-vue'
 

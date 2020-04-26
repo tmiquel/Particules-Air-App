@@ -32,7 +32,7 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Barlow:300,400,700|Source+Sans+Pro:300,400,700|Averia+Serif+Libre:300,700&family=Manrope:800&family=Source+Sans+Pro&display=swap"
+        href: "https://fonts.googleapis.com/css?family=Barlow:300,400,600,700|Source+Sans+Pro:300,400,700|Averia+Serif+Libre:300,700&family=Manrope:800&family=Source+Sans+Pro&display=swap"
 
       }
     ]

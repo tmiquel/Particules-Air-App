@@ -34,9 +34,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 #pages-container {
   margin-top: 49px;
-  margin-bottom: 62px;
+  &.mobile {
+    margin-bottom: 62px;
+  }
 }
 </style>

@@ -1,19 +1,20 @@
 <template>
   <div>
     <app-landing-banner />
-    <sante-air />
-    <posts-list />
+    <the-landing-page />
+    <large-footer />
   </div>
 </template>
 
 <script>
-import SanteAir from '@/components/posts/SanteAir'
-import PostsList from '~/components/posts/UI/PostsList'
+import TheLandingPage from '@/components/SingleInstanceCmp/TheLandingPage'
+import LargeFooter from '@/components/nav/LargeFooter'
+
 
 export default {
   components: {
-    SanteAir,
-    PostsList
+    TheLandingPage,
+    LargeFooter
   }
 }
 </script>
