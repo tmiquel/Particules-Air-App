@@ -47,14 +47,14 @@
     >
       <span :style="footerTextStyle" class="font-weight-bold">
         {{ responsiveSourcesText }}
-        <b-icon-documents class="ml-1" />
+        <b-icon-files class="ml-1" />
       </span>
     </b-button>
   </b-nav>
 </template>
 
 <script>
-import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconDocuments } from 'bootstrap-vue'
+import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconFiles } from 'bootstrap-vue'
 
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
@@ -65,7 +65,7 @@ export default {
     BIconPieChart,
     BIconPeople,
     BIconListCheck,
-    BIconDocuments
+    BIconFiles
   },
   computed: {
     responsiveGraphText() {
@@ -99,5 +99,3 @@ export default {
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 </style>
-
-

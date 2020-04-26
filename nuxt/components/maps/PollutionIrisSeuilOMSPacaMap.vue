@@ -67,8 +67,10 @@ import axios from 'axios'
 import Pbf from 'pbf'
 import geobuf from 'geobuf'
 import { Progress } from 'ant-design-vue'
-var L
-if (process.client) L = require('leaflet')
+// var L
+// if (process.client) L = require('leaflet')
+import L from 'leaflet'
+
 var geojson
 var map
 var info
