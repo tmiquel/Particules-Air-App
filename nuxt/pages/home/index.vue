@@ -7,7 +7,7 @@
           <br />la santé publique
           <br />avec Particules
         </h1>
-        <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
+
         <p
           id="art1"
         >Nous utilisons publications scientifique et données publiques pour vous proposer des contenus ludiques, éducatifs et vous donner les clés de votre santé.</p>
@@ -22,6 +22,7 @@
         </button>
 
         <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
+        <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
         <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
       </div>
       <div class="map">
@@ -126,7 +127,7 @@ export default {
   width: 633px;
   height: 516px;
   left: 807px;
-  top: 515px;
+  top: 480px;
 
   background: #f3f7f9;
 }
