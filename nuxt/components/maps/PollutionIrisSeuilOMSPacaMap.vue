@@ -2,7 +2,7 @@
   <div id="map">
     <portal to="map-menu">
       <b-list-group-item>
-        <h6>Proportion d’habitants par îlot (quartier en zone urbaine, commune en zone rurale) vivant au delà des seuils de recommandations de l’OMS
+        <h6>Proportion d’habitants vivant au delà des recommandations de l’OMS par quartier en zone urbaine et commune en zone rurale
         </h6>
         <template v-if="currentIris">
 
@@ -17,6 +17,7 @@
             class="text-danger"
           >Dont {{Math.floor(currentIris.IRIS_POP14 * (averagePerc(currentIris)/100))}} sensibles</h6>
           <b-progress :value="100" variant="danger" :animated="animate" class="mt-3"></b-progress>
+          <a-progress :percent="30" />
 
         </template>
       </b-list-group-item>
@@ -65,6 +66,7 @@ import { ProgressPlugin } from 'bootstrap-vue'
 import axios from 'axios'
 import Pbf from 'pbf'
 import geobuf from 'geobuf'
+import { Progress } from 'ant-design-vue'
 var L
 if (process.client) L = require('leaflet')
 var geojson
@@ -89,6 +91,9 @@ export default {
     exposedPopulation() {
       return Math.floor(this.currentIris.IRIS_POP14 * (this.averagePerc(this.currentIris) / 100))
     }
+  },
+  components: {
+    AProgress : Progress
   },
   beforeCreate() {
     this.$geoJSONCall = axios.request({
