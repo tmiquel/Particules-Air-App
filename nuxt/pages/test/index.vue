@@ -192,9 +192,11 @@ button {
   border-radius: 36.5px;
   padding-left: 2rem !important;
   padding-right: 2rem !important;
+}
+.btn {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin: auto;
 }
 #mail {
   font-family: 'Manrope', sans-serif;
