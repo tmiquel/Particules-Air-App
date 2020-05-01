@@ -15,45 +15,27 @@
         <button
           type="button"
           class="btn rounded-pill font-weight-bold border-0 text-white video-btn"
-          data-toggle="modal"
-          data-src="https://www.youtube.com/embed/A-twOC3W558"
-          data-target="#myModal"
           tag="button"
+          @click="() => (modal2Visible = true)"
         >
           Lancer la vidéo
           <img src="~/assets/images/icons/desktop/fleche.svg" class="fleche" />
         </button>
-
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="myModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
+        <a-modal
+          v-model="modal2Visible"
+          centered
+          @ok="() => (modal2Visible = false)"
+          :footer="null"
+          :destroyOnClose="true"
         >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <!-- 16:9 aspect ratio -->
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe
-                    class="embed-responsive-item"
-                    src
-                    id="video"
-                    allowscriptaccess="always"
-                    allow="autoplay"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <LazyYoutubeVideo
+              autoplay
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/4JS70KB9GS0"
+            />
           </div>
-        </div>
-        <!--Modal end -->
+        </a-modal>
 
         <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
         <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
@@ -123,11 +105,21 @@
 
 <script>
 import { BIcon, BIconPlay, BIconArrowRight } from 'bootstrap-vue'
+import { Carousel, Modal, Icon } from 'ant-design-vue'
+import LazyYoutubeVideo from 'vue-lazy-youtube-video'
+import { Button } from 'ant-design-vue'
 export default {
+  data() {
+    return {
+      modal2Visible: false
+    }
+  },
   components: {
     BIcon,
     BIconPlay,
-    BIconArrowRight
+    BIconArrowRight,
+    AModal: Modal,
+    LazyYoutubeVideo
   }
 }
 </script>
@@ -136,27 +128,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/_custom.scss';
-//modal
-.modal-dialog {
-  max-width: 800px;
-  margin: 30px auto;
-}
 
-.modal-body {
-  position: relative;
-  padding: 0px;
-}
-.close {
-  position: absolute;
-  right: -30px;
-  top: 0;
-  z-index: 999;
-  font-size: 2rem;
-  font-weight: normal;
-  color: #fff;
-  opacity: 1;
-}
-//modal end
 #titre1 {
   @include maintitle;
   width: 563px;

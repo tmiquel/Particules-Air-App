@@ -12,7 +12,8 @@
     "mdbvue": "^6.5.1",
     "popper.js": "1.16.1",
     "trix": "1.2.2",
-    "turbolinks": "5.2.0"
+    "turbolinks": "5.2.0",
+    "vue-lazy-youtube-video": "^2.0.0"
   },
   "version": "0.1.0",
   "devDependencies": {
