@@ -5,7 +5,7 @@
     <div id="pages-container" class="justify-content-center">
       <nuxt />
     </div>
-    <DesktopFooter v-if="$mq === 'desktop'"></DesktopFooter>
+
 
     <!-- Visibility toggles for the sliders below. See Vuex -->
     <StakeholderSlider />
@@ -20,7 +20,6 @@ import TheNavbarDesktop from '~/components/SingleInstanceCmp/TheNavbarDesktop.vu
 import ThePostsMenu from '~/components/SingleInstanceCmp/ThePostsMenu.vue'
 import StakeholderSlider from '~/components/stakeholders/StakeholderSlider.vue'
 import DefinitionSlider from '~/components/definitions/DefinitionSlider.vue'
-import DesktopFooter from '~/components/SingleInstanceCmp/DesktopFooter.vue'
 
 export default {
   components: {
