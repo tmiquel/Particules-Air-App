@@ -103,37 +103,39 @@
                   </b-col>
                 </b-row>
                 <b-row>
-                  <b-col class="my-3" id="mc_embed_signup">
+                  <b-col cols="12" class="mb-4 ml-2 d-flex justify-content-start" id="mc_embed_signup">
                     <!-- Begin Mailchimp Signup Form -->
-                    <form
-                      action="https://particules.us8.list-manage.com/subscribe/post?u=d44695a488e6e3df588513296&amp;id=b4d1952361"
-                      method="post"
-                      id="mc-embedded-subscribe-form"
-                      name="mc-embedded-subscribe-form"
-                      class="validate d-flex justify-content-start"
-                      target="_blank"
-                      novalidate
+                    <!-- <b-overlay
+                      :show='overlaid'
+                      variant="primary"
+                      spinner-variant="primary"
+                      spinner-type="grow"
+                      spinner-small
+                      rounded="sm"
+                      style="max-width: 320px;"
+                    > -->
+                    <mailchimp-subscribe
+                      url="https://particules.us8.list-manage.com/subscribe/post-json"
+                      user-id="d44695a488e6e3df588513296"
+                      list-id="b4d1952361"
+                      @error="onError"
+                      @success="onSuccess"
                     >
-                      <div id="mc_embed_signup_scroll" class="d-inline-flex ml-4">
-                        <div class="mc-field-group">
+                      <template v-slot="{ subscribe, setEmail, error, success, loading }">
+                        <form
+                          @submit.prevent="subscribe"
+                          id="my-mailchimp-form"
+                          class="d-inline-flex justify-content-start"
+                        >
                           <b-form-input
                             type="email"
                             value=""
                             placeholder="Email"
-                            name="EMAIL"
+                            name="MERGE0"
                             class="required email"
-                            id="mce-EMAIL"
+                            id="MERGE0"
+                            v-model="email"
                           />
-                        </div>
-                        <div id="mce-responses" class="clear">
-                          <div class="response" id="mce-error-response" style="display:none"></div>
-                          <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                          <input type="text" name="b_d44695a488e6e3df588513296_b4d1952361" tabindex="-1" value="" />
-                        </div>
-                        <div class="clear" id="mailchimp-subs-submit">
                           <b-button
                             variant="secondary"
                             type="submit"
@@ -141,15 +143,35 @@
                             name="subscribe"
                             id="mc-embedded-subscribe"
                             class="button"
+                            @click="setEmail(email)"
                           >
                             <b>
                               <a-icon type="right" />
                             </b>
                           </b-button>
-                        </div>
-                      </div>
-                    </form>
+
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_d44695a488e6e3df588513296_b4d1952361" tabindex="-1" value="" />
+                          </div>
+
+                          <!-- //TODO layout
+                            //TODO error msg
+                            //TODO enlever pink, etc.
+                            //TODO push -->
+                          <div v-if="error">{{ error }}</div>
+                          <div v-if="success">Yay!</div>
+                          <div v-if="loading">Loading…</div>
+                        </form>
+                      </template>
+                    </mailchimp-subscribe>
                     <!--End mc_embed_signup-->
+                    <!-- </b-overlay> -->
+                  </b-col>
+                  <b-col>
+                    Mon message
+                    <div v-if="error">{{ error }}</div>
+                    <div v-if="success">Yay!</div>
+                    <div v-if="loading">Loading…</div>
                   </b-col>
                 </b-row>
               </b-container>
@@ -169,24 +191,37 @@
 </template>
 
 <script>
-import MailchimpSubscribe from 'vue-mailchimp-subscribe'
+import MailchimpSubscribe from './VueMailchimpSubscribe'
 import particulesInfo from '~/data/particules-info.yml'
 import { Icon } from 'ant-design-vue'
+import { BOverlay } from 'bootstrap-vue'
+
 export default {
   data() {
     return {
-      particulesInfo
+      particulesInfo,
+      error: 'myError',
+      email: '',
+      overlaid: false
     }
   },
   components: {
-    AIcon: Icon
+    AIcon: Icon,
+    MailchimpSubscribe,
+    'b-overlay': BOverlay
   },
   methods: {
     onError() {
       // handle error
+      alert('fail'), (this.overlaid = false)
+    },
+    onLoading() {
+      this.overlaid = true
     },
     onSuccess() {
       // handle success
+      alert('success')
+      this.overlaid = false
     }
   }
 }
@@ -302,8 +337,8 @@ export default {
   display: table;
 }
 
-.mc-field-group,
-.mc-field-group input {
+#my-mailchimp-form,
+#my-mailchimp-form input {
   background: #f4f4f4;
   width: 340px;
   height: 49.22px;
@@ -315,7 +350,7 @@ export default {
   border-radius: 18px;
 }
 
-#mailchimp-subs-submit .btn {
+#my-mailchimp-form .btn {
   width: 48px;
   height: 49px;
   left: 1305px;

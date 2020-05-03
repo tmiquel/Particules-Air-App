@@ -176,11 +176,16 @@ export default {
    ** Build configuration
    */
   build: {
-    extend(config, ctx) {
+    extend(config, {isDev}) {
       config.module.rules.push({
         test: /\.ya?ml$/,
         use: "js-yaml-loader"
       });
+
+      if (isDev) {
+        config.devtool = 'source-map'
+      }
+
     }
   }
 };
