@@ -32,8 +32,8 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Barlow:300,400,600,700|Source+Sans+Pro:300,400,700|Averia+Serif+Libre:300,700&family=Manrope:800&family=Source+Sans+Pro&display=swap"
-
+        href:
+          "https://fonts.googleapis.com/css?family=Barlow:300,400,700|Source+Sans+Pro:300,400,700|Manrope:800&display=swap"
       }
     ]
   },
@@ -53,16 +53,14 @@ export default {
     description: ""
   },
   workbox: {
-    runtimeCaching: [{
-      urlPattern: "/iris_2018_pop14_formatted_simplified_light1.pbf",
-      handler: "cacheFirst",
-      method: "GET",
-      strategyOptions: {
-        cacheableResponse: {
-          statuses: [0, 200]
-        }
+    runtimeCaching: [
+      {
+        urlPattern: "/iris_2018_pop14_formatted_simplified_light1.pbf",
+        handler: "cacheFirst",
+        method: "GET",
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
       }
-    }]
+    ]
   },
   /*
    ** Customize the progress-bar color
