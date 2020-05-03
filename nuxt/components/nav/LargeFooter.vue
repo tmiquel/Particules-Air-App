@@ -1,18 +1,18 @@
 <template>
   <footer>
-    <b-container fluid :style="{ padding: '14px 30px 0 30px' }" class="pink">
-      <b-row class="d-flex blue align-items-center upper-gray-bar" :style="{ height: '360px' }">
-        <b-col cols="2" class="d-flex h-100 justify-content-center red small-centered-right-border">
+    <b-container fluid :style="{ padding: '14px 30px 0 30px' }" >
+      <b-row class="d-flex align-items-center upper-gray-bar" :style="{ height: '360px' }">
+        <b-col cols="2" class="d-flex h-100 justify-content-center  small-centered-right-border">
           <img src="~assets/images/icons/particules-initials-logo.svg" alt="Particules" />
         </b-col>
         <b-col
           cols="2"
-          class="red text-center h-100 d-flex justify-content-center align-items-center long-centered-right-border"
+          class=" text-center h-100 d-flex justify-content-center align-items-center long-centered-right-border"
         >
           <b-container fluid>
             <b-row class="h-100" no-gutters>
               <b-col class="vertical-blue-bar">
-                <b-nav vertical class="pink">
+                <b-nav vertical >
                   <b-nav-item to="/"><b>Accueil</b></b-nav-item>
                   <b-nav-item to="/posts"><b>Article</b></b-nav-item>
                   <b-nav-item to="/maps"><b>Carte</b></b-nav-item>
@@ -23,9 +23,9 @@
             </b-row>
           </b-container>
         </b-col>
-        <b-col cols="4" class="h-100 red text-center long-centered-right-border">
-          <b-row cols="1" class="h-100 red" align-v="center" align-h="center">
-            <b-col class="pink">
+        <b-col cols="4" class="h-100  text-center long-centered-right-border">
+          <b-row cols="1" class="h-100" align-v="center" align-h="center">
+            <b-col >
               <b-container fluid>
                 <b-row cols="1">
                   <b-col class="text-primary center-primary-underline py-3" :style="{ fontWeight: '600' }">
@@ -89,12 +89,12 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col cols="4" class="red text-center">
-          <b-row cols="1" class="h-100 red" align-v="center" align-h="center">
-            <b-col class="pink">
+        <b-col cols="4" class=" text-center">
+          <b-row cols="1" class="h-100" align-v="center" align-h="center">
+            <b-col >
               <b-container>
                 <b-row>
-                  <b-col cols="2" class="d-flex justify-content-end align-items-center text-primary py-3 green">
+                  <b-col cols="2" class="d-flex justify-content-end align-items-center text-primary py-3">
                     <img src="~assets/images/icons/newsletter.svg" class="yellow" alt="newsletter" />
                   </b-col>
                   <b-col cols="10" id="call-to-newsletter" class="text-primary py-3" :style="{ fontWeight: '600' }">
@@ -162,9 +162,9 @@
           </b-row>
         </b-col>
       </b-row>
-      <b-row :style="{ height: '55px' }" class="yellow upper-gray-bar">
-        <b-col class="d-flex red justify-content-center align-items-center">
-          <span class="blue text-center mx-2">
+      <b-row :style="{ height: '55px' }" class="upper-gray-bar">
+        <b-col class="d-flex justify-content-center align-items-center">
+          <span class="text-center mx-2">
             &copy; 2020 Particules
           </span>
         </b-col>
@@ -255,6 +255,10 @@ export default {
       if (message.includes('is already subscribed to list')) {
         message = 'Cet email est déjà ajouté'
       }
+
+      if (message.includes('This email cannot be added to this list. Please enter a different email address.')) {
+        message = "Cet email ne peut pas être ajouté. Merci d'entrer une autre adresse email"
+      }
       return message
     },
     onError() {
@@ -329,26 +333,6 @@ export default {
   background-size: 1px 100%;
   background-repeat: no-repeat;
   background-position: right;
-}
-
-.red {
-  // background: red;
-}
-
-.pink {
-  // background: pink;
-}
-
-.blue {
-  //  background: blue;
-}
-
-.yellow {
-  // background: yellow;
-}
-
-.green {
-  // background: greenyellow;
 }
 
 .nav-link {
