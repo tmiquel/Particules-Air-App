@@ -103,25 +103,17 @@
                   </b-col>
                 </b-row>
                 <b-row>
-                  <b-col cols="12" class="mb-4 ml-2 d-flex justify-content-start" id="mc_embed_signup">
+                  <b-col cols="12" class="mb-4 ml-4 d-flex justify-content-start" id="mc_embed_signup">
                     <!-- Begin Mailchimp Signup Form -->
-                    <!-- <b-overlay
-                      :show='overlaid'
-                      variant="primary"
-                      spinner-variant="primary"
-                      spinner-type="grow"
-                      spinner-small
-                      rounded="sm"
-                      style="max-width: 320px;"
-                    > -->
-                    <mailchimp-subscribe
+
+                    <!-- <mailchimp-subscribe
                       url="https://particules.us8.list-manage.com/subscribe/post-json"
                       user-id="d44695a488e6e3df588513296"
                       list-id="b4d1952361"
                       @error="onError"
                       @success="onSuccess"
-                    >
-                      <template v-slot="{ subscribe, setEmail, error, success, loading }">
+                    > -->
+                      <!-- <template v-slot="{ subscribe, setEmail, error, success, loading }"> -->
                         <form
                           @submit.prevent="subscribe"
                           id="my-mailchimp-form"
@@ -134,7 +126,7 @@
                             name="MERGE0"
                             class="required email"
                             id="MERGE0"
-                            v-model="email"
+                            @input="setEmail($event)"
                           />
                           <b-button
                             variant="secondary"
@@ -143,7 +135,6 @@
                             name="subscribe"
                             id="mc-embedded-subscribe"
                             class="button"
-                            @click="setEmail(email)"
                           >
                             <b>
                               <a-icon type="right" />
@@ -158,20 +149,12 @@
                             //TODO error msg
                             //TODO enlever pink, etc.
                             //TODO push -->
-                          <div v-if="error">{{ error }}</div>
-                          <div v-if="success">Yay!</div>
-                          <div v-if="loading">Loading…</div>
                         </form>
-                      </template>
-                    </mailchimp-subscribe>
-                    <!--End mc_embed_signup-->
-                    <!-- </b-overlay> -->
                   </b-col>
-                  <b-col>
-                    Mon message
-                    <div v-if="error">{{ error }}</div>
-                    <div v-if="success">Yay!</div>
-                    <div v-if="loading">Loading…</div>
+                  <b-col class="ml-4 d-flex justify-content-start">
+                    <div v-if="error" class="ml-2 text-danger"><b>{{ error }}</b></div>
+                    <div v-if="success" class="ml-2 text-success"><b>Merci! Votre email a bien été ajouté</b></div>
+                    <div v-if="loading" class="ml-2 text-primary"><b>Email en cours d'ajout...</b></div>
                   </b-col>
                 </b-row>
               </b-container>
@@ -195,14 +178,23 @@ import MailchimpSubscribe from './VueMailchimpSubscribe'
 import particulesInfo from '~/data/particules-info.yml'
 import { Icon } from 'ant-design-vue'
 import { BOverlay } from 'bootstrap-vue'
+import jsonp from "jsonp";
+import queryString from "query-string";
+
 
 export default {
   data() {
     return {
       particulesInfo,
-      error: 'myError',
+      error: '',
       email: '',
-      overlaid: false
+      url: "https://particules.us8.list-manage.com/subscribe/post-json",
+      userId: "d44695a488e6e3df588513296",
+      listId: "b4d1952361",
+      success: false,
+      error: null,
+      loading: false,
+
     }
   },
   components: {
@@ -210,18 +202,66 @@ export default {
     MailchimpSubscribe,
     'b-overlay': BOverlay
   },
+  computed: {
+    data() {
+      return queryString.stringify({
+        u: this.userId,
+        id: this.listId,
+        EMAIL: this.email
+      })
+    }
+  },
   methods: {
+    setEmail(value = '') {
+      this.email = value.trim()
+    },
+
+    subscribe() {
+      if (this.email === null || this.loading) {
+        return
+      }
+
+      this.success = false
+      this.error = null
+      this.loading = true
+
+      const url = `${this.url}?${this.data}`
+
+      jsonp(url, { param: 'c' }, this.onResponse)
+    },
+    onResponse(error, data) {
+      this.loading = false
+
+      if (error) {
+        this.error = error
+      }
+
+      if (data && data.result === 'error') {
+        this.error = this.formatErrorMessage(data.msg)
+      }
+
+      if (this.error) {
+        this.onError();
+      } else {
+        this.success = true
+        this.email = null
+        this.onSuccess();
+
+      }
+    },
+
+    formatErrorMessage(message) {
+      message.replace('0 - ', '')
+      if (message.includes('is already subscribed to list')) {
+        message = 'Cet email est déjà ajouté'
+      }
+      return message
+    },
     onError() {
       // handle error
-      alert('fail'), (this.overlaid = false)
-    },
-    onLoading() {
-      this.overlaid = true
     },
     onSuccess() {
       // handle success
-      alert('success')
-      this.overlaid = false
     }
   }
 }
