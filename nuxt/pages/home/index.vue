@@ -32,7 +32,7 @@
             <LazyYoutubeVideo
               autoplay
               class="embed-responsive-item"
-              src="https://www.youtube.com/embed/4JS70KB9GS0"
+              src="https://www.youtube.com/embed/MBMk1uoP5Ao"
             />
           </div>
         </a-modal>
