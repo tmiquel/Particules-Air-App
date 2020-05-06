@@ -28,6 +28,7 @@
           :footer="null"
           :destroyOnClose="true"
           bodyStyle="padding: 0;"
+          width="760px"
         >
           <div class="embed-responsive embed-responsive-16by9">
             <LazyYoutubeVideo
