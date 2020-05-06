@@ -1,105 +1,103 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="video">
-        <h1 id="titre1">
-          Comprendre
-          <br />la santé publique
-          <br />avec Particules
-        </h1>
+  <div class="box">
+    <div class="video">
+      <h1 id="titre1">
+        Comprendre
+        <br />la santé publique
+        <br />avec Particules
+      </h1>
 
-        <p
-          id="art1"
-        >Nous utilisons publications scientifique et données publiques pour vous proposer des contenus ludiques, éducatifs et vous donner les clés de votre santé.</p>
-        <img src="~/assets/images/icons/desktop/texture.svg" class="texture" />
-        <button
-          type="button"
-          class="btn rounded-pill font-weight-bold border-0 text-white video-btn"
-          tag="button"
-          @click="() => (modal2Visible = true)"
-        >
-          Lancer la vidéo
-          <img src="~/assets/images/icons/desktop/fleche.svg" class="fleche" />
-        </button>
-        <a-modal
-          v-model="modal2Visible"
-          centered
-          @ok="() => (modal2Visible = false)"
-          :footer="null"
-          :destroyOnClose="true"
-          bodyStyle="padding: 0;"
-          width="760px"
-        >
-          <div class="embed-responsive embed-responsive-16by9">
-            <LazyYoutubeVideo
-              autoplay
-              class="embed-responsive-item"
-              src="https://www.youtube.com/embed/MBMk1uoP5Ao"
-            />
-          </div>
-        </a-modal>
+      <p
+        id="art1"
+      >Nous utilisons publications scientifique et données publiques pour vous proposer des contenus ludiques, éducatifs et vous donner les clés de votre santé.</p>
+      <img src="~/assets/images/icons/desktop/texture.svg" class="texture" />
+      <button
+        type="button"
+        class="btn rounded-pill font-weight-bold border-0 text-white video-btn"
+        tag="button"
+        @click="() => (modal2Visible = true)"
+      >
+        Lancer la vidéo
+        <img src="~/assets/images/icons/desktop/fleche.svg" class="fleche" />
+      </button>
+      <a-modal
+        v-model="modal2Visible"
+        centered
+        @ok="() => (modal2Visible = false)"
+        :footer="null"
+        :destroyOnClose="true"
+        bodyStyle="padding: 0;"
+        width="760px"
+      >
+        <div class="embed-responsive embed-responsive-16by9">
+          <LazyYoutubeVideo
+            autoplay
+            class="embed-responsive-item"
+            src="https://www.youtube.com/embed/MBMk1uoP5Ao"
+          />
+        </div>
+      </a-modal>
 
-        <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
-        <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
-        <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
-      </div>
-      <div class="map">
-        <h1 id="titre2">Visualisez les données en temps réel</h1>
-        <p id="art2">
-          Nous développons un outil cartographique puissant et configurable. Une compilation et une fusion de données libres totalement partageable.
-          <br />
-          <br />
-          <a href="#" id="linkk">
-            Voir nos cartes
-            <img src="~/assets/images/icons/desktop/arrowright.svg" class="arrow" />
-          </a>
-        </p>
-        <img src="~/assets/images/icons/desktop/Rectangle52.svg" class="rec" />
-        <img src="~/assets/images/icons/desktop/Rectangle53.svg" class="rec2" />
-        <img src="~/assets/images/icons/desktop/carte.svg" class="carte" />
-        <img src="~/assets/images/icons/desktop/encart.svg" class="encart" />
-      </div>
-      <div>
-        <h1 id="titre3">Des notions claires</h1>
-        <p
-          class="art3"
-        >Un récit ponctué par des points de repères chiffrés pour vous aider à quantifier et comprendre les enjeux de santé publique.</p>
-        <a href="#" id="linkk4">
-          Quelques chiffres en vidéo
-          <img
-            src="~/assets/images/icons/desktop/arrowright.svg"
-            class="arrow"
-          />
+      <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
+      <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
+      <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
+    </div>
+
+    <div class="map">
+      <h1 id="titre2">Visualisez les données en temps réel</h1>
+      <p id="art2">
+        Nous développons un outil cartographique puissant et configurable. Une compilation et une fusion de données libres totalement partageable.
+        <br />
+        <br />
+        <a href="#" id="linkk">
+          Voir nos cartes
+          <img src="~/assets/images/icons/desktop/arrowright.svg" class="arrow" />
         </a>
-        <img src="~/assets/images/icons/desktop/illus.svg" class="illus" />
-      </div>
-      <div>
-        <img src="~/assets/images/icons/desktop/bg.svg" class="bg" />
-        <img src="~/assets/images/icons/desktop/icone-simple.svg" class="icone1" />
-        <h1 id="titre4">Apprenez simplement</h1>
-        <p
-          id="art4"
-        >Des articles interactifs et ludiques ponctué d’infographies et d’illustration, pour comprendre des sujets pointus et complexes.</p>
-        <a href="#" id="linkk2">
-          Lire notre 1er article
-          <img
-            src="~/assets/images/icons/desktop/arrowright.svg"
-            class="arrow"
-          />
-        </a>
-        <img src="~/assets/images/icons/desktop/icone-transparence.svg" class="icone2" />
-        <h1 id="titre5">En toute transparence</h1>
-        <p
-          id="art5"
-        >Notre travail est scrupuleusement référencé et nos sources sont triées, catégorisées et accessibles en un clic depuis chaque article.</p>
-        <a href="#" id="linkk3">
-          Voir les sources de notre 1er article
-          <img
-            src="~/assets/images/icons/desktop/arrowright.svg"
-            class="arrow"
-          />
-        </a>
-      </div>
+      </p>
+      <img src="~/assets/images/icons/desktop/Rectangle52.svg" class="rec" />
+      <img src="~/assets/images/icons/desktop/Rectangle53.svg" class="rec2" />
+      <img src="~/assets/images/icons/desktop/carte.svg" class="carte" />
+      <img src="~/assets/images/icons/desktop/encart.svg" class="encart" />
+    </div>
+
+    <div>
+      <h1 id="titre3">Des notions claires</h1>
+      <p
+        class="art3"
+      >Un récit ponctué par des points de repères chiffrés pour vous aider à quantifier et comprendre les enjeux de santé publique.</p>
+      <a href="#" id="linkk4">
+        Quelques chiffres en vidéo
+        <img
+          src="~/assets/images/icons/desktop/arrowright.svg"
+          class="arrow"
+        />
+      </a>
+      <img src="~/assets/images/icons/desktop/illus.svg" class="illus" />
+    </div>
+
+    <div>
+      <img src="~/assets/images/icons/desktop/bg.svg" class="bg" />
+      <img src="~/assets/images/icons/desktop/icone-simple.svg" class="icone1" />
+      <h1 id="titre4">Apprenez simplement</h1>
+      <p
+        id="art4"
+      >Des articles interactifs et ludiques ponctué d’infographies et d’illustration, pour comprendre des sujets pointus et complexes.</p>
+      <a href="#" id="linkk2">
+        Lire notre 1er article
+        <img src="~/assets/images/icons/desktop/arrowright.svg" class="arrow" />
+      </a>
+      <img src="~/assets/images/icons/desktop/icone-transparence.svg" class="icone2" />
+      <h1 id="titre5">En toute transparence</h1>
+      <p
+        id="art5"
+      >Notre travail est scrupuleusement référencé et nos sources sont triées, catégorisées et accessibles en un clic depuis chaque article.</p>
+      <a href="#" id="linkk3">
+        Voir les sources de notre 1er article
+        <img
+          src="~/assets/images/icons/desktop/arrowright.svg"
+          class="arrow"
+        />
+      </a>
     </div>
   </div>
 </template>
@@ -131,6 +129,11 @@ export default {
 <style lang="scss" scoped>
 @import './assets/_custom.scss';
 
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 #titre1 {
   @include maintitle;
   width: 563px;
@@ -171,7 +174,7 @@ export default {
 button {
   background: linear-gradient(89.87deg, #1680a5 -79.71%, #62bad9 167.69%);
   position: relative;
-  left: -5%;
+  left: 144px;
   right: 75.83%;
   top: 420px;
   bottom: 81.14%;
