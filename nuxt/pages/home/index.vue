@@ -29,7 +29,7 @@
           :destroyOnClose="true"
           bodyStyle="padding: 0;"
         >
-          <div class="embed-responsive embed-responsive-21by9">
+          <div class="embed-responsive embed-responsive-16by9">
             <LazyYoutubeVideo
               autoplay
               class="embed-responsive-item"
