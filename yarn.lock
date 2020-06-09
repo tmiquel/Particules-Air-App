@@ -7311,6 +7311,11 @@ vue-clickaway@^2.2.2:
   dependencies:
     loose-envify "^1.2.0"
 
+vue-lazy-youtube-video@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-lazy-youtube-video/-/vue-lazy-youtube-video-2.0.0.tgz#9985d2fa5c23085162d4d5c3189c878feabd2028"
+  integrity sha512-sKt2WTExfhbaq8dSIIQnPfmS/ShKzhHEl8HtQ8j4uqsDpVNyw9zKrI/KGfbxo/3zU0lXztpz94KIBq6/xU9q6g==
+
 vue-numeric@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-numeric/-/vue-numeric-2.3.0.tgz#d6e5aa7c5035a86f2e36481fb1fd0fe2bc445f92"

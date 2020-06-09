@@ -39,7 +39,12 @@
       </a-modal>
 
       <img src="~/assets/images/icons/desktop/Rectangle.svg" class="rectangle" />
-      <img src="~/assets/images/icons/desktop/video.svg" class="vid" />
+      <img
+        src="~/assets/images/icons/desktop/video.svg"
+        class="vid"
+        @click="() => (modal2Visible = true)"
+      />
+
       <img src="~/assets/images/icons/desktop/Vector.svg" class="vector" />
     </div>
 
@@ -160,7 +165,7 @@ export default {
   height: 516px;
   left: 807px;
   top: 480px;
-
+  float: right;
   background: #f3f7f9;
 }
 .vid {
