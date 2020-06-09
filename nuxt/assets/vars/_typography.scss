@@ -1,7 +1,17 @@
 @font-face {
   font-family: 'Soin Sans Neue';
-  font-weight: normal;
+  font-weight: bold;
   src:
     url('~assets/fonts/Soin-Sans-Neue-Heavy.otf') format('opentype');
+
+}
+
+;
+
+@font-face {
+  font-family: 'Soin Sans Neue';
+  font-weight: normal;
+  src:
+    url('~assets/fonts/Soin-Sans-Neue-Light.otf') format('opentype');
 
 }

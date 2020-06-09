@@ -60,5 +60,19 @@ export default {}
 <style scoped lang='scss'>
 p {
   width: 670px;
+  font-family: 'Soin Sans Neue';
+  font-weight: normal;
+  line-height: 145.6%;
+  color: #454545;
+}
+
+h1 {
+  font-family: 'Soin Sans Neue';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 145.6%;
+  letter-spacing: -0.01em;
+  color: #454545;
 }
 </style>
