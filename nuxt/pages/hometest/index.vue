@@ -173,6 +173,7 @@ export default {
 
 <style lang="scss" scoped>
 @import './assets/_custom.scss';
+@import 'vue-lazy-youtube-video/dist/style.css';
 
 #titre1 {
   @include maintitle;
