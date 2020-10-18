@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 export default {
+  target: 'static',
   ssr: false,
   /*
    ** Headers of the page
@@ -188,6 +189,9 @@ export default {
         config.devtool = 'source-map'
       }
 
+    },
+    babel: {
+      compact: true
     }
   }
 };
