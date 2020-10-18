@@ -17,7 +17,7 @@
     "@nuxtjs/svg": "^0.1.6",
     "ant-design-vue": "^1.4.12",
     "bootstrap": "^4.4.1",
-    "bootstrap-vue": "^2.5.0",
+    "bootstrap-vue": "^2.17.3",
     "cloudinary-vue": "^1.0.0",
     "core-js": "^3.6.5",
     "geobuf": "^3.0.1",
@@ -25,6 +25,7 @@
     "js-yaml-loader": "^1.2.2",
     "jsonp": "^0.2.1",
     "leaflet": "^1.6.0",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
     "lodash": "^4.17.20",
     "node-sass": "^4.13.1",
     "nuxt": "^2.11.0",
@@ -41,8 +42,10 @@
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
     "@nuxtjs/dotenv": "^1.4.1",
+    "babel-loader": "^8.1.0",
     "prettier": "^1.19.1",
-    "webpack": "4"
+    "webpack": "^4"
   }
 }

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <CloseIcon id="close-icon" class="mt-3 mr-3 d-none d-sm-block" @click="$router.back()" />
+    <CloseIcon
+      id="close-icon"
+      class="mt-3 mr-3 d-none d-sm-block"
+      @click="$router.back()"
+    />
     <nuxt />
   </div>
 </template>
@@ -9,6 +13,9 @@
 import CloseIcon from '~/assets/images/icons/close.svg?inline'
 import { Icon } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css' // Re-uses images from ~leaflet package
+import * as L from 'leaflet'
+import 'leaflet-defaulticon-compatibility'
 
 // this part resolve an issue where the markers would not appear
 delete Icon.Default.prototype._getIconUrl
@@ -17,7 +24,7 @@ Icon.Default.mergeOptions({
   forceZIndex: 1000,
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 })
 
 export default { components: { CloseIcon } }
