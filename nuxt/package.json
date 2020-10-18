@@ -19,23 +19,30 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.5.0",
     "cloudinary-vue": "^1.0.0",
+    "core-js": "^3.6.5",
     "geobuf": "^3.0.1",
+    "jquery": "3",
     "js-yaml-loader": "^1.2.2",
     "jsonp": "^0.2.1",
     "leaflet": "^1.6.0",
+    "lodash": "^4.17.20",
     "node-sass": "^4.13.1",
     "nuxt": "^2.11.0",
     "nuxt-compress": "^1.1.0",
     "nuxt-mq": "^2.0.1",
     "pbf": "^3.2.1",
     "places.js": "^1.18.1",
+    "popper.js": "1.16.1",
     "query-string": "^6.12.1",
     "sass-loader": "^8.0.2",
     "underscore": "^1.9.2",
-    "vue-bootstrap-typeahead": "^0.2.6"
+    "vue": "^2.6.12",
+    "vue-bootstrap-typeahead": "^0.2.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "webpack": "4"
   }
 }
