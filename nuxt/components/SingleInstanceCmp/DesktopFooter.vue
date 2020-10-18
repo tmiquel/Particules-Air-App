@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconDocuments } from 'bootstrap-vue'
+import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconFileEarmarkText } from 'bootstrap-vue'
 
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
@@ -25,8 +25,8 @@ export default {
   methods: {
     urlFor(page) {
       return `/posts/${this.$route.params.name ? this.$route.params.name : 'home'}/${page}`
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -12,7 +12,10 @@
       class="footer-item px-0 flex-grow-1 justify-content-center"
       :to="urlFor('graphs')"
     >
-      <span :style="footerTextStyle" class="font-weight-bold">
+      <span
+        :style="footerTextStyle"
+        class="font-weight-bold"
+      >
         {{ responsiveGraphText }}
         <img
           src="~/assets/images/icons/mobile/chart_smart.svg"
@@ -26,7 +29,10 @@
       class="footer-item px-0 flex-grow-1 justify-content-center"
       :to="urlFor('stakeholders')"
     >
-      <span :style="footerTextStyle" class="font-weight-bold">
+      <span
+        :style="footerTextStyle"
+        class="font-weight-bold"
+      >
         {{ responsiveStakeholdersText }}
         <img
           src="~/assets/images/icons/mobile/acteurs_smart.svg"
@@ -40,7 +46,10 @@
       class="footer-item px-0 flex-grow-1 justify-content-center"
       :to="urlFor('definitions')"
     >
-      <span :style="footerTextStyle" class="font-weight-bold">
+      <span
+        :style="footerTextStyle"
+        class="font-weight-bold"
+      >
         {{ responsiveDefinitionsText }}
         <img
           src="~/assets/images/icons/mobile/lexique_smart.svg"
@@ -56,7 +65,10 @@
       class="footer-item px-0 flex-grow-1 justify-content-center"
       :to="urlFor('sources')"
     >
-      <span :style="footerTextStyle" class="font-weight-bold">
+      <span
+        :style="footerTextStyle"
+        class="font-weight-bold"
+      >
         {{ responsiveSourcesText }}
         <img
           src="~/assets/images/icons/mobile/sources_smart.svg"
@@ -68,7 +80,7 @@
 </template>
 
 <script>
-import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconDocuments } from 'bootstrap-vue'
+import { BIcon, BIconPieChart, BIconPeople, BIconListCheck, BIconFileEarmarkText } from 'bootstrap-vue'
 
 import fontSizeMixin from '@/mixins/fontSizeMixin.js'
 
@@ -79,7 +91,7 @@ export default {
     BIconPieChart,
     BIconPeople,
     BIconListCheck,
-    BIconDocuments
+    BIconFileEarmarkText,
   },
   computed: {
     responsiveGraphText() {
@@ -96,13 +108,13 @@ export default {
     },
     footerTextStyle() {
       return this.responsiveFontSize('fontSizeFooter')
-    }
+    },
   },
   methods: {
     urlFor(page) {
       return `/posts/${this.$route.params.name ? this.$route.params.name : 'home'}/${page}`
-    }
-  }
+    },
+  },
 }
 </script>
 
