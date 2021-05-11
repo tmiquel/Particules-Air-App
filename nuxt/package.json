@@ -26,7 +26,7 @@
     "jsonp": "^0.2.1",
     "leaflet": "^1.6.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-sass": "^4.13.1",
     "nuxt": "^2.11.0",
     "nuxt-compress": "^1.1.0",
