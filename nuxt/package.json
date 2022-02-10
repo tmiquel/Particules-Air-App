@@ -27,7 +27,7 @@
     "leaflet": "^1.6.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "lodash": "^4.17.20",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.11.0",
     "nuxt-compress": "^1.1.0",
     "nuxt-mq": "^2.0.1",
